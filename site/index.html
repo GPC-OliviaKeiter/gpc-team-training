@@ -1,0 +1,433 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>GPC Team Training</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%23F04E2A%22/%3E%3Ctext x=%2232%22 y=%2244%22 font-family=%22Georgia,serif%22 font-size=%2230%22 fill=%22%23FAF5EE%22 text-anchor=%22middle%22%3Egpc%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap"><style>
+  :root{
+    --red:#F04E2A; --orange:#EF6B00; --yellow:#F7CC43; --ltyellow:#FEE097; --purple:#8B3A8F;
+    --n900:#232424; --n600:#4B4B47; --n300:#D8D1C8; --n200:#EFE7D9; --n100:#FAF5EE;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--n100); color:var(--n900);
+       font-family:"Public Sans","Segoe UI",system-ui,sans-serif; font-size:16.5px; line-height:1.55}
+  .wrap{max-width:1020px; margin:0 auto; padding:44px 28px 72px}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif; margin:0; text-wrap:balance}
+  .mono{font-family:"IBM Plex Mono",Consolas,monospace}
+
+  /* disclaimer */
+  .disclaimer{background:var(--n900); color:var(--n100); font-size:13.5px; padding:9px 28px; text-align:center}
+  .disclaimer b{color:var(--yellow); font-weight:600; letter-spacing:.04em}
+
+  /* nav */
+  .nav{position:sticky; top:0; z-index:20; background:var(--n100); border-bottom:1px solid var(--n900);
+       display:flex; align-items:center; gap:6px; padding:10px 28px; overflow-x:auto}
+  .nav .gpc{font-family:"Fraunces",serif; font-weight:600; font-size:21px; color:var(--n900); margin-right:12px; line-height:1}
+  .nav button{font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.04em; color:var(--n600);
+       background:transparent; border:1px solid var(--n300); border-radius:3px; padding:5px 12px; cursor:pointer; white-space:nowrap}
+  .nav button:hover{color:var(--n900); border-color:var(--n600)}
+  .nav button:focus-visible{outline:2px solid var(--red); outline-offset:2px}
+  .nav button.active{background:var(--red); border-color:var(--red); color:var(--n100); font-weight:600}
+  .view{display:none}.view.active{display:block}
+
+  /* hero */
+  header{border-bottom:1px solid var(--n900); padding-bottom:30px; margin-bottom:38px; position:relative}
+  .eyebrow{font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.22em; text-transform:uppercase;
+       color:var(--n600); display:flex; align-items:center; gap:14px; margin-bottom:16px}
+  .vpill{background:var(--ltyellow); color:var(--n900); border-radius:3px; padding:2px 8px; font-weight:600; letter-spacing:.08em}
+  h1.title{font-size:clamp(42px,6.5vw,64px); font-weight:600; line-height:1.02; letter-spacing:-.015em}
+  .map{height:14px; border-radius:2px; margin:22px 0 0; position:relative; overflow:hidden;
+       background:linear-gradient(90deg, var(--ltyellow) 0%, var(--yellow) 20%, var(--red) 55%, var(--purple) 100%)}
+  .grain::after{content:""; position:absolute; inset:0; background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+       background-size:240px 240px; opacity:.3; mix-blend-mode:soft-light; pointer-events:none}
+  .lede{max-width:64ch; margin:20px 0 0; font-size:18px; color:var(--n600)}
+  .lede strong{color:var(--n900)}
+  .nameplate{position:absolute; right:0; bottom:10px; font-family:"IBM Plex Mono",monospace; font-size:10px;
+       letter-spacing:.28em; color:var(--n600)}
+  @media (max-width:760px){.nameplate{display:none}}
+  .stats{display:flex; flex-wrap:wrap; margin-top:26px; border:1px solid var(--n900); background:var(--n100)}
+  .stat{flex:1 1 120px; padding:14px 18px; border-right:1px solid var(--n300)}
+  .stat:last-child{border-right:none}
+  .stat b{display:block; font-family:"Fraunces",serif; font-size:28px; font-weight:600; color:var(--red);
+       font-variant-numeric:tabular-nums; line-height:1.1}
+  .stat span{font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--n600)}
+
+  section{margin:46px 0}
+  .sec-head{display:flex; align-items:baseline; gap:14px; margin-bottom:6px}
+  h2.sec{font-size:27px; font-weight:600}
+  .sec-note{font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.06em; color:var(--n600)}
+  .sec-sub{max-width:70ch; color:var(--n600); margin:4px 0 20px; font-size:15.5px}
+
+  /* loop */
+  .loop{display:flex; flex-wrap:wrap; align-items:stretch; gap:10px}
+  .loop-step{flex:1 1 175px; background:var(--n200); border:1px solid var(--n300); padding:14px 16px; position:relative}
+  .loop-step .lbl{display:block; font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.14em;
+       text-transform:uppercase; color:var(--red); font-weight:600; margin-bottom:6px}
+  .loop-step p{margin:0; font-size:14.5px; color:var(--n600)}
+  .loop-step p b{color:var(--n900)}
+  .loop-arrow{align-self:center; color:var(--n600); font-size:18px}
+  .loop-back{width:100%; text-align:center; font-size:13px; color:var(--n600); margin-top:4px}
+
+  /* module cards */
+  .mods{display:grid; grid-template-columns:repeat(auto-fit,minmax(285px,1fr)); gap:14px}
+  .mod{background:#FFFFFF; border:1px solid var(--n300); padding:20px 22px 16px; display:flex; flex-direction:column; gap:10px; position:relative}
+  .mod.flagship{border-color:var(--n900)}
+  .mod-num{font-family:"IBM Plex Mono",monospace; font-size:11.5px; font-weight:600; color:var(--n600)}
+  .mod h3{font-size:21px; font-weight:600; line-height:1.15}
+  .mod .role{font-size:13.5px; color:var(--n600); font-style:italic; margin:-4px 0 0}
+  .mod ul{margin:0; padding-left:18px; font-size:14.5px; color:var(--n600); display:flex; flex-direction:column; gap:4px}
+  .mod li::marker{color:var(--red)}
+  .badge{position:absolute; top:-10px; right:14px; font-family:"IBM Plex Mono",monospace; font-size:10px;
+       font-weight:600; letter-spacing:.12em; padding:2px 8px}
+  .badge.new{background:var(--red); color:var(--n100)}
+  .badge.flag{background:var(--n100); color:var(--n900); border:1px solid var(--n900)}
+  .tagrow{display:flex; flex-wrap:wrap; gap:5px; margin-top:auto; padding-top:8px; border-top:1px dashed var(--n300)}
+
+  .ctag{font-family:"IBM Plex Mono",monospace; font-size:.76em; font-weight:600; color:var(--red);
+       background:var(--n200); border-radius:2px; padding:1px 6px; white-space:nowrap}
+  .ctag.dim{color:var(--n600)}
+  .ctag.inf{color:#FAF5EE; background:var(--purple)}
+
+  /* arc */
+  .arc{counter-reset:step; display:grid; grid-template-columns:repeat(auto-fit,minmax(225px,1fr)); gap:10px 14px; margin:0; padding:0; list-style:none}
+  .arc li{counter-increment:step; background:#FFFFFF; border:1px solid var(--n300); padding:10px 12px 10px 14px;
+       font-size:13.5px; color:var(--n600); display:flex; gap:10px; align-items:baseline}
+  .arc li::before{content:counter(step,decimal-leading-zero); font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:600; color:var(--red)}
+  .arc li b{color:var(--n900); font-weight:600}
+
+  footer{margin-top:56px; border-top:1px solid var(--n900); padding-top:20px; display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between}
+  .rules{font-size:13.5px; color:var(--n600); max-width:56ch}
+  .rules b{color:var(--n900)}
+  .status{font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--n600); text-align:right; line-height:1.8}
+  .status .ok{color:var(--red); font-weight:600}
+  @media (max-width:640px){.status{text-align:left}}
+
+  /* module reader */
+  .module{max-width:78ch}
+  .module h1{font-size:clamp(30px,4.5vw,40px); font-weight:600; line-height:1.08; margin:6px 0 10px}
+  .module h2{font-size:24px; font-weight:600; margin:38px 0 10px; padding-top:20px; border-top:1px solid var(--n900)}
+  .module h3{font-size:18px; font-weight:600; margin:24px 0 6px}
+  .module p{margin:0 0 14px; color:var(--n600)}
+  .module p strong,.module li strong{color:var(--n900)}
+  .module ul,.module ol{margin:0 0 16px; padding-left:22px; color:var(--n600); display:flex; flex-direction:column; gap:7px}
+  .module li::marker{color:var(--red); font-weight:600}
+  .module code{font-family:"IBM Plex Mono",monospace; font-size:.84em; background:var(--n200); border-radius:2px; padding:1px 5px}
+  .modpath{font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--n600); margin-bottom:2px}
+  .tblwrap{overflow-x:auto; border:1px solid var(--n900); background:#FFFFFF; margin:0 0 18px}
+  .module table{min-width:560px}
+  .module thead th{font-family:"Public Sans",sans-serif; font-size:13px; text-transform:none; letter-spacing:0; color:var(--n900); padding:9px 12px}
+  .module tbody td{vertical-align:top; color:var(--n600); padding:9px 12px}
+
+  /* diagrams (this repo's addition, GPC-palette inline SVG) */
+  .diagram{border:1px solid var(--n300); background:#FFFFFF; padding:14px 16px 10px; margin:18px 0}
+  .diagram svg{width:100%; height:auto; display:block}
+  .diagram .cap{font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--n600); margin-top:8px}
+
+  /* print export (this repo's addition) */
+  @media print{
+    .disclaimer,.nav{display:none}
+    body{font-size:12.5px}
+    .wrap{max-width:100%; padding:0 8px 24px}
+    header{margin-bottom:22px}
+    .nameplate{display:none}
+    .grain::after{display:none}
+    .view{display:block !important}
+    #view-overview{page-break-after:always}
+    .view:not(#view-overview){page-break-before:always}
+    .loop-step,.mod,.arc li,.diagram{page-break-inside:avoid}
+    .nav button.active{background:none;color:var(--n900)}
+    a[href]::after{content:"" }
+  }
+</style></head><body>
+<div class="disclaimer"><b>INTERNAL USE ONLY</b>: GPC team training. Nothing here goes public without Grant's approval.</div>
+<nav class="nav" aria-label="Training sections">
+  <span class="gpc">gpc</span>
+  <button class="active" data-v="overview">Overview</button>
+  <button data-v="s01">01 · Repos &amp; Branches</button>
+  <button data-v="s02">02 · Commits</button>
+  <button data-v="s03">03 · Pull Requests</button>
+  <button data-v="s04">04 · Merge</button>
+  <button data-v="s05">05 · At GPC</button>
+</nav>
+
+<div class="view active" id="view-overview">
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><span>GPC · Team Training</span><span class="vpill">v0.1 · 2026-09-11</span></div>
+    <h1 class="title">GitHub at GPC</h1>
+    <div class="map grain"></div>
+    <p class="lede">How GitHub and git work at GPC, adapted from GitHub Skills' <em>Introduction to GitHub</em> for our own repos and conventions. Five sections take you from a blank branch to a merged pull request: <strong>the same loop a client SOW travels through</strong> once it's drafted in Claude Code.</p>
+    <div class="stats">
+      <div class="stat"><b>5</b><span>sections</span></div>
+      <div class="stat"><b>4</b><span>step arc</span></div>
+      <div class="stat"><b>1</b><span>module so far</span></div>
+      <div class="stat"><b>6</b><span>screenshots pending</span></div>
+    </div>
+    <span class="nameplate">GENERAL&nbsp;PURPOSE&nbsp;CONSULTING</span>
+  </header>
+
+  <section>
+    <div class="sec-head"><h2 class="sec">The four-step arc</h2><span class="sec-note">branch → commit → pull request → merge</span></div>
+    <p class="sec-sub">Every change at GPC (a client README, a skill, a SOW draft) travels the same four steps before it's official. Learn this loop once and it applies everywhere.</p>
+    <div class="diagram">
+      <svg viewBox="0 0 640 168" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of a branch forking from main, taking three commits, then merging back in via a pull request">
+        <line x1="20" y1="132" x2="620" y2="132" stroke="#D8D1C8" stroke-width="3"/>
+        <text x="22" y="152" font-family="IBM Plex Mono,monospace" font-size="11" fill="#4B4B47" letter-spacing="1">main</text>
+        <path d="M110,132 C110,70 150,70 190,70 L430,70 C470,70 500,70 500,102" fill="none" stroke="#F04E2A" stroke-width="3"/>
+        <circle cx="110" cy="132" r="5" fill="#232424"/>
+        <text x="120" y="60" font-family="IBM Plex Mono,monospace" font-size="11" fill="#F04E2A" letter-spacing="1">your branch</text>
+        <circle cx="230" cy="70" r="6" fill="#F04E2A" stroke="#FAF5EE" stroke-width="2"/>
+        <circle cx="300" cy="70" r="6" fill="#F04E2A" stroke="#FAF5EE" stroke-width="2"/>
+        <circle cx="370" cy="70" r="6" fill="#F04E2A" stroke="#FAF5EE" stroke-width="2"/>
+        <rect x="405" y="86" width="72" height="24" rx="3" fill="#FEE097" stroke="#F7CC43"/>
+        <text x="441" y="102" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10.5" font-weight="600" fill="#232424" letter-spacing="1">PR</text>
+        <circle cx="500" cy="132" r="6" fill="#232424"/>
+        <text x="30" y="26" font-family="IBM Plex Mono,monospace" font-size="10.5" font-weight="600" fill="#F04E2A">1 · BRANCH</text>
+        <text x="220" y="46" font-family="IBM Plex Mono,monospace" font-size="10.5" font-weight="600" fill="#F04E2A">2 · COMMIT</text>
+        <text x="392" y="130" font-family="IBM Plex Mono,monospace" font-size="10.5" font-weight="600" fill="#F04E2A">3 · PULL REQUEST</text>
+        <text x="500" y="156" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10.5" font-weight="600" fill="#F04E2A">4 · MERGE</text>
+      </svg>
+      <div class="cap">the arc every GPC change follows, from a client README to a Claude Code SOW draft</div>
+    </div>
+    <div class="loop">
+      <div class="loop-step"><span class="lbl">1 · Branch</span><p><b>Fork off main.</b> Your copy of the repo, safe to edit without touching the live version.</p></div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-step"><span class="lbl">2 · Commit</span><p><b>Save a snapshot.</b> A message explains what changed and why, GPC-style: imperative, one line.</p></div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-step"><span class="lbl">3 · Pull request</span><p><b>Propose the merge.</b> Description in Completed / Still needed, never generic prose.</p></div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-step"><span class="lbl">4 · Merge</span><p><b>Grant merges it in.</b> Your branch is deleted; the change is now part of main.</p></div>
+    </div>
+    <p class="loop-back">…and the next change starts the loop again ↻</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2 class="sec">The five sections</h2><span class="sec-note">training/01-github-basics.md</span></div>
+    <div class="mods">
+      <div class="mod">
+        <span class="mod-num">01</span><h3>Repos &amp; Branches</h3>
+        <p class="role">What you're working in, and your safe copy of it</p>
+        <ul>
+          <li>What a repo is, and GPC's one-repo-per-client rule</li>
+          <li>What a branch is, why it keeps main safe, and how GPC names them (gpc-skills' typed prefixes vs. plain client-repo names)</li>
+        </ul>
+        <div class="tagrow"><span class="ctag">[branch]</span><span class="ctag">[main]</span><span class="ctag">[one-repo-per-client]</span></div>
+      </div>
+      <div class="mod">
+        <span class="mod-num">02</span><h3>Commits</h3>
+        <p class="role">Saving a change, GPC's way</p>
+        <ul>
+          <li>What a commit is, and GPC's message convention: imperative, one line, specific</li>
+          <li>Practice artifact: a client README on GPC brand, not a placeholder file</li>
+        </ul>
+        <div class="tagrow"><span class="ctag">[commit]</span><span class="ctag">[client-readme]</span></div>
+      </div>
+      <div class="mod">
+        <span class="mod-num">03</span><h3>Pull Requests</h3>
+        <p class="role">Proposing your change for review</p>
+        <ul>
+          <li>What a pull request is and who reviews it</li>
+          <li>GPC's PR description format: Completed / Still needed, never prose</li>
+        </ul>
+        <div class="tagrow"><span class="ctag">[pull-request]</span><span class="ctag">[completed-still-needed]</span></div>
+      </div>
+      <div class="mod">
+        <span class="mod-num">04</span><h3>Merge</h3>
+        <p class="role">Making it official, and cleaning up after</p>
+        <ul>
+          <li>What a merge is</li>
+          <li>Deleting the branch once it's merged</li>
+        </ul>
+        <div class="tagrow"><span class="ctag">[merge]</span><span class="ctag">[delete-branch]</span></div>
+      </div>
+      <div class="mod flagship">
+        <span class="badge flag">TIES IT TOGETHER</span>
+        <span class="mod-num">05</span><h3>How It Works at GPC</h3>
+        <p class="role">Where this loop actually runs, and why it matters for SOW drafting</p>
+        <ul>
+          <li>Grant merges: what his review comments look like</li>
+          <li>Where client repos, gpc-skills, and internal repos live</li>
+          <li>Drive and GitHub aren't synced yet</li>
+          <li>The SOW-creation angle: this loop is what Claude Code runs for you</li>
+        </ul>
+        <div class="tagrow"><span class="ctag">[grant-merges]</span><span class="ctag">[gpc-skills]</span><span class="ctag">[drive-not-synced]</span><span class="ctag">[sow-drafting]</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="rules"><b>Ground rules.</b> Internal use only. Nothing goes public without Grant's approval. No client names, client data, or client repos in screenshots or examples. Write for someone with zero GitHub experience. Screenshots stay current: replace them the moment the UI drifts from the text.</div>
+    <div class="status">repo: gpc-team-training · v0.1<br>status: <span class="ok">draft, screenshots pending</span><br>next: capture the six placeholder screenshots on a sandbox repo</div>
+  </footer>
+</div>
+</div>
+
+<div class="view" id="view-s01"><div class="wrap"><div class="module">
+  <div class="modpath">training/01-github-basics.md · §1 · v0.1</div>
+  <h1>Repos and Branches</h1>
+  <p>A <strong>repository</strong> (repo) is a project's folder, plus its entire history of changes. Every file, and every version that file has ever been, lives in the repo. At GPC that means <strong>one repo per client</strong>: <code>rush-enterprises</code>, <code>delta-water-products</code>, and so on each hold that client's SOW, decks, and deliverables. Shared tooling lives in its own repo (<code>gpc-skills</code>); internal-only material like this training repo and <code>grant-way-playbook</code> are separate again. Nothing client-facing and nothing internal-only ever share a repo.</p>
+  <p>A <strong>branch</strong> is a parallel copy of the repo you can safely edit without touching the official version, called <code>main</code>. You make your changes on a branch, and <code>main</code> stays untouched until your work is reviewed and merged in. This is what lets more than one person work in the same repo at once without stepping on each other.</p>
+  <div class="diagram">
+    <svg viewBox="0 0 560 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of a branch forking off the main line at a commit point">
+      <line x1="20" y1="90" x2="540" y2="90" stroke="#D8D1C8" stroke-width="3"/>
+      <text x="22" y="108" font-family="IBM Plex Mono,monospace" font-size="11" fill="#4B4B47">main, stays untouched</text>
+      <circle cx="150" cy="90" r="6" fill="#232424"/>
+      <path d="M150,90 C150,50 190,50 230,50" fill="none" stroke="#F04E2A" stroke-width="3" stroke-dasharray="1 0"/>
+      <circle cx="230" cy="50" r="6" fill="#F04E2A"/>
+      <line x1="230" y1="50" x2="480" y2="50" stroke="#F04E2A" stroke-width="3" stroke-dasharray="6 5"/>
+      <text x="236" y="32" font-family="IBM Plex Mono,monospace" font-size="11" fill="#F04E2A">your branch, safe to edit</text>
+    </svg>
+    <div class="cap">forking a branch off main at the current commit</div>
+  </div>
+  <p>GPC doesn't have one single branch-naming rule across every repo, but two patterns show up:</p>
+  <ul>
+    <li><strong>gpc-skills</strong> (shared tooling) uses typed prefixes that say what kind of change it is: <code>skill/&lt;name&gt;</code> for a new or changed skill, <code>fix/&lt;what&gt;</code> for a correction, <code>docs/&lt;what&gt;</code> for documentation, <code>chore/&lt;what&gt;</code> for housekeeping.</li>
+    <li><strong>Client repos</strong> are usually simpler: name the branch after what you're doing, in plain words, like <code>kaci-delta-readme</code> or <code>olivia-rush-deck-fix</code>. The point of a branch name is that someone else can tell what's in it without opening it.</li>
+  </ul>
+  <h2>Click-path: create your first branch</h2>
+  <ol class="arc">
+    <li><b>Open the repo</b> you're working in on GitHub.com.</li>
+    <li><b>Click the &lt; &gt; Code tab</b> in the header menu.<!-- SCREENSHOT: repo code tab --></li>
+    <li><b>Click the branch dropdown.</b> It shows main by default.<!-- SCREENSHOT: branch dropdown --></li>
+    <li><b>Type a branch name</b> in "Find or create a branch...", for example <code>&lt;yourname&gt;-first-branch</code>.</li>
+    <li><b>Click "Create branch"</b> from the prompt that appears under the name you typed.</li>
+    <li><b>Confirm the switch.</b> The dropdown now shows your branch, not main.</li>
+  </ol>
+</div></div></div>
+
+<div class="view" id="view-s02"><div class="wrap"><div class="module">
+  <div class="modpath">training/01-github-basics.md · §2 · v0.1</div>
+  <h1>Commits</h1>
+  <p>A <strong>commit</strong> is a saved snapshot of a change, with a message attached explaining what changed and why. A commit always happens on a branch. You'll make many small commits rather than one giant one. Each should be one coherent change you could explain in a sentence.</p>
+  <p>The GitHub Skills exercise has you commit a <code>PROFILE.md</code> with one line of placeholder text. At GPC, practice on something real instead: <strong>a client README on GPC brand</strong>, the kind of short file that sits at the top of a client repo and orients anyone who opens it (what the engagement is, who the sponsor is, where the deliverables live).</p>
+  <div class="diagram">
+    <svg viewBox="0 0 560 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of three commits in sequence along a branch line, each with a message">
+      <line x1="20" y1="60" x2="540" y2="60" stroke="#F04E2A" stroke-width="3"/>
+      <circle cx="90" cy="60" r="7" fill="#F04E2A" stroke="#FAF5EE" stroke-width="2"/>
+      <circle cx="280" cy="60" r="7" fill="#F04E2A" stroke="#FAF5EE" stroke-width="2"/>
+      <circle cx="470" cy="60" r="7" fill="#F04E2A" stroke="#FAF5EE" stroke-width="2"/>
+      <text x="90" y="34" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="#232424">"Add Delta README"</text>
+      <text x="280" y="34" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="#232424">"Add sponsor section"</text>
+      <text x="470" y="34" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="#232424">"Link deliverables"</text>
+    </svg>
+    <div class="cap">each commit is one coherent change, named in the imperative</div>
+  </div>
+  <p>GPC's commit message convention: <strong>imperative mood, one line, specific about what changed.</strong> "Add Delta Water Products client README," not "Update stuff" or "Changes." If you can't summarize the commit in one line, it's probably two commits.</p>
+  <h2>Click-path: your first commit</h2>
+  <ol class="arc">
+    <li><b>Click Add file → Create new file</b> on your branch.<!-- SCREENSHOT: new file screen --></li>
+    <li><b>Name the file</b> <code>README.md</code>.</li>
+    <li><b>Write a short client README:</b> engagement name, sponsor, current phase, where deliverables live.</li>
+    <li><b>Click Commit changes...</b> in the upper right.<!-- SCREENSHOT: commit dialog --></li>
+    <li><b>Replace the suggested message</b> with your own, for example <code>Add Delta Water Products client README</code>.</li>
+    <li><b>Click Commit changes</b> to finish.</li>
+  </ol>
+</div></div></div>
+
+<div class="view" id="view-s03"><div class="wrap"><div class="module">
+  <div class="modpath">training/01-github-basics.md · §3 · v0.1</div>
+  <h1>Pull Requests</h1>
+  <p>A <strong>pull request</strong> (PR) is how you propose merging your branch into <code>main</code>. It shows the changes side by side, and it's where a reviewer, at GPC that's Grant, sees exactly what you did before it becomes official.</p>
+  <p>GitHub will suggest a generic description. GPC doesn't use generic prose for PR descriptions. Every PR description follows the <strong>Completed / Still needed</strong> format: two short lists, not paragraphs. It tells the reviewer in five seconds what's done and what isn't, instead of making them read your commit history to find out.</p>
+  <div class="diagram">
+    <svg viewBox="0 0 560 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram comparing a branch against main with a pull request box in between listing Completed and Still needed">
+      <line x1="20" y1="30" x2="540" y2="30" stroke="#F04E2A" stroke-width="3"/>
+      <text x="22" y="20" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#F04E2A">your branch</text>
+      <line x1="20" y1="118" x2="540" y2="118" stroke="#D8D1C8" stroke-width="3"/>
+      <text x="22" y="112" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#4B4B47">main</text>
+      <rect x="190" y="52" width="180" height="44" rx="3" fill="#FEE097" stroke="#F7CC43"/>
+      <text x="280" y="70" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="600" fill="#232424">Completed:</text>
+      <text x="280" y="86" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="#4B4B47">Still needed: nothing</text>
+      <line x1="280" y1="30" x2="280" y2="52" stroke="#8B3A8F" stroke-width="2"/>
+      <line x1="280" y1="96" x2="280" y2="118" stroke="#8B3A8F" stroke-width="2" stroke-dasharray="4 4"/>
+    </svg>
+    <div class="cap">the pull request compares your branch to main and states what's done</div>
+  </div>
+  <h3>The GPC format</h3>
+  <div class="tblwrap"><table><thead><tr><th>Completed</th><th>Still needed</th></tr></thead><tbody>
+    <tr><td>Added README.md with engagement name, sponsor, and phase</td><td>Nothing, ready for review</td></tr>
+    <tr><td>Linked to the deliverables folder</td><td>None</td></tr>
+  </tbody></table></div>
+  <h2>Click-path: open a pull request</h2>
+  <ol class="arc">
+    <li><b>Click "Compare &amp; pull request"</b> on the banner after committing, or go to Pull requests then New pull request.<!-- SCREENSHOT: PR creation form --></li>
+    <li><b>Set base: main, compare:</b> your branch (if opening manually).</li>
+    <li><b>Write a title</b> that says what changed, not "Update README."</li>
+    <li><b>Write the description</b> in Completed / Still needed format, not prose.</li>
+    <li><b>Click Create pull request.</b> It now sits open until someone reviews it.</li>
+  </ol>
+</div></div></div>
+
+<div class="view" id="view-s04"><div class="wrap"><div class="module">
+  <div class="modpath">training/01-github-basics.md · §4 · v0.1</div>
+  <h1>Merge</h1>
+  <p><strong>Merging</strong> takes everything in your pull request and applies it to <code>main</code>. Once a PR is merged, its branch has done its job and should be deleted. Branches are meant to be temporary. A repo full of old, merged branches is just clutter, and deleting them costs nothing, since the commits already live in <code>main</code>'s history.</p>
+  <div class="diagram">
+    <svg viewBox="0 0 560 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of a branch merging into main and then being deleted">
+      <line x1="20" y1="100" x2="540" y2="100" stroke="#D8D1C8" stroke-width="3"/>
+      <text x="22" y="118" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#4B4B47">main</text>
+      <path d="M60,40 L300,40 C340,40 360,60 380,100" fill="none" stroke="#F04E2A" stroke-width="3"/>
+      <line x1="60" y1="40" x2="300" y2="40" stroke="#F04E2A" stroke-width="3" stroke-dasharray="7 6"/>
+      <circle cx="380" cy="100" r="7" fill="#232424"/>
+      <text x="392" y="104" font-family="IBM Plex Mono,monospace" font-size="10.5" font-weight="600" fill="#232424">merge</text>
+      <text x="60" y="24" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#F04E2A">your branch, deleted after merge</text>
+    </svg>
+    <div class="cap">the branch's commits land on main, then the branch itself is deleted</div>
+  </div>
+  <h2>Click-path: merge and clean up</h2>
+  <ol class="arc">
+    <li><b>Click "Merge pull request"</b> on the PR.<!-- SCREENSHOT: merge button --></li>
+    <li><b>Click "Confirm merge."</b></li>
+    <li><b>Click "Delete branch."</b> Your branch is gone; the change lives on in main.</li>
+    <li><b>Check main.</b> Your README (or whatever you built) is now there.</li>
+  </ol>
+</div></div></div>
+
+<div class="view" id="view-s05"><div class="wrap"><div class="module">
+  <div class="modpath">training/01-github-basics.md · §5 · v0.1</div>
+  <h1>How It Works at GPC</h1>
+  <p><strong>Grant merges.</strong> On live client and internal repos, Grant is the one who clicks merge. His own words on this: "tell me what to merge when ready." A PR you open doesn't go live the moment you create it. It sits until Grant reviews it and either merges it or leaves a comment asking for a change first.</p>
+  <p><strong>What a review comment looks like.</strong> Grant's review comments are usually short and specific: a note on one line, or a line at the bottom of the PR, asking for a small fix before merge. It's rarely a rewrite request. If you get a comment, make the change and commit it to the same branch. There's no need to open a new PR; new commits show up in the existing PR automatically. Let Grant know it's ready to look at again.</p>
+  <h3>Where things live</h3>
+  <div class="diagram">
+    <svg viewBox="0 0 560 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of where GPC repos live: client repos, gpc-skills, internal repos, and Google Drive which is not yet synced">
+      <rect x="20" y="16" width="150" height="40" rx="3" fill="#FFFFFF" stroke="#D8D1C8"/>
+      <text x="95" y="32" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="#232424">rush-enterprises</text>
+      <text x="95" y="46" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="#232424">delta-water-products</text>
+      <rect x="200" y="16" width="140" height="40" rx="3" fill="#FEE097" stroke="#F7CC43"/>
+      <text x="270" y="40" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" font-weight="600" fill="#232424">gpc-skills</text>
+      <rect x="370" y="16" width="170" height="40" rx="3" fill="#FFFFFF" stroke="#232424"/>
+      <text x="455" y="32" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="#232424">grant-way-playbook</text>
+      <text x="455" y="46" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="#232424">gpc-team-training</text>
+      <text x="20" y="80" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#4B4B47">↑ all on GitHub</text>
+      <line x1="20" y1="100" x2="540" y2="100" stroke="#D8D1C8" stroke-width="2" stroke-dasharray="3 6"/>
+      <rect x="230" y="108" width="120" height="34" rx="3" fill="#FFFFFF" stroke="#8B3A8F"/>
+      <text x="290" y="130" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#8B3A8F">Google Drive</text>
+      <text x="290" y="98" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#8B3A8F">not synced yet</text>
+    </svg>
+    <div class="cap">GitHub repos above the line, Drive below it. Nothing crosses automatically</div>
+  </div>
+  <p>Client repos hold that client's deliverables and nothing else, one repo per client: <code>rush-enterprises</code>, <code>delta-water-products</code>, and so on. <code>gpc-skills</code> is the shared library everyone pulls from: SOW templates, deck and portal generators, brand docs, the skills that power Claude Code sessions across every client. <code>grant-way-playbook</code> and <code>gpc-team-training</code> (this repo) are internal-only, never client-facing and never linked from a client deliverable.</p>
+  <p><strong>Drive and GitHub aren't synced yet.</strong> Right now, a file that lives in a GitHub repo doesn't automatically show up in the GPC Google Drive, and vice versa. If you're not sure whether something exists in one place because you saw it in the other, check both, or ask. Don't assume.</p>
+  <h2>Why this matters for SOW creation</h2>
+  <p>This is the same loop behind using Claude Code for SOW drafts. When a SOW gets drafted in Claude Code, it isn't a Google Doc that lives in one place. It's a file in a client repo. You (or Claude Code, working on your behalf) create a branch, commit the draft, open a pull request with a Completed / Still needed description of what the SOW covers and what's still missing, and Grant reviews and merges it the same way you just practiced in the four sections before this one. Once you can do this by hand, every step Claude Code takes on your behalf makes sense, and you'll know what to check before you trust it.</p>
+</div></div></div>
+
+<script>
+  var btns = Array.prototype.slice.call(document.querySelectorAll('.nav button'));
+  function activate(b){
+    btns.forEach(function(x){x.classList.remove('active');});
+    document.querySelectorAll('.view').forEach(function(v){v.classList.remove('active');});
+    b.classList.add('active');
+    document.getElementById('view-'+b.dataset.v).classList.add('active');
+    window.scrollTo({top:0});
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){activate(b);});});
+
+  document.addEventListener('keydown', function(e){
+    if(e.key!=='ArrowLeft' && e.key!=='ArrowRight') return;
+    var tag=(document.activeElement && document.activeElement.tagName)||'';
+    if(tag==='INPUT'||tag==='TEXTAREA') return;
+    var idx=btns.findIndex(function(b){return b.classList.contains('active');});
+    if(idx===-1) return;
+    var next = e.key==='ArrowRight' ? (idx+1)%btns.length : (idx-1+btns.length)%btns.length;
+    activate(btns[next]);
+    btns[next].focus();
+  });
+</script>
+</body></html>
