@@ -30,19 +30,36 @@ gpc-team-training/
 │   ├── search-index.ts                <- hand-tagged index of every module, across all tracks
 │   ├── citations.ts                   <- registry mapping Grant Way's [tag] citations to transcripts
 │   ├── annotate-citations.ts          <- turns [tag] into a superscript link, leaves other brackets alone
-│   ├── module-markdown.ts             <- reads a Grant Way module from the submodule, applies citations
+│   ├── module-markdown.ts             <- reads a Grant Way module from vendor/, applies citations
 │   └── wc-markdown.ts                 <- reads a Workflow Consulting module (no citation pass)
-└── vendor/grant-way-playbook/         <- git submodule: the living source of Grant Way's playbook + transcripts
+└── vendor/grant-way-playbook/playbook/*.md  <- vendored copy of Grant Way's playbook (see below)
 ```
 
-## Why a submodule
+## Why a vendored copy, not a live submodule
 
 Grant Way's playbook (`playbook/*.md`) and its transcripts live in
 `grant-way-playbook`, updated by that repo's own pipeline every time a new call
-gets transcribed. This site never re-authors that content — it reads it, live,
-from `vendor/grant-way-playbook` (a git submodule), and only changes how it's
-rendered. Update the playbook in that repo; run `git submodule update --remote
-vendor/grant-way-playbook` here to pick it up.
+gets transcribed. This site doesn't re-author that content — `vendor/grant-way-playbook/playbook/`
+is a straight copy of it, refreshed by re-running:
+
+```bash
+cp <path-to-grant-way-playbook>/playbook/*.md vendor/grant-way-playbook/playbook/
+```
+
+This was meant to be a live git submodule instead, and the code (`lib/module-markdown.ts`)
+still reads from that same path either way. It's a plain copy today because
+**Vercel's GitHub App doesn't have access to the private `grant-way-playbook`
+repo**, so it can't fetch the submodule during a build — the first deploy
+failed on exactly this (`ENOENT` on every playbook file). Re-enabling the live
+submodule is a one-time fix, not a code change: in GitHub, under the
+GPC-OliviaKeiter account's Vercel GitHub App installation settings, add
+`grant-way-playbook` to the app's repository access list. Once that's done,
+`git submodule add https://github.com/GPC-OliviaKeiter/grant-way-playbook vendor/grant-way-playbook`
+back in place of the plain copy restores live sync.
+
+Until then: **update the playbook in `grant-way-playbook` first, then re-run the
+copy above here** — the same discipline Workflow Consulting already uses for
+its ClickUp-sourced content, below.
 
 Workflow Consulting is different: its source of truth is ClickUp (How We Work →
 Role Handbooks → Process Consultant: Workflow/Workshop), which this site can't
@@ -59,8 +76,8 @@ Grant Way's playbook cites every claim inline in brackets — `[kevin]`, `[sales
 unreadable: some paragraphs carry a dozen tags. `lib/annotate-citations.ts` keeps
 every citation but gets it out of the reading flow: each tag becomes a small
 superscript number linking to a numbered Sources list at the bottom of the page,
-with a real link to the transcript. Nothing is deleted — the source markdown in
-`vendor/grant-way-playbook` still carries every tag; this is a display-layer
+with a real link to the transcript. Nothing is deleted — the vendored markdown
+in `vendor/grant-way-playbook` still carries every tag; this is a display-layer
 transform only.
 
 ## Search
