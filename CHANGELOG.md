@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-09-15 (v0.4, swap the playbook submodule for a vendored copy)
+
+The first Vercel deploy (new project, git-linked to `main`) failed:
+`ENOENT` on every `vendor/grant-way-playbook/playbook/*.md` file. Cause:
+Vercel's GitHub App for this account doesn't have access to the private
+`grant-way-playbook` repo, so it silently failed to fetch the git submodule
+("Warning: Failed to fetch one or more git submodules") before the build ran.
+
+Replaced the submodule with a plain vendored copy of the same files at the
+same path — `lib/module-markdown.ts` is unchanged. This is a one-time GitHub
+permission grant away from being a live submodule again; see README's "Why a
+vendored copy, not a live submodule" for the exact fix and the interim
+re-copy step.
+
 ## 2026-09-15 (v0.3, site-wide search)
 
 Added a keyword search across all three tracks, so finding an answer doesn't
