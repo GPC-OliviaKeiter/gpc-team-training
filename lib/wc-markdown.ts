@@ -5,7 +5,7 @@ import { marked } from "marked";
 /**
  * Reads a Workflow Consulting module doc from content/workflow-consulting.
  * Unlike Grant Way, this content is rewritten once from the ClickUp Process
- * Consultant handbook (the living source of truth for the SOPs themselves —
+ * Consultant handbook (the living source of truth for the SOPs themselves:
  * a procedure change happens in ClickUp first, then gets re-ported here),
  * not sourced from call transcripts, so there's no citation annotation pass.
  */

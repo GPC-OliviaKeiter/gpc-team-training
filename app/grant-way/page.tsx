@@ -64,7 +64,7 @@ export default function Page() {
         <b className="font-medium tracking-[0.04em] text-gpc-secondary-yellow">
           INTERNAL DRAFT
         </b>{" "}
-        — GPC-only. Nothing here goes public without Grant&rsquo;s approval.
+        · GPC-only. Nothing here goes public without Grant&rsquo;s approval.
       </div>
 
       <TopNav active="grant-way" />

@@ -23,7 +23,7 @@ function SearchPageInner() {
         <b className="font-medium tracking-[0.04em] text-gpc-secondary-yellow">
           INTERNAL DRAFT
         </b>{" "}
-        — GPC-only. Nothing here goes public without Grant&rsquo;s approval.
+        · GPC-only. Nothing here goes public without Grant&rsquo;s approval.
       </div>
 
       <TopNav />
@@ -37,7 +37,7 @@ function SearchPageInner() {
             Ask a question
           </h1>
           <p className="mt-5 max-w-[64ch] text-[17px] leading-relaxed text-muted-foreground">
-            Type a keyword or a plain question — this searches every module&rsquo;s
+            Type a keyword or a plain question. This searches every module&rsquo;s
             tags across all three tracks, not just the one you&rsquo;re on.
           </p>
           <input

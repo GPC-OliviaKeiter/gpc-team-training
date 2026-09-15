@@ -4,13 +4,13 @@ import { marked } from "marked";
 import { annotateCitations, type NumberedSource } from "./annotate-citations";
 
 /**
- * Reads a Grant Way playbook module doc from the grant-way-playbook submodule
- * (vendor/grant-way-playbook/playbook — the living source of truth, updated by
- * that repo's own transcript pipeline) and splits it into what a module page
- * needs: the H1 title, the rendered HTML body with citations turned into
- * superscript source links, and the numbered source list for the page's
- * Sources footer. The module doc stays the single source of truth — this
- * never re-transcribes it, only re-renders it.
+ * Reads a Grant Way playbook module doc from vendor/grant-way-playbook/playbook
+ * (a vendored copy of grant-way-playbook's own repo, the living source of
+ * truth, updated by that repo's transcript pipeline) and splits it into what
+ * a module page needs: the H1 title, the rendered HTML body with citations
+ * turned into superscript source links, and the numbered source list for the
+ * page's Sources footer. The module doc stays the single source of truth.
+ * This never re-transcribes it, only re-renders it.
  */
 export function readModuleMarkdown(filename: string) {
   const filePath = path.join(process.cwd(), "vendor", "grant-way-playbook", "playbook", filename);
@@ -19,7 +19,7 @@ export function readModuleMarkdown(filename: string) {
   const lines = raw.split("\n");
   const titleLine = lines.find((l) => l.startsWith("# "));
   const rawTitle = titleLine ? titleLine.replace(/^#\s*/, "").trim() : filename;
-  // Strip the leading "NN. " module number — the page chrome shows it in the eyebrow already.
+  // Strip the leading "NN. " module number. The page chrome shows it in the eyebrow already.
   const title = rawTitle.replace(/^\d+\.\s*/, "");
 
   // Body is everything after the H1 line.

@@ -7,9 +7,9 @@ step-by-step modules that follow.
 
 ## The mission
 
-On the Workflow Assessment side, the job is to own the assessment end to end —
+On the Workflow Assessment side, the job is to own the assessment end to end,
 from kickoff through the readout that converts a $10,000 diagnosis into an
-adoption plan — and then run that adoption plan so the partner's team is
+adoption plan, and then run that adoption plan so the partner's team is
 actually working differently 90 days later. The standard the seat is built
 around: **a partner gets the full GPC standard whether or not Grant is on the
 call.**
@@ -29,13 +29,13 @@ targets:
   listening, AI opportunity ID, teaching and translation, call control,
   strategic framing), no single category below 2.
 - **Pain gets priced in the room.** ≥80% of surfaced opportunities carry a
-  partner-stated number — hours per week, dollars, error rate, headcount —
+  partner-stated number (hours per week, dollars, error rate, headcount)
   captured live on the call, not reconstructed afterward. This is what lets
   you own the build order instead of the partner's gut feel.
 - **Schedule integrity.** ≥90% of engagements land every stakeholder
   interview inside the contracted Interview Week, with names and calendar
   invites out within 48 hours of the Leadership Kickoff. Every week of slip
-  costs the partner a week of turnaround — this is the single
+  costs the partner a week of turnaround: this is the single
   highest-leverage number in the product.
 - **Turnaround SLA.** Assessment deliverable to the Executive Sponsor and
   Primary Contact within 10 business days of the Interview Week closing.
@@ -45,8 +45,8 @@ targets:
 - **Assessment converts.** ≥50% of readouts convert to a signed adoption plan
   within 30 days of the Handoff Walkthrough.
 - **Adoption actually sticks.** On every adoption plan you run, the Month 2
-  Deploy win — the top high-impact, low-effort item off that partner's own
-  matrix — is live and in use by day 60, evidenced by usage, not by a demo.
+  Deploy win (the top high-impact, low-effort item off that partner's own
+  matrix) is live and in use by day 60, evidenced by usage, not by a demo.
 - **Build, Sharpen, Scale.** ≥2 merged PRs per month to the skills repo that
   another consultant can run without asking you a question. Anything you did
   twice by hand becomes a skill, a checklist, or a prompt.
@@ -59,7 +59,7 @@ if a week is trending past your contracted hours.
 
 - **Consultative interviewing with pain quantification.** You map the
   workflow *and* price it live. "How long does that take, and how often?" is
-  not an optional question — mapping without sizing is a competent call, not
+  not an optional question: mapping without sizing is a competent call, not
   a senior one.
 - **Process decomposition and evidence-traced scoring.** Roles into tasks,
   tasks into steps, every opportunity scored on impact, effort, and risk,
@@ -68,8 +68,8 @@ if a week is trending past your contracted hours.
   non-technical room without making anyone feel stupid. Treat every "I don't
   know" as a teaching opportunity: if you don't have the answer, teach the
   framework for deciding it.
-- **Executive altitude.** When a leader hands you the real strategic fork —
-  "do I shrink the team or expand it" — you take it on and reason the
+- **Executive altitude.** When a leader hands you the real strategic fork,
+  "do I shrink the team or expand it," you take it on and reason the
   tradeoff out loud. That's the line between a process mapper and someone the
   owner wants to think with.
 - **Deliverable craft.** One idea per slide, every headline a complete
@@ -83,7 +83,7 @@ if a week is trending past your contracted hours.
 
 - **Be Decent, Be Direct.** Tell a partner what won't work before they pay to
   find out. The "here's what we're deliberately not recommending, and why"
-  slide is a trust beat — a skeptic in the room feels it.
+  slide is a trust beat: a skeptic in the room feels it.
 - **Passion for Modern Solutions.** Recommend a tool only when it moves a KPI
   or removes delivery risk, never because it's new.
 - **Empathetic Ownership.** Own the partner's outcome, not the deliverable.
@@ -96,5 +96,5 @@ if a week is trending past your contracted hours.
 The modules that follow are the operational how-to underneath this
 scorecard: onboarding a partner, running the engagement week to week,
 managing the relationship as it matures, and closing out. **The Grant Way**
-tab is the craft layer on top of this — how Grant actually runs the
+tab is the craft layer on top of this: how Grant actually runs the
 interviews and calls these SOPs describe.

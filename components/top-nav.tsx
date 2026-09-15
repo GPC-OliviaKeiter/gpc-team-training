@@ -8,7 +8,7 @@ const TABS = [
 
 /**
  * Persistent top-level tab bar. "General first tab, then the tracks underneath
- * it" — Overview is org-wide onboarding; everything after it is role-specific.
+ * it": Overview is org-wide onboarding; everything after it is role-specific.
  * Engineering/Ops/other tracks get added here the day they exist, following
  * the same pattern as Workflow Consulting: a folder under vendor/ or content/,
  * an index page, module pages, nothing more to wire up.

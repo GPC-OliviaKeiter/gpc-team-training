@@ -13,8 +13,8 @@ const TRACK_COLOR: Record<SearchResult["track"], string> = {
 /**
  * The site-wide "ask a question" box: type a keyword or a plain question,
  * get back the modules most likely to have the answer, ranked by tag match
- * (see lib/search-index.ts). Lives in the top nav so it's on every page —
- * the point is never having to know which tab to click first.
+ * (see lib/search-index.ts). Lives in the top nav so it's on every page.
+ * The point is never having to know which tab to click first.
  */
 export function SearchBox() {
   const router = useRouter();

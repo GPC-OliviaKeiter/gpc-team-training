@@ -5,7 +5,7 @@ const modules = [
     num: "01",
     title: "GitHub Basics",
     blurb:
-      "Repos, branches, commits, pull requests, merge — and how it works at GPC specifically.",
+      "Repos, branches, commits, pull requests, merge, and how it works at GPC specifically.",
     href: "/overview/github-basics",
   },
 ];
@@ -17,7 +17,7 @@ export default function Page() {
         <b className="font-medium tracking-[0.04em] text-gpc-secondary-yellow">
           INTERNAL DRAFT
         </b>{" "}
-        — GPC-only. Nothing here goes public without Grant&rsquo;s approval.
+        · GPC-only. Nothing here goes public without Grant&rsquo;s approval.
       </div>
 
       <TopNav active="overview" />
@@ -32,7 +32,7 @@ export default function Page() {
           </h1>
           <p className="mt-5 max-w-[64ch] text-[17px] leading-relaxed text-muted-foreground">
             Onboarding for the tools and conventions everyone at GPC needs, regardless
-            of role. Role-specific training lives in its own tab above —{" "}
+            of role. Role-specific training lives in its own tab above:{" "}
             <a href="/grant-way" className="text-primary underline underline-offset-2">
               The Grant Way
             </a>{" "}

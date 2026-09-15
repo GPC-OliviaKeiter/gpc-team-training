@@ -1,12 +1,12 @@
 /**
  * The site's search index: one entry per module, across every track. Tags are
- * hand-authored, not auto-extracted — the point is that someone typing "scope
+ * hand-authored, not auto-extracted. The point is that someone typing "scope
  * creep" or "how does merge work" lands on the right module without knowing
  * which tab it's under, and a curated tag list is more reliable for that than
  * a keyword scrape of the prose.
  *
  * Add a tag list here the same commit a new module ships. There's no build
- * step that keeps this in sync automatically — same tradeoff as everywhere
+ * step that keeps this in sync automatically, the same tradeoff as everywhere
  * else content gets re-authored into this site (see README's "Adding a new
  * track").
  */
@@ -24,7 +24,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
     track: "Overview",
     title: "GitHub Basics",
     href: "/overview/github-basics",
-    blurb: "Repos, branches, commits, pull requests, merge — and how it works at GPC.",
+    blurb: "Repos, branches, commits, pull requests, merge, and how it works at GPC.",
     tags: [
       "github", "git", "branch", "commit", "pull request", "pr", "merge",
       "repo", "repository", "version control", "main branch", "code review",
@@ -172,7 +172,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
     track: "Workflow Consulting",
     title: "Tools: GitHub & Vercel",
     href: "/workflow-consulting/github-and-vercel",
-    blurb: "A curated path beyond GitHub Basics — reviewing PRs, reading a deployment.",
+    blurb: "A curated path beyond GitHub Basics: reviewing PRs, reading a deployment.",
     tags: [
       "github", "vercel", "deployment", "pull request review", "rollback",
       "environment variables", "preview", "production", "github actions",
@@ -184,7 +184,7 @@ export type SearchResult = SearchEntry & { score: number };
 
 /**
  * Scores every index entry against the query and returns matches, best first.
- * Tag hits count for more than a title or blurb hit — tags are the curated
+ * Tag hits count for more than a title or blurb hit. Tags are the curated
  * signal, prose is a fallback.
  */
 export function searchIndex(query: string): SearchResult[] {
