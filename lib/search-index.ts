@@ -178,6 +178,24 @@ export const SEARCH_INDEX: SearchEntry[] = [
       "environment variables", "preview", "production", "github actions",
     ],
   },
+  {
+    track: "Workflow Consulting",
+    title: "Communication Guidelines",
+    href: "/workflow-consulting/communication-guidelines",
+    blurb: "How Grant actually writes to clients, sourced from real sent email.",
+    tags: [
+      "communication", "email", "client email", "1-3-1 method", "slack",
+      "clickup", "hubspot", "which channel", "automation error", "tone",
+      "signature", "writing style",
+    ],
+  },
+  {
+    track: "Workflow Consulting",
+    title: "The Grant Way, for this role",
+    href: "/workflow-consulting/the-grant-way",
+    blurb: "The same eight Grant Way modules, surfaced from inside this track.",
+    tags: ["grant way", "workflow consultant role", "craft"],
+  },
 ];
 
 export type SearchResult = SearchEntry & { score: number };
