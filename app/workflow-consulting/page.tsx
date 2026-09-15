@@ -38,6 +38,18 @@ const modules = [
     blurb: "A curated path beyond GitHub Basics: reviewing PRs, reading a deployment.",
     href: "/workflow-consulting/github-and-vercel",
   },
+  {
+    num: "06",
+    title: "Communication Guidelines",
+    blurb: "How Grant actually writes to clients, sourced from real sent email.",
+    href: "/workflow-consulting/communication-guidelines",
+  },
+  {
+    num: "07",
+    title: "The Grant Way, for this role",
+    blurb: "The same eight Grant Way modules, surfaced from inside this track.",
+    href: "/workflow-consulting/the-grant-way",
+  },
 ];
 
 export default function Page() {
@@ -71,7 +83,7 @@ export default function Page() {
 
         <section>
           <h2 className="mb-5 font-display text-[26px] font-normal">
-            The six modules
+            The eight modules
           </h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {modules.map((m) => (

@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-09-15 (v0.6, Grant Way's second doorway + Communication Guidelines)
+
+**Grant Way lives in two places now.** Factored the module list out to
+`lib/grant-way-modules.ts` and added `/workflow-consulting/the-grant-way`, a
+role-scoped landing page rendering the same 8 modules with Workflow
+Consulting's tab staying active in nav. No content duplication: one array,
+two doorways. Sets the pattern for future roles (Grant does all of them
+eventually) to get their own version of this page once their Grant Way
+content exists.
+
+**New module: Communication Guidelines** (`workflow-consulting/06`). Two
+layers: GPC's channel-by-purpose rules and the 1-3-1 problem-resolution
+method, both rewritten from the ClickUp docs (`GPC Communication
+Guidelines:`, `Client Communication Standards`), plus a new section on how
+Grant actually writes to clients in email, reverse-engineered from 5 real
+sent threads (Rush Enterprises, Coffee & Clothes, Cooper Erving & Savage)
+pulled via Gmail the same way Grant Way pulls patterns from Fathom
+transcripts. Noted one honest finding rather than smoothing it over: Grant's
+real client email doesn't always follow GPC's own em-dash ban, which is a
+rule for authored deliverables, not for how he actually writes. This is a
+first pass, 5 threads across 3 clients: the module says so and names the
+next step.
+
+Both additions are indexed in `lib/search-index.ts` under Workflow
+Consulting.
+
 ## 2026-09-15 (v0.5, no-AI pass: em dashes out, one Grant-specific claim generalized)
 
 Two fixes to the site's own writing, called out by Olivia after reviewing v0.4.

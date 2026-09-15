@@ -19,7 +19,9 @@ gpc-team-training/
 │   ├── page.tsx                       <- Overview tab index
 │   ├── overview/github-basics/        <- Overview's one module so far
 │   ├── grant-way/                     <- The Grant Way: index + one route per playbook module
-│   └── workflow-consulting/           <- Workflow Consulting: index + six modules
+│   └── workflow-consulting/           <- Workflow Consulting: index + eight modules
+│       ├── the-grant-way/             <- Grant Way's 2nd doorway, scoped to this role (see below)
+│       └── communication-guidelines/  <- how Grant writes to clients, sourced from real email
 ├── content/workflow-consulting/*.md   <- Workflow Consulting's module source (rewritten from ClickUp)
 ├── components/
 │   ├── top-nav.tsx                    <- the persistent tab bar + search box, on every page
@@ -28,6 +30,7 @@ gpc-team-training/
 ├── app/search/page.tsx                <- full search results page (/search?q=...)
 ├── lib/
 │   ├── search-index.ts                <- hand-tagged index of every module, across all tracks
+│   ├── grant-way-modules.ts           <- the Grant Way module list, shared by both of its doorways
 │   ├── citations.ts                   <- registry mapping Grant Way's [tag] citations to transcripts
 │   ├── annotate-citations.ts          <- turns [tag] into a superscript link, leaves other brackets alone
 │   ├── module-markdown.ts             <- reads a Grant Way module from vendor/, applies citations
@@ -67,6 +70,20 @@ read live. `content/workflow-consulting/*.md` is a rewritten-once copy. A
 procedure change happens in ClickUp first, then gets manually re-ported here,
 the same way GitHub Basics was rewritten from GitHub Skills' generic exercise
 rather than linked live.
+
+## Grant Way lives in two places
+
+Grant personally does every role at GPC at some point, so The Grant Way isn't
+only a standalone tab: each role track also gets its own doorway into the
+part of the playbook that shows how Grant does that specific role.
+`/workflow-consulting/the-grant-way` is the first one, and today it's
+essentially the whole playbook, since every module so far comes from Grant
+running the workflow-consultant role. `lib/grant-way-modules.ts` holds the
+module list once; both `/grant-way` and `/workflow-consulting/the-grant-way`
+render it, so there's one array to update and two navigational entry points,
+not two copies of the content. When Grant's method for another role
+(engineering, ops, whatever's next) gets documented, that role's track gets
+the same kind of doorway, scoped to its own modules.
 
 ## Citations are hidden, not deleted
 
