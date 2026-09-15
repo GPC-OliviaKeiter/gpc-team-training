@@ -30,7 +30,7 @@ export function ModuleShell({
         <b className="font-medium tracking-[0.04em] text-gpc-secondary-yellow">
           INTERNAL DRAFT
         </b>{" "}
-        — {banner}
+        · {banner}
       </div>
 
       <TopNav active={track} />

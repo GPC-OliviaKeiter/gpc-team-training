@@ -2,14 +2,14 @@ type Beat = { title: string; body: string; time: string };
 
 const beats: Beat[] = [
   {
-    time: "00:00–02:13",
+    time: "00:00-02:13",
     title: "Let the small talk run before starting",
     body: `The first two minutes are unscripted catch-up (sick kids, Mac vs. Windows) with GPC's facilitators participating, not just waiting it out. The session opens on Grant's cue, not the clock.`,
   },
   {
     time: "02:13",
     title: "State who you are and why that matters to how you teach",
-    body: `"I taught kindergarten math to college calculus for eight years, which means I'm used to teaching in a lot of different ways, re-communicating things until they make sense... I gave tours in college for the engineering school" — told to rival-school parents, where no one laughed at his jokes. Credentialing himself as a teacher who works an unreceptive room, not just an AI consultant.`,
+    body: `"I taught kindergarten math to college calculus for eight years, which means I'm used to teaching in a lot of different ways, re-communicating things until they make sense... I gave tours in college for the engineering school," told to rival-school parents, where no one laughed at his jokes. Credentialing himself as a teacher who works an unreceptive room, not just an AI consultant.`,
   },
   {
     time: "02:13",
@@ -34,7 +34,7 @@ const beats: Beat[] = [
   {
     time: "13:48",
     title: "Give a plain rule of thumb for each model, not a spec sheet",
-    body: `Opus for deep work, Sonnet as "your daily driver," Haiku for classification-only automation work, Fable named and explicitly out of scope ("overpowered for the majority of use cases"). A hit token limit is reframed as a scheduling conversation, not a failure — and the same conversation is how a manager notices misuse.`,
+    body: `Opus for deep work, Sonnet as "your daily driver," Haiku for classification-only automation work, Fable named and explicitly out of scope ("overpowered for the majority of use cases"). A hit token limit is reframed as a scheduling conversation, not a failure. The same conversation is how a manager notices misuse.`,
   },
   {
     time: "13:48",
@@ -69,7 +69,7 @@ const beats: Beat[] = [
   {
     time: "46:37",
     title: "Reserve real working time inside the session, and set it up to work",
-    body: `"I actually want you to spend the last 10 minutes on today... go on mute, keep your cameras on... talk it out with Claude" rather than type — typing is slower and gets edited toward "proper grammar," exactly the signal an About Me interview needs.`,
+    body: `"I actually want you to spend the last 10 minutes on today... go on mute, keep your cameras on... talk it out with Claude" rather than type. Typing is slower and gets edited toward "proper grammar," exactly the signal an About Me interview needs.`,
   },
   {
     time: "46:37",
@@ -84,15 +84,15 @@ const beats: Beat[] = [
 ];
 
 const patterns = [
-  "Read the room's fluency before choosing what to teach — the 1-10 self-rating and the OS poll both happened before the first slide of real content.",
-  "Address the elephant before the agenda — “is AI going to take my job” is answered in the first three minutes, unprompted.",
-  "Teach one feature per demo, named explicitly as the takeaway — stops a feature-rich tool from turning into a features tour.",
+  "Read the room's fluency before choosing what to teach: the 1-10 self-rating and the OS poll both happened before the first slide of real content.",
+  "Address the elephant before the agenda: “is AI going to take my job” is answered in the first three minutes, unprompted.",
+  "Teach one feature per demo, named explicitly as the takeaway: stops a feature-rich tool from turning into a features tour.",
   "Give a default and a reason for every setting, not a menu of options.",
-  "Demo it yourself before handing over the keyboard — the flip-classroom moment came after the demo, not instead of it.",
-  "Ship the artifact, don't describe it — the portal URL, the password, and the copy-paste prompt all went directly into the chat.",
+  "Demo it yourself before handing over the keyboard: the flip-classroom moment came after the demo, not instead of it.",
+  "Ship the artifact, don't describe it: the portal URL, the password, and the copy-paste prompt all went directly into the chat.",
   "Recommend, then hand the actual policy call to the client's own leadership, by name.",
   "Protect quiet working time inside the session itself, not just as homework.",
-  "Voice over typing for anything meant to teach the model who you are — a specific, falsifiable claim about output quality, not a style preference.",
+  "Voice over typing for anything meant to teach the model who you are: a specific, falsifiable claim about output quality, not a style preference.",
 ];
 
 import { TopNav } from "@/components/top-nav";
@@ -113,7 +113,7 @@ export default function Page() {
         <b className="font-medium tracking-[0.04em] text-gpc-secondary-yellow">
           INTERNAL DRAFT
         </b>{" "}
-        — GPC-only. Not for Flowium or any external audience without Grant&rsquo;s
+        · GPC-only. Not for Flowium or any external audience without Grant&rsquo;s
         approval.
       </div>
 
@@ -145,7 +145,7 @@ export default function Page() {
             <strong className="text-foreground">
               Grant leads a recurring AI-adoption training call
             </strong>{" "}
-            — not a workflow-assessment step, a standing GPC deliverable — and
+            (not a workflow-assessment step, a standing GPC deliverable) and
             builds the room&rsquo;s Vault, global instructions, and About Me file
             live on screen.
           </p>
@@ -246,7 +246,7 @@ export default function Page() {
             what I want.&rdquo;
           </p>
           <p className="mt-2 text-sm text-muted-foreground">
-            Shortened to a keyboard shortcut (AUQ) — Ask User Question. The
+            Shortened to a keyboard shortcut (AUQ): Ask User Question. The
             About Me and About My Company interview prompts live in the
             password-gated learning portal referenced on the call, not
             reproduced here verbatim.
@@ -260,7 +260,7 @@ export default function Page() {
           <p className="mt-3 max-w-[68ch] text-muted-foreground">
             No connectors or automations beyond a passing mention, no admin or
             provisioning discussion beyond the token-limit framing, and no
-            demo ever runs on Flowium&rsquo;s own data — every example is
+            demo ever runs on Flowium&rsquo;s own data. Every example is
             generic or GPC-internal. The one file that would require
             Flowium-specific content, About My Company, is explicitly deferred
             to homework rather than run live.
@@ -272,7 +272,7 @@ export default function Page() {
             Sources
           </div>
           <p className="text-[13.5px] leading-snug text-muted-foreground">
-            "Flowium Friday" AI training session — 9/11 Flowium{" "}
+            "Flowium Friday" AI training session · 9/11 Flowium{" "}
             <a
               href={citationHref(CITATION_MAP.get("flowium-training")!)}
               className="font-mono text-[11px] text-primary underline underline-offset-2"

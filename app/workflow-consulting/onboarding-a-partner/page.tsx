@@ -10,7 +10,7 @@ export default function Page() {
       crumbs={[{ label: "Workflow Consulting", href: "/workflow-consulting" }, { label: "Onboarding a Partner" }]}
       eyebrow="Workflow Consulting · Module 01"
       title={title}
-      lede="The client kickoff call, the onboarding document, and the engineering handover — the four PC-owned steps that move a partner to Active."
+      lede="The client kickoff call, the onboarding document, and the engineering handover: the four PC-owned steps that move a partner to Active."
     >
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </ModuleShell>

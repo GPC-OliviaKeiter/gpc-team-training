@@ -98,7 +98,7 @@
   --card: oklch(0.992 0.0073 80.72);
   --card-foreground: oklch(0.2593 0.0015 197.07);
 
-  /* Interactive red #c93c1c, not brand red #f94e2a — brand red carries only
+  /* Interactive red #c93c1c, not brand red #f94e2a: brand red carries only
      3.15:1 on this cream ground and fails AA for text/labels. */
   --primary: oklch(0.5606 0.1829 33.89);
   --primary-foreground: oklch(0.9721 0.0107 76.6);
@@ -204,7 +204,7 @@ body {
 }
 
 /* Citation markers (see lib/annotate-citations.ts). Small and out of the way
-   on purpose — the reading copy should look like prose, not a research paper,
+   on purpose: the reading copy should look like prose, not a research paper,
    while still letting anyone jump to the transcript behind a claim. */
 .md-body sup.cite {
   margin-left: 0.05em;

@@ -13,7 +13,7 @@ export type NumberedSource = { n: number; citation: Citation };
 
 /**
  * Strips the module's own "Citation tags: ..." preamble paragraph (present in
- * modules 00 and 01) — it's a flat legend of every tag used, made redundant by
+ * modules 00 and 01). It's a flat legend of every tag used, made redundant by
  * the generated Sources list this function also produces.
  */
 function stripCitationPreamble(markdown: string): string {
@@ -21,14 +21,15 @@ function stripCitationPreamble(markdown: string): string {
 }
 
 /**
- * Converts every bracket citation tag in `markdown` — [kevin], [sales],
- * [delta-data 1:50], [inferred] — into an inline HTML marker, and returns the
- * de-duplicated, numbered list of sources actually cited in this module.
+ * Converts every bracket citation tag in `markdown` (things like [kevin],
+ * [sales], [delta-data 1:50], [inferred]) into an inline HTML marker, and
+ * returns the de-duplicated, numbered list of sources actually cited in this
+ * module.
  *
  * Known tags become a small superscript link to that module's Sources
  * section (#src-N); repeat occurrences of the same tag share one number.
  * Special tags (inferred, all interviews) become a muted label with no link.
- * Anything else in brackets — an ordinary editorial aside — is left alone.
+ * Anything else in brackets, an ordinary editorial aside, is left alone.
  */
 export function annotateCitations(rawMarkdown: string): {
   markdown: string;
@@ -62,7 +63,7 @@ export function annotateCitations(rawMarkdown: string): {
       sources.push({ n, citation });
     }
     const n = numberByTag.get(tag)!;
-    const title = timestamp ? `${citation.label} — ${timestamp}` : citation.label;
+    const title = timestamp ? `${citation.label} · ${timestamp}` : citation.label;
     return `<sup class="cite"><a href="#src-${n}" title="${title}">${n}</a></sup>`;
   });
 

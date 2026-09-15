@@ -35,7 +35,7 @@ const modules = [
   {
     num: "05",
     title: "Tools: GitHub & Vercel",
-    blurb: "A curated path beyond GitHub Basics — reviewing PRs, reading a deployment.",
+    blurb: "A curated path beyond GitHub Basics: reviewing PRs, reading a deployment.",
     href: "/workflow-consulting/github-and-vercel",
   },
 ];
@@ -47,7 +47,7 @@ export default function Page() {
         <b className="font-medium tracking-[0.04em] text-gpc-secondary-yellow">
           INTERNAL DRAFT
         </b>{" "}
-        — GPC-only. Nothing here goes public without Grant&rsquo;s approval.
+        · GPC-only. Nothing here goes public without Grant&rsquo;s approval.
       </div>
 
       <TopNav active="workflow-consulting" />
@@ -61,11 +61,11 @@ export default function Page() {
             Workflow Consulting
           </h1>
           <p className="mt-5 max-w-[64ch] text-[17px] leading-relaxed text-muted-foreground">
-            The operational side of running a Process Consultant engagement —
+            The operational side of running a Process Consultant engagement:
             onboarding, weekly cadence, relationship management, and closeout.
             Rewritten from GPC&rsquo;s ClickUp Process Consultant handbook. This is
             the how; <a href="/grant-way" className="text-primary underline underline-offset-2">The Grant Way</a>{" "}
-            is the craft — how Grant actually runs the calls these SOPs describe.
+            is the craft, how Grant actually runs the calls these SOPs describe.
           </p>
         </header>
 
