@@ -1,0 +1,255 @@
+@import "tailwindcss";
+
+/* GPC brand typefaces, self-hosted under a licence GPC holds. Font files and
+   token values below are copied from the GPC Design Starter's app/globals.css
+   (gpc-make-it-pretty, last reconciled with the published Brand Kit
+   kit_b669c185 on 2026-08-31) so this one-off page carries the real brand
+   instead of the Google Fonts approximation the rest of this repo's static
+   pages still use. That repo is a read-only design reference; nothing there
+   was edited to build this page. */
+
+@font-face {
+  font-family: "FS Kim";
+  src: url("/fonts/gpc/fs-kim-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America";
+  src: url("/fonts/gpc/gt-america-standard-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America";
+  src: url("/fonts/gpc/gt-america-standard-medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America Mono";
+  src: url("/fonts/gpc/gt-america-mono-medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-display: "FS Kim", "Iowan Old Style", "Palatino Linotype", Palatino,
+    Georgia, serif;
+  --font-sans: "GT America", "Helvetica Neue", Helvetica, Arial, ui-sans-serif,
+    system-ui, sans-serif;
+  --font-mono: "GT America Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-gpc-neutral-500: var(--gpc-neutral-500);
+  --color-gpc-neutral-400: var(--gpc-neutral-400);
+  --color-gpc-neutral-300: var(--gpc-neutral-300);
+  --color-gpc-neutral-200: var(--gpc-neutral-200);
+  --color-gpc-neutral-100: var(--gpc-neutral-100);
+  --color-gpc-primary-red: var(--gpc-primary-red);
+  --color-gpc-secondary-orange: var(--gpc-secondary-orange);
+  --color-gpc-secondary-purple: var(--gpc-secondary-purple);
+  --color-gpc-secondary-yellow: var(--gpc-secondary-yellow);
+  --color-gpc-secondary-light-yellow: var(--gpc-secondary-light-yellow);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-solid: var(--primary-solid);
+  --color-primary-solid-foreground: var(--primary-solid-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  /* Published Brand Kit palette (kit_b669c185), literal in both themes. */
+  --gpc-neutral-500: oklch(0.2593 0.0015 197.07); /* #232424 */
+  --gpc-neutral-400: oklch(0.4110 0.0064 67.65); /* #4d4a47 */
+  --gpc-neutral-300: oklch(0.8646 0.0152 70.87); /* #d9d1c8 */
+  --gpc-neutral-200: oklch(0.9315 0.0160 73.68); /* #efe7dd */
+  --gpc-neutral-100: oklch(0.9721 0.0107 76.60); /* #faf5ee */
+  --gpc-primary-red: oklch(0.6605 0.2131 33.46); /* #f94e2a */
+  --gpc-secondary-orange: oklch(0.6943 0.1891 48.00); /* #f66f00 */
+  --gpc-secondary-purple: oklch(0.5065 0.1741 332.76); /* #9b338f */
+  --gpc-secondary-yellow: oklch(0.8425 0.1702 84.14); /* #ffc013 */
+  --gpc-secondary-light-yellow: oklch(0.9390 0.1069 97.69); /* #feec97 */
+
+  --background: oklch(0.9721 0.0107 76.6);
+  --foreground: oklch(0.2593 0.0015 197.07);
+  --card: oklch(0.992 0.0073 80.72);
+  --card-foreground: oklch(0.2593 0.0015 197.07);
+
+  /* Interactive red #c93c1c, not brand red #f94e2a — brand red carries only
+     3.15:1 on this cream ground and fails AA for text/labels. */
+  --primary: oklch(0.5606 0.1829 33.89);
+  --primary-foreground: oklch(0.9721 0.0107 76.6);
+  --primary-solid: oklch(0.5606 0.1829 33.89);
+  --primary-solid-foreground: oklch(0.9721 0.0107 76.6);
+
+  --secondary: oklch(0.9315 0.016 73.68);
+  --secondary-foreground: oklch(0.2593 0.0015 197.07);
+  --muted: oklch(0.9315 0.016 73.68);
+  --muted-foreground: oklch(0.5 0.006 76.6);
+  --border: oklch(0.9315 0.016 73.68);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Rendered markdown from playbook/*.md (see lib/module-markdown.ts). Module
+   docs are the single source of truth for content, so this styles whatever
+   marked emits rather than a hand-authored shape. */
+.md-body h2 {
+  margin: 2.75rem 0 0.9rem;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.md-body h2:first-child {
+  margin-top: 0;
+}
+
+.md-body h3 {
+  margin: 2rem 0 0.6rem;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.md-body p {
+  margin: 0 0 1.1rem;
+  max-width: 70ch;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+}
+
+.md-body strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.md-body a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.md-body ul,
+.md-body ol {
+  margin: 0 0 1.1rem;
+  max-width: 70ch;
+  padding-left: 1.4rem;
+  color: var(--muted-foreground);
+  line-height: 1.65;
+}
+
+.md-body li {
+  margin-bottom: 0.55rem;
+}
+
+.md-body li::marker {
+  color: var(--gpc-primary-red);
+  font-weight: 600;
+}
+
+.md-body blockquote {
+  margin: 1.5rem 0;
+  border-left: 3px solid var(--gpc-primary-red);
+  background: var(--secondary);
+  padding: 0.9rem 1.1rem;
+  font-style: italic;
+}
+
+.md-body code {
+  background: var(--secondary);
+  border-radius: 2px;
+  padding: 0.1em 0.4em;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+.md-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+
+/* Citation markers (see lib/annotate-citations.ts). Small and out of the way
+   on purpose — the reading copy should look like prose, not a research paper,
+   while still letting anyone jump to the transcript behind a claim. */
+.md-body sup.cite {
+  margin-left: 0.05em;
+}
+
+.md-body sup.cite a {
+  color: var(--gpc-primary-red);
+  font-size: 0.68em;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0 0.15em;
+}
+
+.md-body sup.cite a:hover {
+  text-decoration: underline;
+}
+
+.md-body .cite-flag {
+  color: var(--muted-foreground);
+  font-size: 0.85em;
+  font-style: italic;
+  border-bottom: 1px dotted var(--muted-foreground);
+  cursor: help;
+}
+
+.md-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.5rem;
+  font-size: 14px;
+}
+
+.md-body th,
+.md-body td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.md-body th {
+  background: var(--secondary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}

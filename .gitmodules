@@ -1,0 +1,3 @@
+[submodule "vendor/grant-way-playbook"]
+	path = vendor/grant-way-playbook
+	url = https://github.com/GPC-OliviaKeiter/grant-way-playbook
