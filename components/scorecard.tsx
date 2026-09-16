@@ -8,10 +8,19 @@ import type { Scorecard } from "@/lib/scorecard";
  * so the numbers lead.
  */
 export function ScorecardView({ scorecard }: { scorecard: Scorecard }) {
-  const { mission, capacity, kpis, outcomes, competencies, values } = scorecard;
+  const { mission, capacity, sourceUrl, kpis, outcomes, competencies, values } = scorecard;
 
   return (
     <div className="flex flex-col gap-12">
+      <a
+        href={sourceUrl}
+        target="_blank"
+        rel="noreferrer"
+        className="-mt-6 self-start font-mono text-[11px] font-semibold tracking-[0.06em] text-primary uppercase underline underline-offset-2"
+      >
+        View this scorecard in ClickUp →
+      </a>
+
       <section>
         <div className="mb-2 font-mono text-[11px] font-semibold tracking-[0.12em] text-muted-foreground uppercase">
           Mission

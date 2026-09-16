@@ -11,6 +11,9 @@ export type ScorecardItem = { label?: string; body: string };
 export type Scorecard = {
   mission: string;
   capacity: string;
+  /** Direct link to this seat's own ClickUp scorecard page, not the track's
+   * clickupDocUrl. Every scorecard page shows a "View in ClickUp" link. */
+  sourceUrl: string;
   kpis: ScorecardKpi[];
   outcomes: ScorecardOutcome[];
   competencies: ScorecardItem[];
@@ -22,6 +25,7 @@ export type Scorecard = {
 export const SCORECARD_REQUIRED_FIELDS = [
   "mission",
   "capacity",
+  "sourceUrl",
   "kpis",
   "outcomes",
   "competencies",

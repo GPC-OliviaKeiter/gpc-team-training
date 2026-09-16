@@ -223,7 +223,15 @@ function checkVisualRule(moduleRoutes) {
 
 // Mirrors lib/scorecard.ts SCORECARD_REQUIRED_FIELDS. Kept in sync by hand:
 // this script can't import the .ts module under plain node.
-const SCORECARD_REQUIRED_FIELDS = ["mission", "capacity", "kpis", "outcomes", "competencies", "values"];
+const SCORECARD_REQUIRED_FIELDS = [
+  "mission",
+  "capacity",
+  "sourceUrl",
+  "kpis",
+  "outcomes",
+  "competencies",
+  "values",
+];
 
 function findScorecardFiles() {
   const files = [];

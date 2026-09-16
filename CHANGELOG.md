@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-09-16 (v0.7.1, plan decisions: SOP seat tags, direct ClickUp links)
+
+Two decisions confirmed after v0.7 shipped, recorded in the plan doc
+(`docs/plans/2026-09-16-handbooks-buildout.md`) for Step 2 and 4a-4d to build
+against:
+
+- **SOP index seat tags, not nested seat sub-tracks.** ClickUp's own Process
+  Consultant Handbook doesn't split its SOPs into separate Workflow/Workshop
+  folders, only the two scorecards are seat-specific. So `sops.json` rows
+  carry a `seat` field (`workflow` / `workshop` / `both` for Process
+  Consulting, `setter` / `closer` / `both` for Sales) instead of the site
+  nesting Workflow PC and Workshop PC as separate sub-tracks, which would
+  duplicate every page that covers both seats.
+- **Direct ClickUp links throughout.** Every scorecard page now links
+  straight to its own ClickUp page, not just the track's `clickupDocUrl`.
+  `lib/scorecard.ts`'s `Scorecard` type and `SCORECARD_REQUIRED_FIELDS` gain
+  a required `sourceUrl`; `components/scorecard.tsx` renders it as a "View
+  this scorecard in ClickUp" link above the mission. Both live scorecards
+  (`scorecard-workflow.json`, `scorecard-workshop.json`) have theirs.
+  `sops.json` rows already carried a `url` per the plan; that part needed no
+  change, just confirmation it satisfies the same ask at the SOP level.
+
 ## 2026-09-16 (v0.7, Roles shell: tabs, scorecard split, six track stubs)
 
 **Tabs become Overview / The Grant Way / Roles.** `components/top-nav.tsx` and

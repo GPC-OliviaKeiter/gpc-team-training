@@ -18,6 +18,8 @@ Decisions already made (do not reopen in a build chat):
 | CEO | Placeholder card on the Roles index. No route until Grant writes the scorecard. |
 | Onboarding | Overview module 01, a phase-grouped checklist. Each row links to its ClickUp task. |
 | Screenshots | Sonnet leaves labeled `Figure` placeholders. Olivia captures them in one batch (Step 6). |
+| SOP index seat tags | Confirmed after Step 1 shipped. Each `sops.json` row carries a `seat` field (`workflow`, `workshop`, `both`, or `null` for track-wide) instead of nesting Workflow PC and Workshop PC as separate sub-tracks. Same pattern for Sales (`setter`, `closer`, `both`). ClickUp itself doesn't split the SOP folders by seat (see the Process Consultant Handbook doc), only the two scorecards are seat-specific, so the site mirrors that. |
+| Direct ClickUp links throughout | Confirmed after Step 1 shipped. Every scorecard page and every `sops.json` row links straight to its own ClickUp page, not just the track's `clickupDocUrl`. `scorecard-<seat>.json` gets a required `sourceUrl` field. A module page doesn't need its own separate citation list the way Grant Way does: the click-through path is module → SOP index (bottom of the track page) → the ClickUp page. |
 
 ## 1. Source inventory
 
@@ -80,8 +82,8 @@ Every `/workflow-consulting/*` URL gets a permanent redirect in `next.config.ts`
 content/
   overview/onboarding.json                 phases[] -> items[] {label, clickupUrl, owner?}
   roles/<track>/track.json                 title, eyebrow, lede, clickupDocUrl, seats[], modules[]
-  roles/<track>/scorecard-<seat>.json      mission, capacity, kpis[], outcomes[], competencies[], values[]
-  roles/<track>/sops.json                  every SOP page: {name, pageId, url, module|null, owner?, nextReview?}
+  roles/<track>/scorecard-<seat>.json      mission, capacity, sourceUrl, kpis[], outcomes[], competencies[], values[]
+  roles/<track>/sops.json                  every SOP page: {name, pageId, url, seat, module|null, owner?, nextReview?}
   roles/<track>/<nn>-<module>.md           module body
 lib/
   roles.ts                                 reads track.json, seat list, module list; feeds /roles and track indexes
@@ -90,7 +92,7 @@ lib/
 components/
   scorecard.tsx                            mission block, KPI tile row, outcomes table, competencies + values columns
   role-card.tsx                            seat card for /roles
-  sop-index.tsx                            the per-track table, "covered in" column links the module
+  sop-index.tsx                            the per-track table: Seat, "covered in" (links the module), and a direct ClickUp link per row
   figure.tsx                               screenshot placeholder: dashed box, caption, capture spec, id
   step-rail.tsx                            numbered steps with optional figure per step
   checklist.tsx                            onboarding phases, rows link out to ClickUp
@@ -114,6 +116,7 @@ and can be diffed against ClickUp field by field.
 - Every module route has a `SEARCH_INDEX` entry with 8 or more tags.
 - Diagrams are inline SVG on the GPC token palette in `app/globals.css`. No external chart libraries.
 - Screenshots are `Figure` placeholders with an `id`, a caption, and a one-line capture spec ("ClickUp, Partners list, status column visible"). `npm run check` prints the open list.
+- Every scorecard page and every `sops.json` row links straight to its own ClickUp page (`sourceUrl` on the scorecard, `url` on the SOP row), not just the track's `clickupDocUrl`. `npm run check` fails a scorecard missing `sourceUrl` the same way it fails one missing any other required field.
 
 ## 3. Module map per track
 
@@ -133,10 +136,11 @@ index only. Titles are working titles. Sonnet may sharpen them, not merge or spl
 | 05 | Tools: GitHub and Vercel | Github and Vercel SOPs |
 | 06 | Communication Guidelines | Wiki: GPC Communication Guidelines, Client Communication Standards |
 | 07 | The Grant Way, for this role | existing doorway |
-| idx | SOP index | all 13, plus Vulnerability Management Execution (index only) |
+| idx | SOP index | all 13, plus Vulnerability Management Execution (index only), each row tagged `seat: workflow \| workshop \| both` |
 
-Workshop PC has a scorecard and no SOPs in ClickUp yet. The Workshop scorecard page says so
-in one line and links the `workshop-portal` skill in gpc-skills as the current delivery runbook.
+Workshop PC has a scorecard and no SOPs in ClickUp yet, so every SOP index row in this track
+is `seat: workflow` until Workshop SOPs exist. The Workshop scorecard page says so in one line
+and links the `workshop-portal` skill in gpc-skills as the current delivery runbook.
 
 ### Sales (new track)
 
@@ -150,7 +154,7 @@ in one line and links the `workshop-portal` skill in gpc-skills as the current d
 | 04 | Proposal to Close | Product Guide, Pricing and Discount Authority, Proposal / SOW / Signature Process, Statement Of Work Creation, Closed Won to Delivery Handoff, Closed Lost / Nurture / Recycle, Sales to Delivery Handoff template |
 | 05 | CRM Discipline | 12 CRM Commandments, Hubspot Activity And Logging Standards |
 | 06 | Prospect FAQ | the 9 approved-answer pages, one table grouped by topic |
-| idx | SOP index | all 19 SOPs, 2 resources (index only) |
+| idx | SOP index | all 19 SOPs, 2 resources (index only), each row tagged `seat: setter \| closer \| both` |
 
 Module 03 is the "Pitching" doorway from Overview. Module 01 plus the two scorecards are
 the "Selling" doorway.
