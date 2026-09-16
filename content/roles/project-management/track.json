@@ -1,10 +1,41 @@
 {
   "title": "Project Management",
   "eyebrow": "Roles · Project Management Handbook",
-  "lede": "The PM cadence, the partner lifecycle from onboarding to offboarding, scope and estimates and retros, workspace hygiene, and the people-ops work the PM owns. Source of truth is GPC's ClickUp Project Management handbook until modules land here.",
+  "lede": "The PM cadence, the partner lifecycle from onboarding to offboarding, scope and estimates and retros, workspace hygiene, and the people-ops work the PM owns. Rewritten from GPC's ClickUp Project Management handbook.",
   "clickupDocUrl": "https://app.clickup.com/9012022270/docs/8cjh2zy-180852",
   "seats": [
-    { "name": "Project Manager" }
+    { "name": "Project Manager", "scorecardHref": "/roles/project-management/scorecard-project-manager" }
   ],
-  "modules": []
+  "modules": [
+    {
+      "num": "01",
+      "title": "The PM Cadence",
+      "blurb": "Daily, weekly, and monthly duties, sprints, bandwidth tracking, and client update reporting.",
+      "href": "/roles/project-management/the-pm-cadence"
+    },
+    {
+      "num": "02",
+      "title": "Partner Lifecycle: Onboarding to Offboarding",
+      "blurb": "The canonical Onboarding to Active to Offboarding arc across every role, platform access, and repo scaffolding.",
+      "href": "/roles/project-management/partner-lifecycle"
+    },
+    {
+      "num": "03",
+      "title": "Scope, Estimates, and Retros",
+      "blurb": "SOW alignment review, scoping time estimates, project retros, and recurring client satisfaction tracking.",
+      "href": "/roles/project-management/scope-estimates-and-retros"
+    },
+    {
+      "num": "04",
+      "title": "Workspace Hygiene",
+      "blurb": "Google Drive structure, Slack channel management, credential management, and periodic access review.",
+      "href": "/roles/project-management/workspace-hygiene"
+    },
+    {
+      "num": "05",
+      "title": "People Ops the PM Owns",
+      "blurb": "Internal onboarding and offboarding, OOO handover, quarterly SOP review, and the internal SOP template.",
+      "href": "/roles/project-management/people-ops"
+    }
+  ]
 }

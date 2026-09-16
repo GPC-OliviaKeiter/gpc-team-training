@@ -1,0 +1,91 @@
+{
+  "mission": "To deliver contracted promises on time by sequencing work, managing dependencies, resolving blockers, and ensuring every deliverable has completed the required QA and approval gates before it reaches the client. The Project Manager owns execution of the project, not company operations, technical architecture, or the underlying business solution.",
+  "capacity": "All time logged in ClickUp daily. Weekly status prepared at least 2 hours before the partner call, every week. Flag Grant and Savannah in advance if a week is trending past your contracted hours.",
+  "sourceUrl": "https://app.clickup.com/9012022270/docs/8cjh2zy-180852/8cjh2zy-110132",
+  "kpis": [
+    {
+      "name": "1. On-Time In Full Delivery Rate",
+      "calculation": "Deliverables completed on time ÷ total deliverables due",
+      "target": "≥95%"
+    },
+    {
+      "name": "2. Blocker Age",
+      "calculation": "Median working hours from blocker identified to resolved or escalated",
+      "target": "<24 hours median; 0 blockers >72 hours without a recovery plan"
+    },
+    {
+      "name": "3. Deliverables With Completed QA Gates Prior to Delivery",
+      "calculation": "Required QA/approvals complete ≥24 hours before the client deadline",
+      "target": "100%"
+    },
+    {
+      "name": "4. Scope Leakage Rate",
+      "calculation": "Material out-of-scope work started without documented approval ÷ total scope-change requests",
+      "target": "10%"
+    }
+  ],
+  "outcomes": [
+    {
+      "what": "Client commitments are ready before they're due",
+      "howMeasured": "≥95% of weekly deliverables complete and through required QA gates ≥24 hours before the partner call; slippage only with documented scope, dependency, or priority changes; client-impacting delays communicated before the missed deadline",
+      "byWhen": "Ongoing"
+    },
+    {
+      "what": "Clear project status for internal and client stakeholders",
+      "howMeasured": "Weekly status contains SOW progress, completed work, upcoming milestones, blockers, risks, decisions required, and scope changes; prepared ≥2 hours before the partner call",
+      "byWhen": "Ongoing"
+    },
+    {
+      "what": "A reliable delivery cadence",
+      "howMeasured": "≥80% sprint commitment met; <20% unplanned work; work entering the sprint has a clear owner, expected outcome, and completion criteria; material dependencies identified before work begins",
+      "byWhen": "Monthly; ongoing"
+    },
+    {
+      "what": "Blockers don't silently delay delivery",
+      "howMeasured": "Median blocker age <24 hours; no blocker >72 hours without escalation and a documented recovery plan; technical blockers routed to the Process Consultant, requirement blockers to the Workshop or Workflow Consultant, capacity blockers to the Ops Manager",
+      "byWhen": "Ongoing"
+    },
+    {
+      "what": "Ops gets enough warning to solve capacity problems",
+      "howMeasured": "Upcoming resource needs reflected in the delivery plan; foreseeable gaps escalated before they affect a milestone; PTO/OOO impact incorporated into timelines; PM provides project-level demand, Ops owns company-level capacity planning",
+      "byWhen": "Ongoing"
+    },
+    {
+      "what": "No unapproved work quietly enters delivery",
+      "howMeasured": "New requests matched against the SOW before being committed; suspected out-of-scope work flagged within one business day; scope questions routed through the defined escalation path; no material scope expansion begins without documented approval",
+      "byWhen": "Ongoing"
+    },
+    {
+      "what": "Work doesn't reach the client until the right owners have approved it",
+      "howMeasured": "Before a deliverable is ready: Engineer has completed builder QA, Process Consultant has completed business/requirement acceptance where applicable, documentation and client-facing materials are complete. The PM verifies all four gates rather than personally performing them.",
+      "byWhen": "Ongoing"
+    }
+  ],
+  "competencies": [
+    { "body": "Scheduling and sequencing under constraints." },
+    { "body": "Dependency management." },
+    { "body": "Risk identification and escalation." },
+    { "body": "Scope discipline." },
+    { "body": "Clear asynchronous communication." },
+    { "body": "Project tooling fluency." },
+    { "body": "Definition of Done enforcement." }
+  ],
+  "values": [
+    {
+      "label": "Build, Sharpen, Scale.",
+      "body": "Turns recurring project-management friction into templates, automations, and checklists."
+    },
+    {
+      "label": "Passion for Modern Solutions.",
+      "body": "Uses modern tooling to remove unnecessary status work and improve visibility."
+    },
+    {
+      "label": "Empathetic Ownership.",
+      "body": "Protects delivery commitments without creating unsustainable team workloads."
+    },
+    {
+      "label": "Be Decent, Be Direct.",
+      "body": "Communicates risk, timeline changes, and trade-offs early."
+    }
+  ]
+}

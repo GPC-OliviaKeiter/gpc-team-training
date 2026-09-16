@@ -1,7 +1,14 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 
-export type SopSeat = "workflow" | "workshop" | "both" | "setter" | "closer" | "engineer";
+export type SopSeat =
+  | "workflow"
+  | "workshop"
+  | "both"
+  | "setter"
+  | "closer"
+  | "engineer"
+  | "project-manager";
 
 export type SopRow = {
   name: string;

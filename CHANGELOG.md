@@ -1,5 +1,51 @@
 # Changelog
 
+## 2026-09-16 (v1.2, Project Management track: the swimlane module, five modules, one scorecard)
+
+Step 4c. `content/roles/project-management/` and `app/roles/project-management/`
+fill in from ClickUp doc `8cjh2zy-180852`.
+
+**One scorecard**, `scorecard-project-manager.json`, copied field for field
+from `8cjh2zy-110132`.
+
+**Five modules**: The PM Cadence (daily/weekly/monthly duties, sprints,
+bandwidth tracking, the weekly and monthly client report formats), Partner
+Lifecycle: Onboarding to Offboarding (the plan's canonical cross-role page:
+Onboarding's automated Phase 1 and the PM's eight Phase 2 subtasks,
+confirming client platform access, client repo scaffolding, Close Out,
+Offboarding, and the Slack export automation), Scope,
+Estimates, and Retros (SOW alignment review and scope creep handling, the
+scoping buffer rule, the project retro's three phases, recurring NPS
+tracking), Workspace Hygiene (the Google Drive folder map, Slack channel
+management, credential management, the quarterly access review, and the PM's
+half of monitoring and automation ownership), and People Ops the PM Owns
+(internal onboarding and offboarding, OOO handover, quarterly SOP review, the
+welcome message and internal SOP templates).
+
+**The swimlane diagram.** Partner Lifecycle carries the one inline SVG the
+plan calls for: three lanes (Process Consultant, Project Manager, Operations
+Manager) across the five-stage arc. Hit a real bug building it: a blank line
+anywhere inside a raw `<svg>` block in a module's markdown ends marked's raw
+HTML passthrough early, and everything after gets wrapped in a stray `<p>`,
+which breaks the SVG namespace and silently kills the diagram (text renders,
+shapes and colors don't). Fixed by removing every internal blank line;
+`lib/role-markdown.ts` now documents the gotcha for the next inline SVG
+(Marketing's a candidate, and Engineering's still-unbuilt tracks might want
+one too).
+
+**`content/roles/project-management/sops.json`**, 26 rows, one seat
+throughout. The plan's SOP index line named "22 plus 2 templates," but two
+sub-pages explicitly named in the module table (the PM's own Onboarding-stage
+responsibilities page, and the Slack export automation) bring the real count
+to 26; included rather than dropped to force the headline number, the same
+call made for Sales and Engineering. Two SOPs, Scoping Time Estimates and
+Confirm Client Platform Access, are near-duplicates of Engineering's own
+copies under different page IDs (flagged for Step 5 dedupe); the PM's copy
+of Scoping Time Estimates has a blank Roles & Responsibilities table in
+ClickUp, noted inline rather than invented.
+
+`npm run check` and `npm run build` both pass clean.
+
 ## 2026-09-16 (v1.1, Engineering track: six modules, one scorecard, 33-row SOP index)
 
 Step 4b. `content/roles/engineering/` and `app/roles/engineering/` fill in

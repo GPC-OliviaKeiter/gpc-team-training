@@ -389,6 +389,70 @@ export const SEARCH_INDEX: SearchEntry[] = [
       "status colors", "clickup migration", "clickup training", "clickup like a pro",
     ],
   },
+  {
+    track: "Project Management",
+    title: "Scorecard: Project Manager",
+    href: "/roles/project-management/scorecard-project-manager",
+    blurb: "What the Project Manager seat is held to: on-time delivery, clear status, blocker age, and gatekeeping.",
+    tags: [
+      "project manager scorecard", "pm kpis", "on time delivery", "blocker age",
+      "qa gates", "scope leakage rate", "pm mission",
+    ],
+  },
+  {
+    track: "Project Management",
+    title: "The PM Cadence",
+    href: "/roles/project-management/the-pm-cadence",
+    blurb: "Daily, weekly, and monthly duties, sprints, bandwidth tracking, and client update reporting.",
+    tags: [
+      "pm flow", "daily weekly monthly", "sprints", "bandwidth tracking",
+      "workload view", "weekly client update", "monthly executive wrap up",
+      "silent killers",
+    ],
+  },
+  {
+    track: "Project Management",
+    title: "Partner Lifecycle: Onboarding to Offboarding",
+    href: "/roles/project-management/partner-lifecycle",
+    blurb: "The canonical Onboarding to Active to Offboarding arc across every role, platform access, and repo scaffolding.",
+    tags: [
+      "partner lifecycle", "onboarding a partner", "offboarding a partner",
+      "close out", "swimlane", "client platform access", "client repo scaffolding",
+      "claude code scaffold", "slack export automation",
+    ],
+  },
+  {
+    track: "Project Management",
+    title: "Scope, Estimates, and Retros",
+    href: "/roles/project-management/scope-estimates-and-retros",
+    blurb: "SOW alignment review, scoping time estimates, project retros, and recurring client satisfaction tracking.",
+    tags: [
+      "sow alignment review", "scope creep", "scoping time estimates",
+      "bloating rule", "project retro", "nps", "client satisfaction",
+    ],
+  },
+  {
+    track: "Project Management",
+    title: "Workspace Hygiene",
+    href: "/roles/project-management/workspace-hygiene",
+    blurb: "Google Drive structure, Slack channel management, credential management, and periodic access review.",
+    tags: [
+      "google drive structure", "drive folders", "slack channel management",
+      "credential management", "1password vault", "periodic access review",
+      "monitoring automation ownership",
+    ],
+  },
+  {
+    track: "Project Management",
+    title: "People Ops the PM Owns",
+    href: "/roles/project-management/people-ops",
+    blurb: "Internal onboarding and offboarding, out-of-office handover, quarterly SOP review, and the internal SOP template.",
+    tags: [
+      "internal onboarding", "internal offboarding", "out of office handover",
+      "ooo", "quarterly sop review", "welcome onboarding message",
+      "internal sop template",
+    ],
+  },
 ];
 
 export type SearchResult = SearchEntry & { score: number };

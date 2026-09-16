@@ -15,6 +15,15 @@ import { CALLOUT_CLASSES } from "@/components/callout";
  * inline tags for their real component markup, so a module author can write
  * a placeholder or a rule inline in prose and get the actual component in
  * the rendered page. See that function for how.
+ *
+ * A raw <svg>...</svg> block (for a diagram no component covers, e.g. a
+ * swimlane) can also be written directly in a module's markdown; marked
+ * passes a raw HTML block through untouched the same way. It must not
+ * contain a blank line anywhere inside it: a blank line ends the HTML block
+ * early, and marked wraps everything after it in a stray <p>, which breaks
+ * SVG's namespace and silently kills the diagram (text renders, shapes and
+ * colors don't). Keep every line of an inline SVG contiguous, no blank
+ * lines until after the closing tag.
  */
 export function readRoleMarkdown(track: string, filename: string) {
   const filePath = path.join(process.cwd(), "content", "roles", track, filename);
