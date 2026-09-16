@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-09-16 (v1.4, direct ClickUp links on every role module page)
+
+Every role-track module page (26 across Sales, Engineering, Project
+Management, Process Consulting, Operations, Marketing) now links straight
+to the ClickUp source page(s) it condenses, right under the lede, the same
+place a scorecard already says "View this scorecard in ClickUp." Before
+this, that link only existed one level up, in a track's SOP index table;
+reading a module meant going back to the index to find the right row.
+
+**`lib/sops.ts`** gains `sourcesForModule(track, moduleNum)`, filtering a
+track's `sops.json` down to the rows for one module. **`components/module-
+shell.tsx`** gains an optional `clickupSources` prop, rendered as a wrapped
+row of links under the lede; omitted (and skipped) when a module has no
+matching rows, which is true for two pages that aren't condensed from a
+single ClickUp page: Process Consulting's Communication Guidelines (pulled
+from real sent email) and The Grant Way, for this role (a doorway page, not
+its own ModuleShell instance).
+
+`npm run check` and `npm run build` both pass clean.
+
 ## 2026-09-16 (v1.3, Operations and Marketing tracks: the last two of Step 4)
 
 Step 4d, the final step of the handbooks buildout. `content/roles/operations/`,

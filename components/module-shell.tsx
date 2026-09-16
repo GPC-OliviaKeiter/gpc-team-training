@@ -13,6 +13,7 @@ export function ModuleShell({
   lede,
   children,
   sources,
+  clickupSources,
   banner = "GPC-only. Nothing here goes public without Grant’s approval.",
 }: {
   track: Track;
@@ -22,6 +23,12 @@ export function ModuleShell({
   lede?: ReactNode;
   children: ReactNode;
   sources?: NumberedSource[];
+  /** Direct links to the ClickUp page(s) this role module condenses, from
+   * lib/sops.ts's sourcesForModule. Rendered under the lede so a reader can
+   * jump straight to the living source instead of going back through the
+   * track's SOP index. Omit when a module isn't condensed from a single
+   * ClickUp SOP page (e.g. Process Consulting's Communication Guidelines). */
+  clickupSources?: { name: string; url: string }[];
   banner?: string;
 }) {
   return (
@@ -61,6 +68,21 @@ export function ModuleShell({
           {lede && (
             <div className="mt-5 max-w-[68ch] text-[17px] leading-relaxed text-muted-foreground">
               {lede}
+            </div>
+          )}
+          {clickupSources && clickupSources.length > 0 && (
+            <div className="mt-5 flex flex-wrap gap-x-5 gap-y-1.5">
+              {clickupSources.map((s) => (
+                <a
+                  key={s.url}
+                  href={s.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-mono text-[11px] font-semibold tracking-[0.06em] text-primary uppercase underline underline-offset-2"
+                >
+                  {s.name} →
+                </a>
+              ))}
             </div>
           )}
         </header>

@@ -35,3 +35,17 @@ export function readSops(track: string): SopRow[] {
   const raw = readFileSync(filePath, "utf-8");
   return JSON.parse(raw) as SopRow[];
 }
+
+/**
+ * The ClickUp source pages a given module condenses, in sops.json order, for
+ * the "Sourced from ClickUp" links a module page renders under its lede. A
+ * module with no matching rows (e.g. Communication Guidelines, pulled from
+ * real sent email rather than a single ClickUp page) gets an empty list, and
+ * the caller should pass nothing to ModuleShell rather than render an empty
+ * block.
+ */
+export function sourcesForModule(track: string, moduleNum: string): { name: string; url: string }[] {
+  return readSops(track)
+    .filter((s) => s.module === moduleNum)
+    .map((s) => ({ name: s.name, url: s.url }));
+}
