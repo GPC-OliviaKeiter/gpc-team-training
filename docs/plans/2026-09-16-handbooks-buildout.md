@@ -345,9 +345,14 @@ Build:
    a diagram would replace a paragraph. Every fact stays; only the words go. When a
    sentence is a rule, make it a Callout.
 3. content/roles/process-consulting/sops.json: every page in the ClickUp handbook
-   doc 8cjh2zy-180912 (list pages with the ClickUp tool), with the module that covers
-   it or null. Render it as the SOP index at the bottom of the track page.
-4. Delete the Step 1 allowlist. npm run check must pass clean.
+   doc 8cjh2zy-180912 (list pages with the ClickUp tool), each row {name, pageId, url,
+   seat, module|null}. seat is workflow, workshop, or both: ClickUp doesn't split these
+   SOPs by seat, so most rows are both; use workflow for anything Workshop has no
+   parallel for yet. url is that row's own ClickUp page link, not the doc-level link.
+   Render it as the SOP index at the bottom of the track page, Seat and a per-row
+   ClickUp link both visible.
+4. Delete scripts/pc-visual-rule-allowlist.json (not the Overview one, that's Step 3's).
+   npm run check must pass clean.
 CHANGELOG v0.8. Show me every changed module rendered before the PR.
 ```
 
@@ -383,10 +388,12 @@ For <track> (ClickUp doc <doc_id>):
 1. List the doc's pages with the ClickUp tool. Fetch only the pages the module table
    names, in text/md, one module at a time. Do not load the whole handbook.
 2. scorecard-<seat>.json per seat, copied field for field from the scorecard page(s).
+   sourceUrl is that seat's own scorecard page link, not the track's clickupDocUrl.
 3. One .md per module in the table, at least one table or Figure each. Condense, do
    not summarize: every rule, number, and owner in the source survives, and no
    sentence is there only to bridge two others.
-4. sops.json with every page in the doc, module or null.
+4. sops.json with every page in the doc, each row's seat tagged to the seat(s) it
+   covers (both if ClickUp doesn't split it), module or null.
 5. Fill track.json modules[]. The track index shows scorecards first.
 6. Search index entries, 8 or more tags each. CHANGELOG line.
 npm run check clean. Rendered scorecard and modules in chat before the PR.
