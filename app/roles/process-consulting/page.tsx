@@ -1,8 +1,11 @@
 import { TopNav } from "@/components/top-nav";
+import { SopIndex } from "@/components/sop-index";
 import { readTrack } from "@/lib/roles";
+import { readSops } from "@/lib/sops";
 
 export default function Page() {
   const track = readTrack("process-consulting");
+  const sops = readSops("process-consulting");
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -71,6 +74,25 @@ export default function Page() {
               </a>
             ))}
           </div>
+        </section>
+
+        <section className="mt-14">
+          <h2 className="mb-2 font-display text-[26px] font-normal">SOP index</h2>
+          <p className="mb-5 max-w-[64ch] text-[14.5px] leading-relaxed text-muted-foreground">
+            Every SOP page in the Process Consultant ClickUp handbook. Workshop PC
+            has a scorecard and no SOPs written yet, so every row below is tagged
+            for the Workflow seat until Workshop SOPs exist; the{" "}
+            <a
+              href="https://github.com/Grantbot-Eng/gpc-skills/blob/main/skills/workshop-portal/SKILL.md"
+              className="text-primary underline underline-offset-2"
+              target="_blank"
+              rel="noreferrer"
+            >
+              workshop-portal skill
+            </a>{" "}
+            in gpc-skills is the current delivery runbook for that seat.
+          </p>
+          <SopIndex sops={sops} modules={track.modules} />
         </section>
 
         <footer className="mt-14 border-t border-foreground pt-6">
