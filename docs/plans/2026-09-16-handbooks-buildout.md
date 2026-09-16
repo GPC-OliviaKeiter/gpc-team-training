@@ -109,7 +109,7 @@ and can be diffed against ClickUp field by field.
   check script catches the mechanical tells; the pass catches the rest.
 - Every module carries at least one table, one `Figure`, or one inline SVG.
 - No em or en dash anywhere the repo owns. Vendor content is exempt.
-- Banned words and phrases: the list in `gpc-skills/skills/gpc-brand-docs/references/voice-and-slop.md`, plus: delve, crucial, pivotal, tapestry, foundational, robust, seamless, navigating, evolving, landscape, realm, harness, transformative, genuine, genuinely.
+- Banned words and phrases: the list in `gpc-skills/skills/gpc-brand-docs/references/voice-and-slop.md`, plus: delve, crucial, pivotal, tapestry, foundational, robust, seamless, navigating, evolving, landscape, realm, harness, transformative, genuine, genuinely. Step 1 copies the merged list into `scripts/banned-words.json` in this repo. The check script reads that file, never gpc-skills, because Vercel builds this site without gpc-skills present.
 - No client or partner names outside Grant Way's own sourced modules. Testimonial pages stay in ClickUp.
 - Every module route has a `SEARCH_INDEX` entry with 8 or more tags.
 - Diagrams are inline SVG on the GPC token palette in `app/globals.css`. No external chart libraries.
@@ -227,7 +227,13 @@ have no source become new coming-soon cards with him as owner.
 ## 4. Steps
 
 Chat naming: `GPC Training · Step N <name> M/D`. Time logs to the ClickUp list
-"Demo Assets for Consulting". Each Sonnet step runs on its own `claude/<slug>` branch off
+"Demo Assets for Consulting".
+
+gpc-skills is attached to every build chat, read-only. It holds GPC's voice and brand
+standards. Each chat reads `skills/gpc-brand-docs/references/voice-and-slop.md` and
+nothing else in that repo unless a plan step names a file. No build chat writes to
+gpc-skills. Anything this site needs from it (the banned list, a design token) gets
+copied into this repo, so the site builds on Vercel with gpc-skills absent. Each Sonnet step runs on its own `claude/<slug>` branch off
 `main`, opens a PR, and Olivia reviews the Vercel preview before merge. Step 1 must merge
 before Steps 2 to 4 start. Steps 4a to 4d can run in parallel (four-session ceiling).
 
@@ -251,8 +257,9 @@ PM), Partner Onboarding (PC, PM, OM).
 
 ## 5. Kickoff prompts
 
-Paste the block for the step into a new chat on the named model. Every prompt assumes the
-repo is cloned and this file is at `docs/plans/2026-09-16-handbooks-buildout.md`.
+Paste the block for the step into a new chat on the named model. Every prompt assumes
+both repos are attached (gpc-team-training with write access, gpc-skills read-only) and
+this file is at `docs/plans/2026-09-16-handbooks-buildout.md` on main.
 
 ### Step 1 (Sonnet): Shell, Roles index, scorecard split
 
@@ -262,6 +269,10 @@ Read docs/plans/2026-09-16-handbooks-buildout.md sections 2 and 3 first. Then re
 README.md, components/top-nav.tsx, components/module-shell.tsx, app/page.tsx,
 app/workflow-consulting/page.tsx, lib/wc-markdown.ts, lib/search-index.ts, and
 content/workflow-consulting/00-role-overview.md. Read nothing else until you need it.
+
+gpc-skills is attached for reference only. Read
+skills/gpc-brand-docs/references/voice-and-slop.md and nothing else in it unless a step
+below names a file. Never write to gpc-skills from this chat.
 
 Build, in this order:
 1. Tabs become Overview / The Grant Way / Roles. TopNav and ModuleShell accept the new
@@ -290,13 +301,15 @@ Build, in this order:
    figures unchanged. Routes: /roles/process-consulting/scorecard-workflow and
    /scorecard-workshop. The Workshop page carries one line: no Workshop SOPs exist in
    ClickUp yet; the workshop-portal skill in gpc-skills is the current delivery runbook.
-   The track index lists both scorecards first, then the six modules, then the Grant
-   Way doorway.
+   Confirm gpc-skills/skills/workshop-portal/SKILL.md exists before you link it; do not
+   read it. The track index lists both scorecards first, then the six modules, then the
+   Grant Way doorway.
 7. scripts/check-content.mjs and "check": "node scripts/check-content.mjs" in
-   package.json. Rules are plan section 2, "Copy and visual rules". It must fail on:
-   a module route with no SEARCH_INDEX entry, an em or en dash outside vendor/, a
-   banned word, a module with no table, Figure, or svg, and scorecard JSON that misses
-   a required field. It prints the open Figure list and a word count per module (for
+   package.json. Rules are plan section 2, "Copy and visual rules". Seed
+   scripts/banned-words.json from the voice-and-slop.md list plus the plan's additions;
+   the script reads only that file. It must fail on: a module route with no
+   SEARCH_INDEX entry, an em or en dash outside vendor/, a banned word, a module with
+   no table, Figure, or svg, and scorecard JSON that misses a required field. It prints the open Figure list and a word count per module (for
    information, never a failure). The six existing PC modules will fail the visual
    rule today; list them as warnings, not failures, until Step 2 (use an allowlist
    file the next step deletes).
