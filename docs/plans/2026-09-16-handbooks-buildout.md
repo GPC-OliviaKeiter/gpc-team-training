@@ -3,7 +3,7 @@
 Date: 2026-09-16. Owner: Olivia Keiter. Planner: Fable. Builders: Sonnet, one step per chat.
 
 This plan turns the six ClickUp role handbooks into tracks on the GPC Team Training
-site, splits every scorecard into its own clickable page, cuts copy to a hard budget,
+site, splits every scorecard into its own clickable page, cuts copy to what earns its place,
 and adds the onboarding checklist and Pete's core fundamentals to the Overview page.
 ClickUp stays the source of truth for every SOP. The site is the readable map of it.
 
@@ -82,7 +82,7 @@ content/
   roles/<track>/track.json                 title, eyebrow, lede, clickupDocUrl, seats[], modules[]
   roles/<track>/scorecard-<seat>.json      mission, capacity, kpis[], outcomes[], competencies[], values[]
   roles/<track>/sops.json                  every SOP page: {name, pageId, url, module|null, owner?, nextReview?}
-  roles/<track>/<nn>-<module>.md           module body, 400 words max
+  roles/<track>/<nn>-<module>.md           module body
 lib/
   roles.ts                                 reads track.json, seat list, module list; feeds /roles and track indexes
   scorecard.ts                             reads and validates scorecard JSON
@@ -102,7 +102,11 @@ and can be diffed against ClickUp field by field.
 
 ### Copy and visual rules (enforced by `npm run check`, see Step 1)
 
-- Module body: 400 words target, 450 hard fail. Scorecard pages have no free prose beyond the mission.
+- No word count budget. The rule is word choice: every sentence carries a fact, a rule, an
+  owner, or a number the reader needs. Nothing is added to fill a section. Scorecard pages
+  have no free prose beyond the mission.
+- A full no-AI pass runs on every module before anything goes live (Step 5). Until then the
+  check script catches the mechanical tells; the pass catches the rest.
 - Every module carries at least one table, one `Figure`, or one inline SVG.
 - No em or en dash anywhere the repo owns. Vendor content is exempt.
 - Banned words and phrases: the list in `gpc-skills/skills/gpc-brand-docs/references/voice-and-slop.md`, plus: delve, crucial, pivotal, tapestry, foundational, robust, seamless, navigating, evolving, landscape, realm, harness, transformative, genuine, genuinely.
@@ -217,8 +221,8 @@ Core Fundamentals cards:
 | The Grant Way | /grant-way | live |
 | Pete's list | none yet | coming soon, owner Pete Sena |
 
-Olivia replies to Pete's Slack message asking him to name the fundamentals he wants beyond
-these five. Any he names that have no source become new coming-soon cards with him as owner.
+Pete has been asked to name the fundamentals he wants beyond these five. Any he names that
+have no source become new coming-soon cards with him as owner.
 
 ## 4. Steps
 
@@ -229,7 +233,7 @@ before Steps 2 to 4 start. Steps 4a to 4d can run in parallel (four-session ceil
 
 | Step | Model | Depends on | Deliverable |
 |---|---|---|---|
-| 0 | Olivia | none | Five ClickUp source fixes. Slack reply to Pete. |
+| 0 | Olivia | none | Five ClickUp source fixes, two of them after Eliza confirms the targets. Pete reply is done; his list is pending. |
 | 1 | Sonnet | none | Shell: Roles tab, /roles index, track moved to /roles/process-consulting with redirects, Scorecard component, two PC scorecard pages, six track stubs, `npm run check`. |
 | 2 | Sonnet | 1 | Component kit (Figure, StepRail, Checklist, Callout, SopIndex). Copy cut on the six PC modules. PC SOP index. |
 | 3 | Sonnet | 1 | Overview: Onboarding checklist module, Core Fundamentals section, GitHub Basics cut plus figures. |
@@ -237,7 +241,7 @@ before Steps 2 to 4 start. Steps 4a to 4d can run in parallel (four-session ceil
 | 4b | Sonnet | 2 | Engineering track. |
 | 4c | Sonnet | 2 | Project Management track, including the lifecycle swimlane SVG. |
 | 4d | Sonnet | 2 | Operations and Marketing tracks. |
-| 5 | Fable | 4a to 4d merged | Dedupe and review gate. Canonical home for the SOPs that appear in two handbooks. Copy audit. KPI figures diffed against ClickUp. Search index completeness. |
+| 5 | Fable | 4a to 4d merged | Dedupe and review gate. Canonical home for the SOPs that appear in two handbooks. Full no-AI pass on every module, all tracks. KPI figures diffed against ClickUp. Search index completeness. Nothing goes live before this passes. |
 | 6 | Olivia | 5 | Screenshot batch from the `Figure` list. Grant review. Deploy. Reply to Pete with the link. |
 
 Cross-handbook duplicates Step 5 must resolve (one canonical module, the other links):
@@ -290,11 +294,12 @@ Build, in this order:
    Way doorway.
 7. scripts/check-content.mjs and "check": "node scripts/check-content.mjs" in
    package.json. Rules are plan section 2, "Copy and visual rules". It must fail on:
-   a module route with no SEARCH_INDEX entry, a module body over 450 words, an em or
-   en dash outside vendor/, a banned word, a module with no table, Figure, or svg, and
-   scorecard JSON that misses a required field. It prints the open Figure list. The
-   six existing PC modules will fail the word and visual rules today; list them as
-   warnings, not failures, until Step 2 (use an allowlist file the next step deletes).
+   a module route with no SEARCH_INDEX entry, an em or en dash outside vendor/, a
+   banned word, a module with no table, Figure, or svg, and scorecard JSON that misses
+   a required field. It prints the open Figure list and a word count per module (for
+   information, never a failure). The six existing PC modules will fail the visual
+   rule today; list them as warnings, not failures, until Step 2 (use an allowlist
+   file the next step deletes).
 8. Update README.md (structure tree, "Adding a new track" now means a track.json plus
    a content folder) and CHANGELOG.md (v0.7).
 
@@ -317,8 +322,9 @@ Build:
 1. components/figure.tsx (placeholder: dashed box on the secondary token, caption,
    capture spec, id), step-rail.tsx, checklist.tsx, callout.tsx, sop-index.tsx.
    Document each in one comment block. The check script already knows what a Figure is.
-2. Cut the six PC modules to 400 words each. Convert prose lists into tables (RACI,
-   cadence, checklist). Add one Figure or inline SVG per module where a screenshot or
+2. Rewrite the six PC modules for word choice: keep every fact, rule, owner, and
+   number, drop every sentence that only restates one. Convert prose lists into
+   tables (RACI, cadence, checklist). Add one Figure or inline SVG per module where a screenshot or
    a diagram would replace a paragraph. Every fact stays; only the words go. When a
    sentence is a rule, make it a Callout.
 3. content/roles/process-consulting/sops.json: every page in the ClickUp handbook
@@ -343,7 +349,7 @@ Build:
 2. /overview/onboarding as Overview module 01. GitHub Basics becomes 02.
 3. Core Fundamentals section under the module grid, six cards per the plan table.
    Coming-soon cards have no link and show the owner.
-4. GitHub Basics: cut to 400 words per section, convert every shot label into a Figure
+4. GitHub Basics: cut each section to the sentences that teach, convert every shot label into a Figure
    with a capture spec, add one inline SVG of the branch-commit-PR-merge loop.
 Search index entries for the new route. CHANGELOG v0.9. Rendered pages in chat first.
 ```
@@ -360,8 +366,9 @@ For <track> (ClickUp doc <doc_id>):
 1. List the doc's pages with the ClickUp tool. Fetch only the pages the module table
    names, in text/md, one module at a time. Do not load the whole handbook.
 2. scorecard-<seat>.json per seat, copied field for field from the scorecard page(s).
-3. One .md per module in the table, 400 words, at least one table or Figure each.
-   Condense, do not summarize: every rule, number, and owner in the source survives.
+3. One .md per module in the table, at least one table or Figure each. Condense, do
+   not summarize: every rule, number, and owner in the source survives, and no
+   sentence is there only to bridge two others.
 4. sops.json with every page in the doc, module or null.
 5. Fill track.json modules[]. The track index shows scorecards first.
 6. Search index entries, 8 or more tags each. CHANGELOG line.
@@ -382,8 +389,10 @@ at one.
    "Step 5 decisions" heading.
 2. Diff every scorecard JSON against its ClickUp page. Any figure that differs is a
    finding, not a fix: list it for Olivia to resolve in ClickUp first.
-3. Voice audit across content/ and app/: banned list, em dashes, lists of exactly
-   three, contrast framing. Fix in place.
+3. Full no-AI pass across every module in content/ and app/, all tracks: banned
+   list, em dashes, lists of exactly three, contrast framing, paired fragments,
+   adverb padding, sentences that restate the previous one. Fix in place. Read every
+   module body for this step; it is the one step that loads them all.
 4. Confirm every route is in the search index and every SOP page ID in ClickUp appears
    in exactly one sops.json.
 5. Print the open Figure list grouped by the tool it needs a login for (GitHub,
