@@ -207,7 +207,7 @@ link to it instead of redrawing it.
 | # | Module | Source |
 |---|---|---|
 | 01 | Onboarding at GPC | The 47 tasks in list `901220437555`, grouped: Paperwork (4), Systems and Tools (8), Learn About GPC (7), ClickUp University (20, rendered collapsed), First Week Calls (5), Your Role Handbook (1, links to /roles). Every row links its ClickUp task. |
-| 02 | GitHub Basics | Existing page. Cut to budget, convert the six `shot` labels into `Figure` placeholders, add one SVG of the branch-commit-PR-merge loop (v0.1 had one; it was lost in the rebuild). |
+| 02 | GitHub Basics | Existing page. Cut to the sentences that teach, convert the six `shot` labels into `Figure` placeholders, add one SVG of the branch-commit-PR-merge loop (v0.1 had one; it was lost in the rebuild). |
 | CF | Core Fundamentals | Section of doorway cards, see below |
 
 Core Fundamentals cards:
