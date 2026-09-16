@@ -3,8 +3,9 @@ import path from "node:path";
 
 export type RoleSeat = {
   name: string;
-  /** Present once that seat's scorecard page ships. Absent seats render as
-   * "not yet on this site" on /roles, linking out to clickupDocUrl instead. */
+  /** Present once that seat's scorecard page ships. A track's own index
+   * page (not /roles) is what shows "not yet on this site" for a seat
+   * without one, linking out to clickupDocUrl instead. */
   scorecardHref?: string;
 };
 
@@ -26,9 +27,8 @@ export type RoleTrack = {
 };
 
 /**
- * Order matches the seat order the Roles index renders in: Workflow PC,
- * Workshop PC, Engineer, Project Manager, Operations Manager, Marketing
- * Manager, Sales Setter, Sales Closer.
+ * Order matches the card order /roles renders in: Process Consulting,
+ * Engineering, Project Management, Operations, Marketing, Sales.
  */
 export const ROLE_TRACK_KEYS = [
   "process-consulting",
@@ -49,9 +49,4 @@ export function readTrack(key: RoleTrackKey): RoleTrack {
 
 export function readAllTracks(): RoleTrack[] {
   return ROLE_TRACK_KEYS.map(readTrack);
-}
-
-/** Every seat across every track, in the fixed Roles-index order. */
-export function readAllSeats(): { track: RoleTrack; seat: RoleSeat }[] {
-  return readAllTracks().flatMap((track) => track.seats.map((seat) => ({ track, seat })));
 }

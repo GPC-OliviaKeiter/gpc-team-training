@@ -1,22 +1,18 @@
 /**
- * One card on /roles per seat. Three states:
- * - live: `href` is set (that seat's scorecard page exists). The whole card
- *   is a link and opens the scorecard directly.
- * - stub: no `href` yet, but the seat is real. Shows `fallbackText` and
- *   links out to the seat's ClickUp handbook (`fallbackHref`) instead of a
- *   dead internal link.
- * - placeholder: no `href` and no `fallbackHref` (the CEO seat today, which
- *   has no ClickUp handbook at all). No link anywhere on the card.
+ * One card on /roles per track. Two states:
+ * - live: `href` is set (the track has its own /roles/<track> index page,
+ *   true for all six real tracks, stub content or not). The whole card is
+ *   a link and opens the track index directly.
+ * - placeholder: no `href` (the CEO seat today, which has no track at all).
+ *   Shows `fallbackText` and links nowhere.
  */
 export function RoleCard({
   name,
   href,
-  fallbackHref,
   fallbackText,
 }: {
   name: string;
   href?: string;
-  fallbackHref?: string;
   fallbackText?: string;
 }) {
   const body = (
@@ -28,7 +24,7 @@ export function RoleCard({
       <h3 className="font-display text-xl font-normal">{name}</h3>
       {href ? (
         <span className="mt-auto pt-2 font-mono text-[11px] font-semibold tracking-[0.08em] text-gpc-primary-red uppercase">
-          Open scorecard →
+          Open track →
         </span>
       ) : (
         <p className="mt-auto pt-2 text-[13px] leading-snug text-muted-foreground">{fallbackText}</p>
@@ -39,14 +35,6 @@ export function RoleCard({
   if (href) {
     return (
       <a href={href} className="block h-full">
-        {body}
-      </a>
-    );
-  }
-
-  if (fallbackHref) {
-    return (
-      <a href={fallbackHref} target="_blank" rel="noreferrer" className="block h-full">
         {body}
       </a>
     );

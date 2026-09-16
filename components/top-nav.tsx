@@ -2,21 +2,25 @@ import { SearchBox } from "./search-box";
 
 const TABS = [
   { href: "/", label: "Overview" },
-  { href: "/grant-way", label: "The Grant Way" },
   { href: "/roles", label: "Roles" },
 ] as const;
 
 /**
  * Persistent top-level tab bar. "General first tab, then the tracks underneath
  * it": Overview is org-wide onboarding; everything after it is role-specific.
- * Roles is a card grid, one card per seat (see /roles); each seat's own
- * track (Process Consulting, Sales, Engineering, ...) lives under
- * /roles/<track> and still highlights this same "Roles" tab.
+ * Roles is a card grid, one card per track (see /roles); each track
+ * (Process Consulting, Sales, Engineering, ...) lives under /roles/<track>
+ * and still highlights this same "Roles" tab. The Grant Way isn't its own
+ * tab: Grant personally does every role, so its content is scoped to
+ * whichever role it's sourced from (Process Consulting today, via that
+ * track's own doorway at /roles/process-consulting/the-grant-way) and reads
+ * as "Roles" active, not a company-wide fourth tab. See README's "Grant Way
+ * lives inside a role" for why.
  */
 export function TopNav({
   active,
 }: {
-  active?: "overview" | "grant-way" | "roles";
+  active?: "overview" | "roles";
 }) {
   return (
     <div className="border-b border-border bg-card">

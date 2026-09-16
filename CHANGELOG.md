@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-09-16 (v0.8.1, Roles is one card per track, Grant Way moves under Process Consulting)
+
+Navigation fix after v0.8 shipped: `/roles` had no way to reach Process
+Consulting at all. It showed "Workflow PC" and "Workshop PC" as two separate
+seat cards, each opening straight to a scorecard, with the track index (and
+its new SOP index) reachable only via a breadcrumb link on the scorecard
+page. Not discoverable.
+
+**`/roles` now shows one card per track, not one per seat.** `RoleCard` drops
+its ClickUp-fallback state (dead now that every track has its own index page,
+stub or not) and its label changes from "Open scorecard" to "Open track."
+`lib/roles.ts` drops `readAllSeats`, now unused. A multi-seat track like
+Process Consulting is one role: its own index page already lists both
+scorecards up top, so nothing about reaching either scorecard got harder.
+
+**The Grant Way is no longer a top-level tab.** Reopens the Navigation
+decision in the plan doc: Grant personally does every role, so its content
+is scoped to whichever role it's sourced from, not a company-wide fourth
+tab next to Overview and Roles. Today that's Process Consulting; other
+tracks get their own Grant Way doorway once their own past-call content
+exists. `components/top-nav.tsx` drops the tab, `components/module-shell.tsx`
+drops the `"grant-way"` track type, and all eight Grant Way module pages
+render `track="roles"` with a breadcrumb that starts at Process Consulting
+instead of `track="grant-way"` starting at a standalone index. The module
+pages keep their existing `/grant-way/<module>` URLs unchanged, so nothing
+that already links to one breaks; only the bare `/grant-way` index redirects,
+permanently, to `/roles/process-consulting/the-grant-way`, which is now the
+only doorway rather than a second one.
+
 ## 2026-09-16 (v0.8, component kit and Process Consulting copy cut)
 
 **Five new components, each documented in its own file.** `figure.tsx` is
