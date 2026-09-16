@@ -1,9 +1,9 @@
 import { TopNav } from "@/components/top-nav";
 import { RoleCard } from "@/components/role-card";
-import { readAllSeats } from "@/lib/roles";
+import { readAllTracks } from "@/lib/roles";
 
 export default function Page() {
-  const seats = readAllSeats();
+  const tracks = readAllTracks();
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -25,23 +25,17 @@ export default function Page() {
             Roles
           </h1>
           <p className="mt-5 max-w-[64ch] text-[17px] leading-relaxed text-muted-foreground">
-            One card per seat at GPC. Each card opens that seat&rsquo;s scorecard:
-            the mission, the KPIs, and what the role is actually held to. The
-            track underneath each scorecard carries the SOPs for running the
-            role day to day.
+            One card per role at GPC. Each card opens that role&rsquo;s track:
+            its scorecard (or scorecards, for a role with more than one seat),
+            the SOPs for running it day to day, and, where Grant&rsquo;s own
+            method for that role has been documented, its Grant Way modules.
           </p>
         </header>
 
         <section>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {seats.map(({ track, seat }) => (
-              <RoleCard
-                key={seat.name}
-                name={seat.name}
-                href={seat.scorecardHref}
-                fallbackHref={track.clickupDocUrl}
-                fallbackText="Scorecard not yet on this site. See the ClickUp handbook."
-              />
+            {tracks.map((track) => (
+              <RoleCard key={track.key} name={track.title} href={`/roles/${track.key}`} />
             ))}
             <RoleCard name="CEO" fallbackText="Scorecard not written yet. Owner: Grant Hushek." />
           </div>

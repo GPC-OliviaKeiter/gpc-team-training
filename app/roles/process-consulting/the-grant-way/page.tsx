@@ -30,11 +30,8 @@ export default function Page() {
           </h1>
           <p className="mt-5 max-w-[64ch] text-[17px] leading-relaxed text-muted-foreground">
             Grant personally does every role at GPC at some point, and each role
-            track gets its own doorway into the part of{" "}
-            <a href="/grant-way" className="text-primary underline underline-offset-2">
-              The Grant Way
-            </a>{" "}
-            that shows how he does it. For Process Consulting, that&rsquo;s the
+            track gets its own doorway into the part of the Grant Way that
+            shows how he does it. For Process Consulting, that&rsquo;s the
             whole playbook today: every module so far comes from Grant running
             this exact role. As Grant&rsquo;s method for other roles gets
             documented, they&rsquo;ll get their own version of this page.
@@ -73,11 +70,11 @@ export default function Page() {
 
         <footer className="mt-14 border-t border-foreground pt-6">
           <p className="max-w-[60ch] text-[13.5px] text-muted-foreground">
-            Same modules, same pages as the{" "}
-            <a href="/grant-way" className="text-primary underline underline-offset-2">
-              standalone Grant Way tab
-            </a>
-            . This page is a second doorway into them, not a second copy.
+            This is the only doorway into these modules: The Grant Way isn&rsquo;t
+            a company-wide tab, since every module so far is sourced from Grant
+            running this exact role. Each module&rsquo;s own page still lives at
+            its own URL under <code className="rounded-sm bg-secondary px-1.5 py-0.5 font-mono text-[12px]">/grant-way/&lt;module&gt;</code>,
+            so existing links keep working.
           </p>
         </footer>
       </main>

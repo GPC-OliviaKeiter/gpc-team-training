@@ -1,11 +1,14 @@
 # GPC Team Training
 
 The internal GPC training site: a Next.js app on GPC's real Design Starter tokens,
-one tab per track. **Overview** (org-wide, role-agnostic onboarding), **The Grant
-Way** (the workflow-consultant craft, sourced from real call transcripts), and
-**Roles** (a card grid, one card per seat at GPC, each opening that seat's
-scorecard and its own track of operational SOPs). More tracks land the same way,
-one role at a time: see "Adding a new track" below.
+two top-level tabs. **Overview** (org-wide, role-agnostic onboarding) and
+**Roles** (a card grid, one card per role at GPC, each opening that role's
+track: its scorecard or scorecards, its operational SOPs, and, where Grant's
+own method for that role has been documented from real call transcripts, its
+Grant Way modules). Grant Way isn't a separate tab: Grant personally does
+every role at GPC, so its content is scoped to whichever role it's sourced
+from, Process Consulting today, and lives inside that role's track. More
+tracks land the same way, one role at a time: see "Adding a new track" below.
 
 This is a living site. It grows one module at a time, as new people need to learn
 new things, and as more roles bring their own training in.
@@ -19,12 +22,14 @@ gpc-team-training/
 ├── app/
 │   ├── page.tsx                       <- Overview tab index
 │   ├── overview/github-basics/        <- Overview's one module so far
-│   ├── grant-way/                     <- The Grant Way: index + one route per playbook module
-│   ├── roles/page.tsx                 <- Roles tab index: one RoleCard per seat
+│   ├── grant-way/                     <- The Grant Way's content: one route per playbook module.
+│   │                                      No index page here anymore; /grant-way redirects to
+│   │                                      roles/process-consulting/the-grant-way below.
+│   ├── roles/page.tsx                 <- Roles tab index: one RoleCard per track
 │   ├── roles/process-consulting/      <- track index + scorecards + seven modules
 │   │   ├── scorecard-workflow/        <- Scorecard: Workflow PC
 │   │   ├── scorecard-workshop/        <- Scorecard: Workshop PC
-│   │   ├── the-grant-way/             <- Grant Way's 2nd doorway, scoped to this role (see below)
+│   │   ├── the-grant-way/             <- Grant Way's doorway, scoped to this role (see below)
 │   │   └── communication-guidelines/  <- how Grant writes to clients, sourced from real email
 │   └── roles/<sales|engineering|project-management|operations|marketing>/
 │                                       <- stub track index pages, content lands track by track
@@ -36,12 +41,12 @@ gpc-team-training/
 │   ├── top-nav.tsx                    <- the persistent tab bar + search box, on every page
 │   ├── search-box.tsx                 <- the top-nav "ask a question" input, live dropdown of matches
 │   ├── module-shell.tsx               <- shared page chrome + the Sources footer
-│   ├── role-card.tsx                  <- one seat card on /roles (live, stub, or placeholder)
+│   ├── role-card.tsx                  <- one track card on /roles (live or placeholder)
 │   └── scorecard.tsx                  <- renders a seat's scorecard JSON
 ├── app/search/page.tsx                <- full search results page (/search?q=...)
 ├── lib/
 │   ├── search-index.ts                <- hand-tagged index of every module, across all tracks
-│   ├── grant-way-modules.ts           <- the Grant Way module list, shared by both of its doorways
+│   ├── grant-way-modules.ts           <- the Grant Way module list, read by its one doorway page
 │   ├── citations.ts                   <- registry mapping Grant Way's [tag] citations to transcripts
 │   ├── annotate-citations.ts          <- turns [tag] into a superscript link, leaves other brackets alone
 │   ├── module-markdown.ts             <- reads a Grant Way module from vendor/, applies citations
@@ -90,19 +95,23 @@ linked live. A scorecard is different again: `content/roles/<track>/scorecard-<s
 is copied field for field from that seat's ClickUp scorecard page, so its
 KPI figures can be diffed against ClickUp directly.
 
-## Grant Way lives in two places
+## Grant Way lives inside a role
 
-Grant personally does every role at GPC at some point, so The Grant Way isn't
-only a standalone tab: each role track also gets its own doorway into the
-part of the playbook that shows how Grant does that specific role.
+The Grant Way isn't its own top-level tab. Grant personally does every role
+at GPC at some point, so each role track gets its own doorway into the part
+of the playbook that shows how Grant does that specific role.
 `/roles/process-consulting/the-grant-way` is the first one, and today it's
-essentially the whole playbook, since every module so far comes from Grant
-running the process-consultant role. `lib/grant-way-modules.ts` holds the
-module list once; both `/grant-way` and `/roles/process-consulting/the-grant-way`
-render it, so there's one array to update and two navigational entry points,
-not two copies of the content. When Grant's method for another role
-(engineering, ops, whatever's next) gets documented, that role's track gets
-the same kind of doorway, scoped to its own modules.
+the whole playbook, since every module so far comes from Grant running the
+process-consultant role. `lib/grant-way-modules.ts` holds the module list;
+the doorway page renders it. The module pages themselves still live at their
+own `/grant-way/<module>` URLs (unmoved, so nothing that links to one
+breaks), but their page chrome reads as being under Roles > Process
+Consulting, not a fourth tab: `track="roles"` on `ModuleShell`, and a
+breadcrumb that starts at Process Consulting. `/grant-way` (the bare index)
+permanently redirects to the doorway. When Grant's method for another role
+(engineering, ops, whatever's next) gets documented from that role's own
+call transcripts, that role's track gets the same kind of doorway, scoped
+to its own modules, not a subfolder of this one.
 
 ## Citations are hidden, not deleted
 
