@@ -7,7 +7,12 @@ import { searchIndex, type SearchResult } from "@/lib/search-index";
 const TRACK_COLOR: Record<SearchResult["track"], string> = {
   Overview: "text-muted-foreground",
   "The Grant Way": "text-gpc-primary-red",
-  "Workflow Consulting": "text-gpc-secondary-purple",
+  "Process Consulting": "text-gpc-secondary-purple",
+  Sales: "text-gpc-secondary-orange",
+  Engineering: "text-gpc-neutral-400",
+  "Project Management": "text-primary",
+  Operations: "text-gpc-secondary-yellow",
+  Marketing: "text-gpc-secondary-purple",
 };
 
 /**

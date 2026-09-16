@@ -9,8 +9,9 @@ export type GrantWayModule = {
 
 /**
  * The Grant Way's module list, shared by two pages: the standalone /grant-way
- * tab, and /workflow-consulting/the-grant-way, the same modules surfaced from
- * inside the Workflow Consulting track. One array, two doorways. See
+ * tab, and /roles/process-consulting/the-grant-way, the same modules
+ * surfaced from inside the Process Consulting track. One array, two
+ * doorways, more to come as other role tracks get their own. See
  * "Grant Way lives in two places" in README.md.
  */
 export const GRANT_WAY_MODULES: GrantWayModule[] = [

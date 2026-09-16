@@ -1,0 +1,11 @@
+{
+  "_comment": "Step 1 allowlist: the six Process Consulting modules moved as-is from Workflow Consulting, before Step 2's copy cut adds a table, Figure, or svg to each. Listed routes warn instead of fail the visual rule. Step 2 deletes this file and cuts every module below to pass clean.",
+  "routes": [
+    "/roles/process-consulting/onboarding-a-partner",
+    "/roles/process-consulting/running-the-engagement",
+    "/roles/process-consulting/managing-the-relationship",
+    "/roles/process-consulting/closing-out",
+    "/roles/process-consulting/github-and-vercel",
+    "/roles/process-consulting/communication-guidelines"
+  ]
+}

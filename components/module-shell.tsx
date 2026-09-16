@@ -3,7 +3,7 @@ import { TopNav } from "./top-nav";
 import { citationHref, type NumberedSource } from "@/lib/annotate-citations";
 
 type Crumb = { label: string; href?: string };
-type Track = "overview" | "grant-way" | "workflow-consulting";
+type Track = "overview" | "grant-way" | "roles";
 
 export function ModuleShell({
   track,

@@ -1,0 +1,10 @@
+{
+  "title": "Operations",
+  "eyebrow": "Roles · Operations Manager Handbook",
+  "lede": "Partner onboarding, the Operations Manager's share of the cross-role lifecycle. Source of truth is GPC's ClickUp Operations Manager handbook until modules land here.",
+  "clickupDocUrl": "https://app.clickup.com/9012022270/docs/8cjh2zy-180872",
+  "seats": [
+    { "name": "Operations Manager" }
+  ],
+  "modules": []
+}

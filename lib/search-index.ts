@@ -12,7 +12,15 @@
  */
 
 export type SearchEntry = {
-  track: "Overview" | "The Grant Way" | "Workflow Consulting";
+  track:
+    | "Overview"
+    | "The Grant Way"
+    | "Process Consulting"
+    | "Sales"
+    | "Engineering"
+    | "Project Management"
+    | "Operations"
+    | "Marketing";
   title: string;
   href: string;
   blurb: string;
@@ -117,19 +125,31 @@ export const SEARCH_INDEX: SearchEntry[] = [
     ],
   },
   {
-    track: "Workflow Consulting",
-    title: "Role Overview",
-    href: "/workflow-consulting/role-overview",
-    blurb: "The Process Consultant scorecard: mission, outcomes, competencies.",
+    track: "Process Consulting",
+    title: "Scorecard: Workflow PC",
+    href: "/roles/process-consulting/scorecard-workflow",
+    blurb: "The Workflow Process Consultant scorecard: mission, KPIs, outcomes, competencies.",
     tags: [
-      "role overview", "scorecard", "mission", "outcomes", "competencies",
-      "kpi", "process consultant", "operating floor", "build sharpen scale",
+      "scorecard", "workflow pc", "mission", "outcomes", "competencies",
+      "kpi", "process consultant", "values in action", "cultural fit",
+      "operating floor", "capacity",
     ],
   },
   {
-    track: "Workflow Consulting",
+    track: "Process Consulting",
+    title: "Scorecard: Workshop PC",
+    href: "/roles/process-consulting/scorecard-workshop",
+    blurb: "The Workshop Process Consultant scorecard: mission, KPIs, outcomes, competencies.",
+    tags: [
+      "scorecard", "workshop pc", "workshop", "mission", "outcomes",
+      "competencies", "kpi", "process consultant", "values in action",
+      "cultural fit", "operating floor", "capacity",
+    ],
+  },
+  {
+    track: "Process Consulting",
     title: "Onboarding a Partner",
-    href: "/workflow-consulting/onboarding-a-partner",
+    href: "/roles/process-consulting/onboarding-a-partner",
     blurb: "The client kickoff call, the onboarding document, the engineering handover.",
     tags: [
       "onboarding", "client kickoff call", "onboarding document",
@@ -138,9 +158,9 @@ export const SEARCH_INDEX: SearchEntry[] = [
     ],
   },
   {
-    track: "Workflow Consulting",
+    track: "Process Consulting",
     title: "Running the Engagement",
-    href: "/workflow-consulting/running-the-engagement",
+    href: "/roles/process-consulting/running-the-engagement",
     blurb: "Weekly calls, Monday updates, and Workflow Assessment stakeholder interviews.",
     tags: [
       "weekly call", "weekly update", "monday update", "stakeholder interview",
@@ -149,9 +169,9 @@ export const SEARCH_INDEX: SearchEntry[] = [
     ],
   },
   {
-    track: "Workflow Consulting",
+    track: "Process Consulting",
     title: "Managing the Relationship",
-    href: "/workflow-consulting/managing-the-relationship",
+    href: "/roles/process-consulting/managing-the-relationship",
     blurb: "Client health, scope creep, and spotting the next engagement.",
     tags: [
       "scope creep", "upsell", "cross-sell", "nps survey", "client relationship",
@@ -159,9 +179,9 @@ export const SEARCH_INDEX: SearchEntry[] = [
     ],
   },
   {
-    track: "Workflow Consulting",
+    track: "Process Consulting",
     title: "Closing Out",
-    href: "/workflow-consulting/closing-out",
+    href: "/roles/process-consulting/closing-out",
     blurb: "The three PC-owned action items that move a partner to Offboarding.",
     tags: [
       "closeout", "close out", "offboarding", "post-deployment offer",
@@ -169,9 +189,9 @@ export const SEARCH_INDEX: SearchEntry[] = [
     ],
   },
   {
-    track: "Workflow Consulting",
+    track: "Process Consulting",
     title: "Tools: GitHub & Vercel",
-    href: "/workflow-consulting/github-and-vercel",
+    href: "/roles/process-consulting/github-and-vercel",
     blurb: "A curated path beyond GitHub Basics: reviewing PRs, reading a deployment.",
     tags: [
       "github", "vercel", "deployment", "pull request review", "rollback",
@@ -179,9 +199,9 @@ export const SEARCH_INDEX: SearchEntry[] = [
     ],
   },
   {
-    track: "Workflow Consulting",
+    track: "Process Consulting",
     title: "Communication Guidelines",
-    href: "/workflow-consulting/communication-guidelines",
+    href: "/roles/process-consulting/communication-guidelines",
     blurb: "How Grant actually writes to clients, sourced from real sent email.",
     tags: [
       "communication", "email", "client email", "1-3-1 method", "slack",
@@ -190,11 +210,11 @@ export const SEARCH_INDEX: SearchEntry[] = [
     ],
   },
   {
-    track: "Workflow Consulting",
+    track: "Process Consulting",
     title: "The Grant Way, for this role",
-    href: "/workflow-consulting/the-grant-way",
+    href: "/roles/process-consulting/the-grant-way",
     blurb: "The same eight Grant Way modules, surfaced from inside this track.",
-    tags: ["grant way", "workflow consultant role", "craft"],
+    tags: ["grant way", "process consultant role", "craft"],
   },
 ];
 

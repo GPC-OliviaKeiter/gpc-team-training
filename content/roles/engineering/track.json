@@ -1,0 +1,10 @@
+{
+  "title": "Engineering",
+  "eyebrow": "Roles · Engineering Handbook",
+  "lede": "Ticket to build, definition of done and QA, go-live and operate, access and credentials, handover and documentation. Source of truth is GPC's ClickUp Engineering handbook until modules land here.",
+  "clickupDocUrl": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752",
+  "seats": [
+    { "name": "Engineer" }
+  ],
+  "modules": []
+}

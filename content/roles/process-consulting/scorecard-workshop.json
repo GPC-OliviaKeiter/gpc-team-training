@@ -1,0 +1,88 @@
+{
+  "mission": "To Deliver high-quality AI Workshops that help partners understand where AI can improve their business, teach their teams how to use AI effectively, and turn workshop insights into clear opportunities for continued adoption.",
+  "capacity": "All hours in ClickUp by end of day Friday, 100% of weeks. Engagement capacity at full ramp is 3 active Workshops per month plus adoption plan work. Flag Grant and Savannah in advance if a week is trending past your contracted hours.",
+  "kpis": [
+    {
+      "name": "1. Workshop Readiness Rate",
+      "calculation": "Workshops with discovery, agenda, exercises, and participant materials finalized ≥2 business days before delivery ÷ total Workshops",
+      "target": "100%"
+    },
+    {
+      "name": "2. Workshop Delivery Quality",
+      "calculation": "Workshops delivered according to approved agenda/timing with no GPC-caused delivery issues ÷ total Workshops",
+      "target": "≥90%"
+    },
+    {
+      "name": "3. Participant Engagement Rate",
+      "calculation": "Participants completing required exercises/interactive activities ÷ total participants",
+      "target": "≥80%"
+    },
+    {
+      "name": "4. Actionable AI Opportunities Identified",
+      "calculation": "Number of documented partner-specific AI opportunities tied to real workflows/business problems",
+      "target": "≥3 per Workshop"
+    },
+    {
+      "name": "5. Next-Step Conversion Rate",
+      "calculation": "Workshops converting into a WFA, Adoption Plan, build, or other paid next step ÷ completed Workshops",
+      "target": "≥66%"
+    }
+  ],
+  "outcomes": [
+    {
+      "what": "Workshop preparation",
+      "howMeasured": "100% of Workshops have completed client discovery, finalized agenda, selected exercises, and participant materials before delivery",
+      "byWhen": "≥5 business days before Workshop"
+    },
+    {
+      "what": "Workshop delivery quality",
+      "howMeasured": "≥90% of Workshops are delivered according to the approved agenda and planned timing with no GPC-caused delivery issues",
+      "byWhen": "Per Workshop"
+    },
+    {
+      "what": "Participant engagement",
+      "howMeasured": "Greater than 80% of workshop participants logged in to the portal during the workshop period. This means unique users in the portal need to be over 80% of the attendance number.",
+      "byWhen": "Per Workshop"
+    },
+    {
+      "what": "AI opportunity identification",
+      "howMeasured": "Each Workshop produces a documented list of at least 3 partner-specific AI opportunities connected to actual workflows or business problems",
+      "byWhen": "Per Workshop"
+    },
+    {
+      "what": "Workshop follow-up",
+      "howMeasured": "Workshop recap, identified opportunities, and recommended next actions are delivered to the partner",
+      "byWhen": "≤5 business days post-Workshop"
+    },
+    {
+      "what": "Next-step conversion",
+      "howMeasured": "Track percentage of completed Workshops that convert into a Workflow Assessment, Adoption Plan, build, or other paid next-step engagement",
+      "byWhen": "Quarterly; ongoing"
+    }
+  ],
+  "competencies": [
+    { "body": "AI fluency and practical business application" },
+    { "body": "Group facilitation and presentation skills" },
+    { "body": "Teaching and translation for non-technical audiences" },
+    { "body": "Business-process discovery" },
+    { "body": "Clear written and verbal communication" }
+  ],
+  "values": [
+    {
+      "label": "Build-Sharpen-Scale",
+      "body": "Turns successful Workshop exercises, prompts, modules, and teaching methods into reusable assets that improve future Workshops."
+    },
+    {
+      "label": "Passion for Modern Solutions",
+      "body": "Teaches modern AI capabilities through practical applications that can improve the partner's real work."
+    },
+    {
+      "label": "Empathetic Ownership",
+      "body": "Meets the audience at their actual level of AI adoption and adjusts explanations so people leave able to use what they learned."
+    },
+    {
+      "label": "Be Decent, Be Direct",
+      "body": "Explains AI clearly, corrects misconceptions without making people feel stupid, and gives partners realistic recommendations."
+    }
+  ]
+}

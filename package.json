@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check": "node scripts/check-content.mjs"
   },
   "dependencies": {
     "marked": "^18.0.12",
