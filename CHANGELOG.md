@@ -1,5 +1,50 @@
 # Changelog
 
+## 2026-09-16 (v1.3, Operations and Marketing tracks: the last two of Step 4)
+
+Step 4d, the final step of the handbooks buildout. `content/roles/operations/`,
+`app/roles/operations/`, `content/roles/marketing/`, and `app/roles/marketing/`
+fill in from ClickUp docs `8cjh2zy-180872` (Operations) and `8cjh2zy-180932`
+(Marketing).
+
+**Operations is thin by design**, matching the plan. One scorecard,
+`scorecard-operations-manager.json`, copied field for field from
+`8cjh2zy-110272`. One module, Partner Onboarding: OM Responsibilities, the
+Operations Manager's slice of the cross-role onboarding sequence already
+documented end to end on Project Management's Partner Lifecycle page (three
+financial-tracking subtasks: Confirm Payment Initiation, Update Airtable
+Base, Receive First Invoice Payment). One SOP row. The track index carries a
+visible amber callout naming Savannah Higgins as owner for the rest of the
+role's SOPs, none of which are written yet.
+
+**Marketing gets three modules**: LinkedIn Playbook (why organic content,
+the 2:45 PM EST posting rhythm, the first-comment CTA convention, and the
+full commenting SOP with its Do/Don't table and keyword lists), Getting a
+Testimonial (the outreach and call-booking steps, and the six-question-group
+Epiphany Bridge framework for drawing out contrast), and Permissions and
+Design (the 16-permission Meta Graph API reference table and the brand
+design guidelines resource table, with a `<Figure>` placeholder for the
+brand assets folder screenshot).
+
+One scorecard, `scorecard-marketing-manager.json`, copied field for field
+from `8cjh2zy-110472`. `content/roles/marketing/sops.json`, 6 rows, one seat
+(`marketing-manager`) throughout: LinkedIn Overview/Posting/Commenting all
+point at module 01, the testimonial SOP at module 02, and the permissions
+and design-guidelines pages at module 03. The track index's SOP-index intro
+notes the 12 client testimonials stay in ClickUp, since they carry client
+names the site's copy rules don't allow outside Grant Way's sourced modules;
+a "Marketing Template" page under the same doc came back empty in ClickUp
+and is excluded outright, not named in the plan and not part of the 6-row
+count. A trailing amber callout flags that the scorecard's paid-media and
+Webflow duties have no SOP written yet. The LinkedIn Overview source text
+still said "GrantBot Consulting"; renamed to GPC in the condensed module for
+consistency with every other track on the site.
+
+**`lib/sops.ts`**: `SopSeat` gains `"operations-manager"` and
+`"marketing-manager"`.
+
+`npm run check` and `npm run build` both pass clean.
+
 ## 2026-09-16 (v1.2, Project Management track: the swimlane module, five modules, one scorecard)
 
 Step 4c. `content/roles/project-management/` and `app/roles/project-management/`

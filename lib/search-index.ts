@@ -453,6 +453,68 @@ export const SEARCH_INDEX: SearchEntry[] = [
       "internal sop template",
     ],
   },
+  {
+    track: "Operations",
+    title: "Scorecard: Operations Manager",
+    href: "/roles/operations/scorecard-operations-manager",
+    blurb: "What the Operations Manager seat is held to: margin, delivery utilization, data accuracy, and client health.",
+    tags: [
+      "operations manager scorecard", "operations kpis", "accounts at target margin",
+      "delivery utilization", "operating data accuracy", "client health rate",
+      "capacity", "operations mission",
+    ],
+  },
+  {
+    track: "Operations",
+    title: "Partner Onboarding: OM Responsibilities",
+    href: "/roles/operations/partner-onboarding",
+    blurb: "The three financial-tracking subtasks owned by the Operations Manager during onboarding.",
+    tags: [
+      "partner onboarding", "operations manager", "confirm payment initiation",
+      "update airtable base", "first invoice payment", "financial tracking",
+    ],
+  },
+  {
+    track: "Marketing",
+    title: "Scorecard: Marketing Manager",
+    href: "/roles/marketing/scorecard-marketing-manager",
+    blurb: "What the Marketing Manager seat is held to: qualified pipeline, paid media efficiency, Webflow, and an always-on experiment cadence.",
+    tags: [
+      "marketing manager scorecard", "marketing kpis", "marketing sourced pipeline",
+      "roas", "mql to qualified opportunity", "landing page conversion",
+      "experiment execution rate", "marketing mission",
+    ],
+  },
+  {
+    track: "Marketing",
+    title: "LinkedIn Playbook",
+    href: "/roles/marketing/linkedin-playbook",
+    blurb: "Why organic content, the posting rhythm, and the commenting SOP.",
+    tags: [
+      "linkedin", "organic content", "posting rhythm", "commenting sop",
+      "first comment cta", "linkedin overview", "linkedin posting",
+    ],
+  },
+  {
+    track: "Marketing",
+    title: "Getting a Testimonial",
+    href: "/roles/marketing/getting-a-testimonial",
+    blurb: "The Epiphany Bridge framework for collecting a testimonial worth using.",
+    tags: [
+      "testimonial", "epiphany bridge", "before and after", "contrast",
+      "client story", "case study", "testimonial sop",
+    ],
+  },
+  {
+    track: "Marketing",
+    title: "Permissions and Design",
+    href: "/roles/marketing/permissions-and-design",
+    blurb: "The Meta Graph API permissions reference and brand design guidelines.",
+    tags: [
+      "meta graph api", "permissions reference", "business management",
+      "design guidelines", "brand assets", "design study", "website designs",
+    ],
+  },
 ];
 
 export type SearchResult = SearchEntry & { score: number };

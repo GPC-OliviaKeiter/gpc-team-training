@@ -1,8 +1,11 @@
 import { TopNav } from "@/components/top-nav";
+import { SopIndex } from "@/components/sop-index";
 import { readTrack } from "@/lib/roles";
+import { readSops } from "@/lib/sops";
 
 export default function Page() {
   const track = readTrack("marketing");
+  const sops = readSops("marketing");
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -39,30 +42,51 @@ export default function Page() {
           <h2 className="mb-5 font-display text-[26px] font-normal">Scorecards</h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {track.seats.map((seat) => (
-              <div key={seat.name} className="relative flex h-full flex-col gap-2 border border-border bg-card px-5 py-4">
-                <h3 className="font-display text-xl font-normal">{seat.name}</h3>
-                <p className="mt-auto pt-2 text-[13px] leading-snug text-muted-foreground">
-                  Scorecard not yet on this site. See it in the ClickUp handbook below.
-                </p>
-              </div>
+              <a key={seat.name} href={seat.scorecardHref} className="block h-full">
+                <div className="relative flex h-full flex-col gap-2 border border-foreground bg-card px-5 py-4 transition-colors hover:border-gpc-primary-red">
+                  <h3 className="font-display text-xl font-normal">{seat.name}</h3>
+                  <span className="mt-auto pt-2 font-mono text-[11px] font-semibold tracking-[0.08em] text-gpc-primary-red uppercase">
+                    Open scorecard →
+                  </span>
+                </div>
+              </a>
             ))}
           </div>
         </section>
 
         <section>
           <h2 className="mb-5 font-display text-[26px] font-normal">Modules</h2>
-          <p className="max-w-[64ch] text-[15px] leading-relaxed text-muted-foreground">
-            No modules ported yet. See the {track.title} handbook in{" "}
-            <a
-              href={track.clickupDocUrl}
-              className="text-primary underline underline-offset-2"
-              target="_blank"
-              rel="noreferrer"
-            >
-              ClickUp
-            </a>
-            .
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {track.modules.map((m) => (
+              <a key={m.num} href={m.href} className="block h-full">
+                <div className="relative flex h-full flex-col gap-2 border border-border bg-card px-5 py-4 transition-colors hover:border-gpc-primary-red">
+                  <span className="font-mono text-xs font-semibold text-muted-foreground">
+                    {m.num}
+                  </span>
+                  <h3 className="font-display text-xl font-normal">{m.title}</h3>
+                  <p className="text-[14.5px] leading-snug text-muted-foreground">
+                    {m.blurb}
+                  </p>
+                  <span className="mt-auto pt-2 font-mono text-[11px] font-semibold tracking-[0.08em] text-gpc-primary-red uppercase">
+                    Open module →
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-14">
+          <h2 className="mb-2 font-display text-[26px] font-normal">SOP index</h2>
+          <p className="mb-5 max-w-[64ch] text-[14.5px] leading-relaxed text-muted-foreground">
+            Every SOP page in the Marketing ClickUp handbook. The 12 client
+            testimonials stay in ClickUp, since they carry client names.
           </p>
+          <SopIndex sops={sops} modules={track.modules} />
+          <div className="mt-4 border-l-4 border-gpc-secondary-yellow bg-gpc-secondary-light-yellow/40 px-5 py-4 text-[14px] leading-snug text-foreground">
+            The scorecard&rsquo;s paid-media and Webflow duties have no SOP
+            written yet.
+          </div>
         </section>
 
         <footer className="mt-14 border-t border-foreground pt-6">

@@ -1,0 +1,100 @@
+{
+  "mission": "To generate qualified pipeline through a scientific, always-on experiment cadence by owning campaign execution, Webflow, marketing attribution, lead routing, and channel performance, while continuously testing new ways to create demand for GPC.",
+  "capacity": "All time logged in ClickUp daily. Core operating metrics updated ahead of every relevant review. Flag Grant in advance if a week is trending past your contracted hours.",
+  "sourceUrl": "https://app.clickup.com/9012022270/docs/8cjh2zy-180932/8cjh2zy-110472",
+  "kpis": [
+    {
+      "name": "1. Marketing-Sourced Qualified Pipeline",
+      "calculation": "Dollar value of qualified sales opportunities sourced by marketing",
+      "target": "≥$750K/quarter when ramped"
+    },
+    {
+      "name": "2. Paid Media ROAS",
+      "calculation": "Collected marketing-sourced revenue ÷ paid media spend",
+      "target": "≥6x Q1, ≥5x Q2, ≥4x Q3, ≥4x Q4"
+    },
+    {
+      "name": "3. MQL to Qualified Opportunity Rate",
+      "calculation": "Marketing-generated leads accepted as qualified sales opportunities ÷ total MQLs",
+      "target": "≥30%"
+    },
+    {
+      "name": "4. Landing Page Conversion Rate",
+      "calculation": "Leads generated ÷ qualified landing-page visitors",
+      "target": "≥3.5% or approved page-specific target"
+    },
+    {
+      "name": "5. Experiment Execution Rate",
+      "calculation": "Required experiments completed with hypothesis, metric, budget, scale/stop decision, and postmortem",
+      "target": "1/month plus 1 quarterly big bet; 100% postmortems ≤72h"
+    }
+  ],
+  "outcomes": [
+    {
+      "what": "Always-on experiments",
+      "howMeasured": "1 monthly experiment and 1 quarterly big bet active at all times; each has a documented hypothesis, target metric, budget, and kill/scale rule; postmortem completed ≤72h after the experiment ends",
+      "byWhen": "Monthly / quarterly; ongoing"
+    },
+    {
+      "what": "Lead generation quality",
+      "howMeasured": "≥60 ICP MQLs/month when ramped; ≥30% MQL to qualified opportunity; marketing-sourced qualified pipeline ≥$750K/quarter when ramped",
+      "byWhen": "Monthly / quarterly; ongoing"
+    },
+    {
+      "what": "Webflow ownership",
+      "howMeasured": "Accountable for publishing, copy, and design direction; pages ship ≤5 business days from an approved brief and hit ≥3.5% conversion or the agreed page-specific target",
+      "byWhen": "Ongoing"
+    },
+    {
+      "what": "Lead routing and attribution",
+      "howMeasured": "100% of marketing-generated leads enter HubSpot with source, campaign, and UTM data; attribution coverage ≥95%; ≥98% of qualified leads routed to the Setter; routing failures corrected within 1 business day",
+      "byWhen": "Weekly audit; ongoing"
+    },
+    {
+      "what": "Spend discipline",
+      "howMeasured": "Stay within approved budget ±10%; budget increases deployed only when prior-quarter performance supports scaling; underperforming campaigns stopped or materially changed within 7 days of falling below threshold",
+      "byWhen": "Monthly; ongoing"
+    },
+    {
+      "what": "GTM engineering opportunities",
+      "howMeasured": "Submit ≥1 qualified automation or GTM engineering brief per month when a technical build could materially improve acquisition, conversion, personalization, or marketing ops, including problem, proposed outcome, and success metric",
+      "byWhen": "Monthly; ongoing"
+    },
+    {
+      "what": "Channel exploration",
+      "howMeasured": "Test ≥1 new acquisition channel or tactic per quarter with a documented hypothesis, target metric, result, and scale/stop decision",
+      "byWhen": "Quarterly; ongoing"
+    },
+    {
+      "what": "Paid acquisition efficiency",
+      "howMeasured": "Maintain paid-media ROAS of ≥6x Q1, ≥5x Q2, ≥4x Q3, ≥4x Q4, measured on collected marketing-sourced revenue",
+      "byWhen": "Monthly; reviewed quarterly"
+    }
+  ],
+  "competencies": [
+    { "body": "Paid ad experience: design, media buying, and performance analysis." },
+    { "body": "Direct-response copy and landing-page optimization." },
+    { "body": "Webflow and digital campaign execution." },
+    { "body": "Attribution, UTMs, and funnel analytics." },
+    { "body": "CAC, conversion, and pipeline economics." },
+    { "body": "GTM technology and automation literacy." }
+  ],
+  "values": [
+    {
+      "label": "Build-Sharpen-Scale.",
+      "body": "Turns winning pages, campaigns, audiences, and experiments into reusable systems, and kills low-performing tactics quickly."
+    },
+    {
+      "label": "Passion for Modern Solutions.",
+      "body": "Stays current on AI, automation, data providers, personalization, and modern GTM tooling, and uses them when they improve measurable performance."
+    },
+    {
+      "label": "Empathetic Ownership.",
+      "body": "Owns qualified pipeline and marketing spend outcomes, not activity volume. Spends company money like it's their own."
+    },
+    {
+      "label": "Be Decent, Be Direct.",
+      "body": "Reports results clearly, communicates what is and isn't working, and makes direct recommendations on what to scale, improve, or stop."
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "mission": "To build and operate the system that allows GPC to deliver profitably and predictably by owning capacity, profitability, operational controls, company reporting, account hygiene, and cross-functional accountability. The Ops Manager doesn't personally manage every project or client; they ensure the people who own those outcomes have the information, resources, systems, and accountability required to succeed.",
+  "capacity": "All time logged in ClickUp daily. Core operating metrics updated before every weekly leadership review. Flag Grant in advance if a week is trending past your contracted hours.",
+  "sourceUrl": "https://app.clickup.com/9012022270/docs/8cjh2zy-180872/8cjh2zy-110272",
+  "kpis": [
+    {
+      "name": "1. Accounts at Target Margin",
+      "calculation": "Active accounts meeting company gross-margin target ÷ total active accounts",
+      "target": "≥90%"
+    },
+    {
+      "name": "2. Delivery Utilization",
+      "calculation": "Productive/assigned delivery hours ÷ available delivery hours",
+      "target": "70-80% healthy; >80% for 2 weeks triggers action"
+    },
+    {
+      "name": "3. Operating Data Accuracy",
+      "calculation": "Active accounts with complete, reconciled revenue, cost, hours, contract, owner, health, and renewal data ÷ total active accounts",
+      "target": "100%"
+    },
+    {
+      "name": "4. Client Health Rate",
+      "calculation": "Green/healthy accounts ÷ total active accounts, paired with NPS",
+      "target": "≥90% healthy; NPS ≥8/10"
+    }
+  ],
+  "outcomes": [
+    {
+      "what": "Current revenue, cost, and profitability reporting",
+      "howMeasured": "100% of active accounts logged in Airtable with accurate data; accounts below target margin identified and escalated with a corrective action; no material profitability issue unidentified for more than one reporting cycle",
+      "byWhen": "Each weekly leadership review"
+    },
+    {
+      "what": "A forward-looking view of delivery capacity",
+      "howMeasured": "Rolling capacity forecast updated weekly, PTO/OOO reflected; when backlog exceeds two weeks or utilization exceeds 80% for two consecutive weeks, leadership gets a staffing recommendation within 48 hours",
+      "byWhen": "Each weekly leadership review"
+    },
+    {
+      "what": "One trustworthy view of company operating performance",
+      "howMeasured": "Core operating metrics updated before leadership review; delivery, profitability, capacity, and client-health data reconcile to source systems; no recurring manual reporting process stays undocumented",
+      "byWhen": "Each weekly leadership review"
+    },
+    {
+      "what": "An accurate operating record of every active client",
+      "howMeasured": "100% of active accounts have accurate client name, product/service, contract value, start/end date, engagement owner, PM, renewal date, health status, and account status, reconciled across ClickUp, CRM, and profitability reporting",
+      "byWhen": "Ongoing"
+    },
+    {
+      "what": "Consistent scope and profitability decisions",
+      "howMeasured": "Billable/non-billable policy documented and applied; scope exceptions resolved before creating material unplanned work; material commercial exceptions get leadership approval; no engineer makes an independent commercial concession",
+      "byWhen": "Ongoing"
+    },
+    {
+      "what": "Visibility into which accounts are healthy, at risk, or renewing",
+      "howMeasured": "100% of active accounts have a current health status; renewal dates visible forward-looking; at-risk accounts have a named owner; NPS collected from ≥90% of eligible clients quarterly, company NPS ≥8/10, every score below 8 has an owner and corrective action within 5 business days",
+      "byWhen": "Each weekly leadership review"
+    },
+    {
+      "what": "An operating system for company knowledge, without owning every SOP personally",
+      "howMeasured": "Every critical process has a named SOP owner and review date; process changes trigger a review; overdue or missing SOPs get assigned; repeated tribal-knowledge issues get documented",
+      "byWhen": "Ongoing"
+    },
+    {
+      "what": "Predictable staffing coverage",
+      "howMeasured": "PTO processed per policy; upcoming OOO visible to impacted teams; coverage risks communicated to PMs; resource conflicts addressed before affecting client commitments",
+      "byWhen": "Ongoing"
+    },
+    {
+      "what": "Growth actions",
+      "howMeasured": "Collect any 4 company-wide growth actions per quarter (video testimonial, case study, referral resulting in a qualified opportunity, or a new SOW from an existing client); Ops tracks the opportunity and assigns the client-facing owner",
+      "byWhen": "Quarterly"
+    }
+  ],
+  "competencies": [
+    { "body": "Operational systems thinking." },
+    { "body": "Financial and profitability literacy." },
+    { "body": "Capacity and workforce planning." },
+    { "body": "Cross-functional accountability." },
+    { "body": "Data and reporting discipline." },
+    { "body": "Process design and continuous improvement." },
+    { "body": "Direct executive communication." }
+  ],
+  "values": [
+    {
+      "label": "Build, Sharpen, Scale.",
+      "body": "Builds systems that reduce reliance on individual memory and manual intervention."
+    },
+    {
+      "label": "Passion for Modern Solutions.",
+      "body": "Automates recurring operating work when automation increases accuracy, speed, or visibility."
+    },
+    {
+      "label": "Empathetic Ownership.",
+      "body": "Protects both team capacity and client commitments rather than solving one at the expense of the other."
+    },
+    {
+      "label": "Be Decent, Be Direct.",
+      "body": "Surfaces operational problems early, names the owner, and creates a path to resolution."
+    }
+  ]
+}

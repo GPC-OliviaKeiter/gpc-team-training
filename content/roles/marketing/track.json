@@ -1,10 +1,29 @@
 {
   "title": "Marketing",
   "eyebrow": "Roles · Marketing Manager Handbook",
-  "lede": "The LinkedIn playbook, getting a testimonial, and permissions and design rules. Source of truth is GPC's ClickUp Marketing handbook until modules land here.",
+  "lede": "The LinkedIn playbook, getting a testimonial, and permissions and design rules. Rewritten from GPC's ClickUp Marketing handbook.",
   "clickupDocUrl": "https://app.clickup.com/9012022270/docs/8cjh2zy-180932",
   "seats": [
-    { "name": "Marketing Manager" }
+    { "name": "Marketing Manager", "scorecardHref": "/roles/marketing/scorecard-marketing-manager" }
   ],
-  "modules": []
+  "modules": [
+    {
+      "num": "01",
+      "title": "LinkedIn Playbook",
+      "blurb": "Why organic content, the posting rhythm, and the commenting SOP.",
+      "href": "/roles/marketing/linkedin-playbook"
+    },
+    {
+      "num": "02",
+      "title": "Getting a Testimonial",
+      "blurb": "The Epiphany Bridge framework for collecting a testimonial worth using.",
+      "href": "/roles/marketing/getting-a-testimonial"
+    },
+    {
+      "num": "03",
+      "title": "Permissions and Design",
+      "blurb": "The Meta Graph API permissions reference and brand design guidelines.",
+      "href": "/roles/marketing/permissions-and-design"
+    }
+  ]
 }

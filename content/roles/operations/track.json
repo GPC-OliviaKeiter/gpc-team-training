@@ -1,10 +1,17 @@
 {
   "title": "Operations",
   "eyebrow": "Roles · Operations Manager Handbook",
-  "lede": "Partner onboarding, the Operations Manager's share of the cross-role lifecycle. Source of truth is GPC's ClickUp Operations Manager handbook until modules land here.",
+  "lede": "Partner onboarding, the Operations Manager's share of the cross-role lifecycle. Rewritten from GPC's ClickUp Operations Manager handbook, thin by design: most of the role's SOPs aren't written yet.",
   "clickupDocUrl": "https://app.clickup.com/9012022270/docs/8cjh2zy-180872",
   "seats": [
-    { "name": "Operations Manager" }
+    { "name": "Operations Manager", "scorecardHref": "/roles/operations/scorecard-operations-manager" }
   ],
-  "modules": []
+  "modules": [
+    {
+      "num": "01",
+      "title": "Partner Onboarding: OM Responsibilities",
+      "blurb": "The three financial-tracking subtasks owned by the Operations Manager during onboarding.",
+      "href": "/roles/operations/partner-onboarding"
+    }
+  ]
 }

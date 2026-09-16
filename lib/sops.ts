@@ -8,7 +8,9 @@ export type SopSeat =
   | "setter"
   | "closer"
   | "engineer"
-  | "project-manager";
+  | "project-manager"
+  | "operations-manager"
+  | "marketing-manager";
 
 export type SopRow = {
   name: string;
