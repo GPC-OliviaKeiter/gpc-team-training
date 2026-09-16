@@ -1,0 +1,95 @@
+{
+  "mission": "To create qualified sales opportunities by rapidly responding to inbound demand and executing targeted outbound outreach, ensuring the Closer consistently receives qualified prospects who show up prepared for the sales conversation.",
+  "capacity": "All activity logged in HubSpot within 24 hours, every week; next step and date documented on every active lead. Flag Grant and Savannah in advance if lead volume or pipeline health puts the monthly meeting target at risk.",
+  "sourceUrl": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-112192",
+  "kpis": [
+    {
+      "name": "1. Qualified Showed Meetings",
+      "calculation": "Number of qualified prospects who actually attend the scheduled sales meeting",
+      "target": "≥44/month"
+    },
+    {
+      "name": "2. Closer Acceptance Rate",
+      "calculation": "Showed meetings accepted by the Closer as meeting qualification criteria ÷ total showed meetings",
+      "target": "≥80%"
+    },
+    {
+      "name": "3. Show Rate",
+      "calculation": "Prospects who attend ÷ total qualified meetings booked",
+      "target": "≥85%"
+    },
+    {
+      "name": "4. Inbound Speed-to-Lead",
+      "calculation": "Inbound leads receiving first response within 10 minutes during working hours ÷ total inbound leads received during working hours",
+      "target": "≥95%"
+    },
+    {
+      "name": "5. Handoff Completeness",
+      "calculation": "Qualified meetings with required research, discovery context, qualification data, and CRM notes completed before the sales call ÷ total qualified meetings",
+      "target": "100%"
+    }
+  ],
+  "outcomes": [
+    {
+      "what": "Qualified showed meetings",
+      "howMeasured": "≥44 qualified sales meetings show per month",
+      "byWhen": "Monthly; ongoing"
+    },
+    {
+      "what": "Meeting quality",
+      "howMeasured": "≥80% of showed meetings are accepted by the Closer as meeting the defined qualification criteria",
+      "byWhen": "Monthly; ongoing"
+    },
+    {
+      "what": "Show rate",
+      "howMeasured": "No-show rate ≤15% through confirmations, reminders, and follow-up",
+      "byWhen": "Monthly; ongoing"
+    },
+    {
+      "what": "Speed-to-lead",
+      "howMeasured": "≥95% of inbound leads receive first response within 10 minutes during working hours; remaining leads contacted within 2 business hours",
+      "byWhen": "Weekly; ongoing"
+    },
+    {
+      "what": "Qualification and research",
+      "howMeasured": "100% of booked meetings include required ICP and qualification information: company, stakeholder, need/pain, and relevant context",
+      "byWhen": "Per meeting; ongoing"
+    },
+    {
+      "what": "Handoff quality",
+      "howMeasured": "100% of qualified meetings have discovery context, relevant notes, and required CRM information completed before the Closer meeting",
+      "byWhen": "Per meeting; ongoing"
+    },
+    {
+      "what": "CRM hygiene",
+      "howMeasured": "100% of activities logged within 24h; next step and date documented on every active lead owned by Setter",
+      "byWhen": "Weekly audit"
+    }
+  ],
+  "competencies": [
+    { "body": "Prospecting and qualification." },
+    { "body": "Clear written and verbal communication." },
+    { "body": "Objection handling." },
+    { "body": "Research and ICP identification." },
+    { "body": "Time discipline and follow-through." },
+    { "body": "CRM rigor and data cleanliness." }
+  ],
+  "values": [
+    {
+      "label": "Build-Sharpen-Scale.",
+      "body": "Turns winning outreach, qualification questions, and follow-up sequences into repeatable templates and processes."
+    },
+    {
+      "label": "Passion for Modern Solutions.",
+      "body": "Uses AI, automation, and modern prospecting tools when they improve response rates, qualification, or efficiency."
+    },
+    {
+      "label": "Empathetic Ownership.",
+      "body": "Owns the quality of the meeting, not simply whether something appears on the calendar."
+    },
+    {
+      "label": "Be Decent, Be Direct.",
+      "body": "Communicates clearly with prospects, qualifies honestly, and does not force poor-fit leads into the sales process."
+    }
+  ]
+}

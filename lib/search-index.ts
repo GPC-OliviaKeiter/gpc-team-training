@@ -227,6 +227,92 @@ export const SEARCH_INDEX: SearchEntry[] = [
     blurb: "The same eight Grant Way modules, surfaced from inside this track.",
     tags: ["grant way", "process consultant role", "craft"],
   },
+  {
+    track: "Sales",
+    title: "Scorecard: Setter",
+    href: "/roles/sales/scorecard-setter",
+    blurb: "What the Setter seat is held to: speed to lead, meeting quality, and handoff quality.",
+    tags: [
+      "setter scorecard", "sales kpis", "speed to lead", "show rate",
+      "qualified meetings", "handoff completeness", "prospecting", "sales mission",
+    ],
+  },
+  {
+    track: "Sales",
+    title: "Scorecard: Closer",
+    href: "/roles/sales/scorecard-closer",
+    blurb: "What the Closer seat is held to: revenue, close rate, pipeline coverage, and clean handoffs.",
+    tags: [
+      "closer scorecard", "sales kpis", "close rate", "pipeline coverage",
+      "sales cycle", "forecast accuracy", "new revenue", "sales mission",
+    ],
+  },
+  {
+    track: "Sales",
+    title: "The Sales Process",
+    href: "/roles/sales/the-sales-process",
+    blurb: "The stage-by-stage motion from lead to delivery handoff, pipelines, and lead ownership.",
+    tags: [
+      "sales process", "hubspot stages", "pipeline", "prospects pipeline",
+      "referrals pipeline", "partnerships pipeline", "lead ownership",
+      "setter closer delivery", "blackout dates", "closed won", "closed lost",
+    ],
+  },
+  {
+    track: "Sales",
+    title: "Qualifying a Lead",
+    href: "/roles/sales/qualifying-a-lead",
+    blurb: "BANT, the Qualified Meeting Definition, fit signals, and pre-call preparation.",
+    tags: [
+      "bant", "budget authority need timing", "qualified meeting", "qualification",
+      "fit signals", "smof", "pre call preparation", "setter compensation",
+      "headcount pricing tier",
+    ],
+  },
+  {
+    track: "Sales",
+    title: "Discovery and Demo",
+    href: "/roles/sales/discovery-and-demo",
+    blurb: "Opening the call, the discovery question order, the Solution Demo stage, and post-call follow-up.",
+    tags: [
+      "discovery call", "discovery questions", "solution demo", "post call follow up",
+      "pitching", "objection handling phrases", "the last five minutes",
+      "case study request", "proposal follow up",
+    ],
+  },
+  {
+    track: "Sales",
+    title: "Proposal to Close",
+    href: "/roles/sales/proposal-to-close",
+    blurb: "Pricing and discount authority, the SOW and signature sequence, and the Sales-to-Delivery handoff.",
+    tags: [
+      "pricing authority", "discount approval", "sow", "pandadoc",
+      "out for signature", "closed won", "delivery handoff",
+      "sales to delivery handoff template", "closed lost nurture recycle",
+    ],
+  },
+  {
+    track: "Sales",
+    title: "CRM Discipline",
+    href: "/roles/sales/crm-discipline",
+    blurb: "The 12 CRM Commandments and HubSpot activity and logging standards.",
+    tags: [
+      "crm commandments", "hubspot", "crm hygiene", "deal source",
+      "append only fields", "logging standards", "hubspot notes",
+      "deal stage rules",
+    ],
+  },
+  {
+    track: "Sales",
+    title: "Prospect FAQ",
+    href: "/roles/sales/prospect-faq",
+    blurb: "The approved answers to common prospect questions, grouped by topic.",
+    tags: [
+      "prospect faq", "approved answers", "workshop pricing", "workflow assessment pricing",
+      "technical build pricing", "roi", "security compliance", "soc 2",
+      "escalation", "objection handling", "model agnostic",
+    ],
+  },
 ];
 
 export type SearchResult = SearchEntry & { score: number };

@@ -1,5 +1,44 @@
 # Changelog
 
+## 2026-09-16 (v1.0, Sales track: six modules, two scorecards, 22-row SOP index)
+
+Step 4a. `content/roles/sales/` and `app/roles/sales/` fill in from ClickUp doc
+`8cjh2zy-180892`, the same pattern as Process Consulting.
+
+**Two scorecards**, `scorecard-setter.json` and `scorecard-closer.json`, copied
+field for field from `8cjh2zy-112192` and `8cjh2zy-112212`. `track.json`'s
+seats gain `scorecardHref`, so both are also linked directly from the Sales
+card on `/roles` (see v0.8.2's `RoleCard`).
+
+**Six modules**, condensed from 19 ClickUp SOP pages and one template, at
+least one table or Figure each: The Sales Process (the stage-by-stage motion,
+pipelines, lead ownership, blackout dates), Qualifying a Lead (BANT, the
+Qualified Meeting Definition, fit signals, pre-call prep), Discovery and Demo
+(opening the call, the discovery question order, the phrases that land,
+post-call follow-up), Proposal to Close (pricing and discount authority, the
+SOW and signature sequence, the delivery handoff), CRM Discipline (the 12 CRM
+Commandments, HubSpot logging standards), and Prospect FAQ (all 9 approved-
+answer pages as one table grouped by topic, per the plan). Two ClickUp pages
+were empty at the source (Solution Demo Guide, Closed Lost / Nurture /
+Recycle): each module says so inline rather than inventing content, and
+Discovery and Demo's Solution Demo section is written from the Sales Process
+Overview's own stage description instead.
+
+**`content/roles/sales/sops.json`**, 22 rows: the 19 SOP pages plus the Sales
+→ Delivery Handoff template (a source for Module 04, so it earns a row even
+though the plan's index line only named "19 SOPs, 2 resources") plus the 2
+Sales Resources pages, index only. Seat tags split real ownership where the
+source does (`closer` for anything after the qualified meeting through
+delivery handoff, `setter` for the Qualified Meeting Definition and the two
+prospecting resources, `both` for what covers the whole motion), unlike
+Process Consulting where every row was the same seat.
+
+**Core Fundamentals' "Pitching" card goes live**, linking
+`/roles/sales/discovery-and-demo` now that it exists; v0.9 shipped it
+coming-soon because Sales had no modules yet.
+
+`npm run check` and `npm run build` both pass clean.
+
 ## 2026-09-16 (v0.9, Overview: onboarding checklist, Core Fundamentals, GitHub Basics cut)
 
 **Module 01: Onboarding at GPC**, new. `content/overview/onboarding.json`

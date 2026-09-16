@@ -1,0 +1,100 @@
+{
+  "mission": "Convert qualified demand into profitable revenue through rigorous discovery, clear recommendations, strong proposals, and disciplined closing, while owning expansion and renewal sales and handing every closed engagement cleanly into delivery.",
+  "capacity": "All activity logged in HubSpot within 24 hours, every week; next step and date documented on every active opportunity. Flag Grant and Savannah in advance if pipeline coverage falls under 3x target or a forecast is trending off.",
+  "sourceUrl": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-112212",
+  "kpis": [
+    {
+      "name": "1. New Contracted Revenue",
+      "calculation": "Total new contracted revenue Closed Won during the month",
+      "target": "≥$105,000/month"
+    },
+    {
+      "name": "2. Close Rate",
+      "calculation": "Qualified sales opportunities Closed Won ÷ total qualified sales opportunities decided",
+      "target": "≥20%"
+    },
+    {
+      "name": "3. Pipeline Coverage",
+      "calculation": "Active qualified pipeline value ÷ monthly revenue target",
+      "target": "≥3x target, or ≥$315K"
+    },
+    {
+      "name": "4. Sales Cycle Length",
+      "calculation": "Median days from first Closer meeting to Closed Won/Lost",
+      "target": "≤21 days"
+    },
+    {
+      "name": "5. Expansion & Renewal Execution",
+      "calculation": "Qualified expansion opportunities with commercial next step within 2 business days; contracts approaching renewal with documented commercial next step ≥60 days before expiration",
+      "target": "100%"
+    }
+  ],
+  "outcomes": [
+    {
+      "what": "New revenue target",
+      "howMeasured": "Close ≥$105,000 in new contracted revenue per month",
+      "byWhen": "Monthly; ongoing"
+    },
+    {
+      "what": "Close rate",
+      "howMeasured": "≥20% of qualified sales opportunities convert to Closed Won",
+      "byWhen": "Monthly; ongoing"
+    },
+    {
+      "what": "Pipeline coverage",
+      "howMeasured": "Maintain ≥3x monthly sales target in qualified active pipeline",
+      "byWhen": "Weekly; ongoing"
+    },
+    {
+      "what": "Sales velocity",
+      "howMeasured": "Median sales cycle ≤21 days from first Closer meeting to Closed Won/Lost; proposals delivered ≤3 business days after completed discovery",
+      "byWhen": "Monthly; ongoing"
+    },
+    {
+      "what": "Expansion and renewal execution",
+      "howMeasured": "100% of qualified expansion opportunities receive a documented commercial next step within 2 business days; 100% of contracts approaching renewal have a documented commercial next step ≥60 days before contract end",
+      "byWhen": "Weekly; ongoing"
+    },
+    {
+      "what": "Forecast accuracy",
+      "howMeasured": "Month-end closed revenue is within ±10% of forecast submitted at mid-month",
+      "byWhen": "Monthly"
+    },
+    {
+      "what": "CRM hygiene",
+      "howMeasured": "100% of new business, expansion, and renewal opportunities have required fields completed by stage; Next Step and Next Step Date on every active opportunity; activity logged within 24h",
+      "byWhen": "Weekly audit"
+    },
+    {
+      "what": "Clean handoff to delivery",
+      "howMeasured": "100% of Closed Won engagements include signed SOW, final scope, pricing, timeline, stakeholders, discovery context, and promises made, transferred to the appropriate delivery owner within 2 business days of signature",
+      "byWhen": "Per closed deal; ongoing"
+    }
+  ],
+  "competencies": [
+    { "body": "Consultative discovery and qualification." },
+    { "body": "Value articulation and business-case development." },
+    { "body": "Proposal writing and negotiation." },
+    { "body": "Deal strategy and closing discipline." },
+    { "body": "Commercial judgment across new business, expansion, and renewal." },
+    { "body": "CRM and forecasting discipline." }
+  ],
+  "values": [
+    {
+      "label": "Build-Sharpen-Scale.",
+      "body": "Turns winning discovery questions, proposals, objection responses, and closing strategies into reusable sales assets that improve future performance."
+    },
+    {
+      "label": "Passion for Modern Solutions.",
+      "body": "Understands GPC's AI and automation capabilities well enough to sell business outcomes rather than technology features."
+    },
+    {
+      "label": "Empathetic Ownership.",
+      "body": "Owns the quality of the revenue being sold, including whether GPC can successfully deliver what was promised."
+    },
+    {
+      "label": "Be Decent, Be Direct.",
+      "body": "Sets expectations plainly, asks hard budget and decision questions directly, says no to poor-fit work, and documents commitments clearly."
+    }
+  ]
+}

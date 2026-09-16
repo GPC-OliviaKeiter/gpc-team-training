@@ -27,7 +27,7 @@ const CORE_FUNDAMENTALS: FundamentalCard[] = [
   {
     title: "Pitching",
     blurb: "The discovery and demo craft: how GPC pitches an engagement.",
-    owner: "Coming soon, once Sales's own track lands (Step 4a)",
+    href: "/roles/sales/discovery-and-demo",
   },
   {
     title: "Selling",

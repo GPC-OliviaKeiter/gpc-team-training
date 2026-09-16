@@ -1,0 +1,156 @@
+[
+  {
+    "name": "Sales Process Overview",
+    "pageId": "8cjh2zy-112232",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-112232",
+    "seat": "both",
+    "module": "01"
+  },
+  {
+    "name": "Pipeline Guide",
+    "pageId": "8cjh2zy-111732",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-111732",
+    "seat": "both",
+    "module": "01"
+  },
+  {
+    "name": "Lead Ownership & Routing",
+    "pageId": "8cjh2zy-112272",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-112272",
+    "seat": "both",
+    "module": "01"
+  },
+  {
+    "name": "Blackout Dates Workflow",
+    "pageId": "8cjh2zy-113592",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-113592",
+    "seat": "both",
+    "module": "01"
+  },
+  {
+    "name": "BANT Rules",
+    "pageId": "8cjh2zy-112672",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-112672",
+    "seat": "both",
+    "module": "02"
+  },
+  {
+    "name": "Qualification Guide",
+    "pageId": "8cjh2zy-111792",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-111792",
+    "seat": "both",
+    "module": "02"
+  },
+  {
+    "name": "Qualified Meeting Definition",
+    "pageId": "8cjh2zy-112252",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-112252",
+    "seat": "setter",
+    "module": "02"
+  },
+  {
+    "name": "Pre Call Preperation",
+    "pageId": "8cjh2zy-112292",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-112292",
+    "seat": "both",
+    "module": "02"
+  },
+  {
+    "name": "Discovery Call Guide",
+    "pageId": "8cjh2zy-111752",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-111752",
+    "seat": "closer",
+    "module": "03"
+  },
+  {
+    "name": "Solution Demo Guide",
+    "pageId": "8cjh2zy-112312",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-112312",
+    "seat": "closer",
+    "module": "03"
+  },
+  {
+    "name": "Post-Call Follow-Up Standards",
+    "pageId": "8cjh2zy-111772",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-111772",
+    "seat": "both",
+    "module": "03"
+  },
+  {
+    "name": "Product Guide",
+    "pageId": "8cjh2zy-111672",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-111672",
+    "seat": "both",
+    "module": "04"
+  },
+  {
+    "name": "Pricing & Discount Authority",
+    "pageId": "8cjh2zy-112332",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-112332",
+    "seat": "closer",
+    "module": "04"
+  },
+  {
+    "name": "Proposal / SOW / Signature Process",
+    "pageId": "8cjh2zy-112352",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-112352",
+    "seat": "closer",
+    "module": "04"
+  },
+  {
+    "name": "Statement Of Work Creation",
+    "pageId": "8cjh2zy-112592",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-112592",
+    "seat": "closer",
+    "module": "04"
+  },
+  {
+    "name": "Closed Won → Delivery Handoff",
+    "pageId": "8cjh2zy-112372",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-112372",
+    "seat": "closer",
+    "module": "04"
+  },
+  {
+    "name": "Closed Lost / Nurture / Recycle",
+    "pageId": "8cjh2zy-112392",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-112392",
+    "seat": "closer",
+    "module": "04"
+  },
+  {
+    "name": "Sales → Delivery Handoff (template)",
+    "pageId": "8cjh2zy-112612",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-112612",
+    "seat": "closer",
+    "module": "04"
+  },
+  {
+    "name": "12 CRM Commandments",
+    "pageId": "8cjh2zy-111692",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-111692",
+    "seat": "both",
+    "module": "05"
+  },
+  {
+    "name": "Hubspot Activity And Logging Standards",
+    "pageId": "8cjh2zy-113092",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-113092",
+    "seat": "both",
+    "module": "05"
+  },
+  {
+    "name": "How To: Generate an ICP Primer Doc for Leads",
+    "pageId": "8cjh2zy-50832",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-50832",
+    "seat": "setter",
+    "module": null
+  },
+  {
+    "name": "How to: Scrape a Clay Event",
+    "pageId": "8cjh2zy-31972",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892/8cjh2zy-31972",
+    "seat": "setter",
+    "module": null
+  }
+]

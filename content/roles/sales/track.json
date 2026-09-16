@@ -1,11 +1,48 @@
 {
   "title": "Sales",
   "eyebrow": "Roles · Sales Handbook",
-  "lede": "Pipeline, qualification, discovery and demo, proposal to close, CRM discipline, and the approved answers to common prospect questions. Source of truth is GPC's ClickUp Sales handbook until modules land here.",
+  "lede": "Pipeline, qualification, discovery and demo, proposal to close, CRM discipline, and the approved answers to common prospect questions. Rewritten from GPC's ClickUp Sales handbook.",
   "clickupDocUrl": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892",
   "seats": [
-    { "name": "Sales Setter" },
-    { "name": "Sales Closer" }
+    { "name": "Sales Setter", "scorecardHref": "/roles/sales/scorecard-setter" },
+    { "name": "Sales Closer", "scorecardHref": "/roles/sales/scorecard-closer" }
   ],
-  "modules": []
+  "modules": [
+    {
+      "num": "01",
+      "title": "The Sales Process",
+      "blurb": "The stage-by-stage motion from lead to delivery handoff, pipelines, and lead ownership.",
+      "href": "/roles/sales/the-sales-process"
+    },
+    {
+      "num": "02",
+      "title": "Qualifying a Lead",
+      "blurb": "BANT, the Qualified Meeting Definition, fit signals, and pre-call preparation.",
+      "href": "/roles/sales/qualifying-a-lead"
+    },
+    {
+      "num": "03",
+      "title": "Discovery and Demo",
+      "blurb": "Opening the call, the discovery question order, the Solution Demo stage, and post-call follow-up.",
+      "href": "/roles/sales/discovery-and-demo"
+    },
+    {
+      "num": "04",
+      "title": "Proposal to Close",
+      "blurb": "Pricing and discount authority, the SOW and signature sequence, and the Sales-to-Delivery handoff.",
+      "href": "/roles/sales/proposal-to-close"
+    },
+    {
+      "num": "05",
+      "title": "CRM Discipline",
+      "blurb": "The 12 CRM Commandments and HubSpot activity and logging standards.",
+      "href": "/roles/sales/crm-discipline"
+    },
+    {
+      "num": "06",
+      "title": "Prospect FAQ",
+      "blurb": "The approved answers to common prospect questions, grouped by topic.",
+      "href": "/roles/sales/prospect-faq"
+    }
+  ]
 }
