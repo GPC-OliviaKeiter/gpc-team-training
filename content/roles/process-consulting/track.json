@@ -1,0 +1,54 @@
+{
+  "title": "Process Consulting",
+  "eyebrow": "Roles · Process Consultant Handbook",
+  "lede": "The operational side of running a Process Consultant engagement: onboarding, weekly cadence, relationship management, and closeout. Rewritten from GPC's ClickUp Process Consultant handbook. This is the how; The Grant Way is the craft, how Grant actually runs the calls these SOPs describe.",
+  "clickupDocUrl": "https://app.clickup.com/9012022270/docs/8cjh2zy-180912",
+  "seats": [
+    { "name": "Workflow PC", "scorecardHref": "/roles/process-consulting/scorecard-workflow" },
+    { "name": "Workshop PC", "scorecardHref": "/roles/process-consulting/scorecard-workshop" }
+  ],
+  "modules": [
+    {
+      "num": "01",
+      "title": "Onboarding a Partner",
+      "blurb": "The client kickoff call, the onboarding document, the engineering handover.",
+      "href": "/roles/process-consulting/onboarding-a-partner"
+    },
+    {
+      "num": "02",
+      "title": "Running the Engagement",
+      "blurb": "Weekly calls, Monday updates, and Workflow Assessment stakeholder interviews.",
+      "href": "/roles/process-consulting/running-the-engagement"
+    },
+    {
+      "num": "03",
+      "title": "Managing the Relationship",
+      "blurb": "Client health, scope creep, and spotting the next engagement.",
+      "href": "/roles/process-consulting/managing-the-relationship"
+    },
+    {
+      "num": "04",
+      "title": "Closing Out",
+      "blurb": "The three PC-owned action items that move a partner to Offboarding.",
+      "href": "/roles/process-consulting/closing-out"
+    },
+    {
+      "num": "05",
+      "title": "Tools: GitHub & Vercel",
+      "blurb": "A curated path beyond GitHub Basics: reviewing PRs, reading a deployment.",
+      "href": "/roles/process-consulting/github-and-vercel"
+    },
+    {
+      "num": "06",
+      "title": "Communication Guidelines",
+      "blurb": "How Grant actually writes to clients, sourced from real sent email.",
+      "href": "/roles/process-consulting/communication-guidelines"
+    },
+    {
+      "num": "07",
+      "title": "The Grant Way, for this role",
+      "blurb": "The same eight Grant Way modules, surfaced from inside this track.",
+      "href": "/roles/process-consulting/the-grant-way"
+    }
+  ]
+}

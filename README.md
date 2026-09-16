@@ -3,8 +3,9 @@
 The internal GPC training site: a Next.js app on GPC's real Design Starter tokens,
 one tab per track. **Overview** (org-wide, role-agnostic onboarding), **The Grant
 Way** (the workflow-consultant craft, sourced from real call transcripts), and
-**Workflow Consulting** (the operational SOPs for running an engagement). More
-tracks land the same way, one role at a time: see "Adding a new track" below.
+**Roles** (a card grid, one card per seat at GPC, each opening that seat's
+scorecard and its own track of operational SOPs). More tracks land the same way,
+one role at a time: see "Adding a new track" below.
 
 This is a living site. It grows one module at a time, as new people need to learn
 new things, and as more roles bring their own training in.
@@ -19,14 +20,24 @@ gpc-team-training/
 │   ├── page.tsx                       <- Overview tab index
 │   ├── overview/github-basics/        <- Overview's one module so far
 │   ├── grant-way/                     <- The Grant Way: index + one route per playbook module
-│   └── workflow-consulting/           <- Workflow Consulting: index + eight modules
-│       ├── the-grant-way/             <- Grant Way's 2nd doorway, scoped to this role (see below)
-│       └── communication-guidelines/  <- how Grant writes to clients, sourced from real email
-├── content/workflow-consulting/*.md   <- Workflow Consulting's module source (rewritten from ClickUp)
+│   ├── roles/page.tsx                 <- Roles tab index: one RoleCard per seat
+│   ├── roles/process-consulting/      <- track index + scorecards + seven modules
+│   │   ├── scorecard-workflow/        <- Scorecard: Workflow PC
+│   │   ├── scorecard-workshop/        <- Scorecard: Workshop PC
+│   │   ├── the-grant-way/             <- Grant Way's 2nd doorway, scoped to this role (see below)
+│   │   └── communication-guidelines/  <- how Grant writes to clients, sourced from real email
+│   └── roles/<sales|engineering|project-management|operations|marketing>/
+│                                       <- stub track index pages, content lands track by track
+├── content/
+│   ├── roles/<track>/track.json       <- title, eyebrow, lede, clickupDocUrl, seats[], modules[]
+│   ├── roles/<track>/scorecard-<seat>.json  <- one scorecard per seat, schema in lib/scorecard.ts
+│   └── roles/<track>/*.md             <- module source (rewritten from ClickUp)
 ├── components/
 │   ├── top-nav.tsx                    <- the persistent tab bar + search box, on every page
 │   ├── search-box.tsx                 <- the top-nav "ask a question" input, live dropdown of matches
-│   └── module-shell.tsx               <- shared page chrome + the Sources footer
+│   ├── module-shell.tsx               <- shared page chrome + the Sources footer
+│   ├── role-card.tsx                  <- one seat card on /roles (live, stub, or placeholder)
+│   └── scorecard.tsx                  <- renders a seat's scorecard JSON
 ├── app/search/page.tsx                <- full search results page (/search?q=...)
 ├── lib/
 │   ├── search-index.ts                <- hand-tagged index of every module, across all tracks
@@ -34,7 +45,13 @@ gpc-team-training/
 │   ├── citations.ts                   <- registry mapping Grant Way's [tag] citations to transcripts
 │   ├── annotate-citations.ts          <- turns [tag] into a superscript link, leaves other brackets alone
 │   ├── module-markdown.ts             <- reads a Grant Way module from vendor/, applies citations
-│   └── wc-markdown.ts                 <- reads a Workflow Consulting module (no citation pass)
+│   ├── role-markdown.ts               <- reads a role-track module doc, by track + filename
+│   ├── roles.ts                       <- reads track.json: seats, modules, the six track keys
+│   └── scorecard.ts                   <- reads and validates a seat's scorecard JSON
+├── scripts/
+│   ├── check-content.mjs              <- npm run check: search-index coverage, dashes, banned
+│   │                                      words, the visual rule, scorecard required fields
+│   └── banned-words.json              <- the word list check-content.mjs reads
 └── vendor/grant-way-playbook/playbook/*.md  <- vendored copy of Grant Way's playbook (see below)
 ```
 
@@ -61,25 +78,27 @@ GPC-OliviaKeiter account's Vercel GitHub App installation settings, add
 back in place of the plain copy restores live sync.
 
 Until then: **update the playbook in `grant-way-playbook` first, then re-run the
-copy above here**, the same discipline Workflow Consulting already uses for
+copy above here**, the same discipline every Roles track already uses for
 its ClickUp-sourced content, below.
 
-Workflow Consulting is different: its source of truth is ClickUp (How We Work →
-Role Handbooks → Process Consultant: Workflow/Workshop), which this site can't
-read live. `content/workflow-consulting/*.md` is a rewritten-once copy. A
-procedure change happens in ClickUp first, then gets manually re-ported here,
-the same way GitHub Basics was rewritten from GitHub Skills' generic exercise
-rather than linked live.
+Each Roles track is different: its source of truth is ClickUp (How We Work →
+Role Handbooks → that seat's handbook), which this site can't read live.
+`content/roles/<track>/*.md` is a rewritten-once copy. A procedure change
+happens in ClickUp first, then gets manually re-ported here, the same way
+GitHub Basics was rewritten from GitHub Skills' generic exercise rather than
+linked live. A scorecard is different again: `content/roles/<track>/scorecard-<seat>.json`
+is copied field for field from that seat's ClickUp scorecard page, so its
+KPI figures can be diffed against ClickUp directly.
 
 ## Grant Way lives in two places
 
 Grant personally does every role at GPC at some point, so The Grant Way isn't
 only a standalone tab: each role track also gets its own doorway into the
 part of the playbook that shows how Grant does that specific role.
-`/workflow-consulting/the-grant-way` is the first one, and today it's
+`/roles/process-consulting/the-grant-way` is the first one, and today it's
 essentially the whole playbook, since every module so far comes from Grant
-running the workflow-consultant role. `lib/grant-way-modules.ts` holds the
-module list once; both `/grant-way` and `/workflow-consulting/the-grant-way`
+running the process-consultant role. `lib/grant-way-modules.ts` holds the
+module list once; both `/grant-way` and `/roles/process-consulting/the-grant-way`
 render it, so there's one array to update and two navigational entry points,
 not two copies of the content. When Grant's method for another role
 (engineering, ops, whatever's next) gets documented, that role's track gets
@@ -111,14 +130,27 @@ one click away in its own tab.
 
 ## Adding a new track
 
-1. Add a tab to `components/top-nav.tsx`.
-2. Add `content/<track>/*.md` (or a submodule, if the content has its own
-   living-source repo the way Grant Way does) and a reader in `lib/` if the
-   existing ones don't fit.
-3. Add `app/<track>/page.tsx` (index, cards) and one route per module, following
-   the Workflow Consulting pattern.
-4. Add a `SearchEntry` per module to `lib/search-index.ts`.
-5. Log it in `CHANGELOG.md`.
+All six Roles tracks already exist as stubs (`content/roles/<track>/track.json`).
+Landing real content in one means:
+
+1. Add `content/roles/<track>/scorecard-<seat>.json` per seat, copied field for
+   field from that seat's ClickUp scorecard page (schema in `lib/scorecard.ts`).
+   Fill in that seat's `scorecardHref` in `track.json`.
+2. Add `content/roles/<track>/<nn>-<module>.md` per module and fill in
+   `track.json`'s `modules[]` to match. `app/roles/<track>/page.tsx` reads
+   `track.json` and renders scorecards and modules automatically: no page
+   changes needed for content that already fits the pattern.
+3. Add one `app/roles/<track>/<module>/page.tsx` per module, following the
+   Process Consulting pattern (`ModuleShell` + `readRoleMarkdown`).
+4. Add a `SearchEntry` per module and per scorecard to `lib/search-index.ts`.
+5. Run `npm run check`. It fails on a missing search-index entry, an em or en
+   dash, a banned word, a module with no table/Figure/svg, or a scorecard
+   missing a required field.
+6. Log it in `CHANGELOG.md`.
+
+A track with no content at all yet (a fresh seventh track, say) additionally
+needs a tab entry only if it isn't a Roles seat: `components/top-nav.tsx`
+today has one Roles tab covering all six, not one tab per track.
 
 ## Ground rules for this repo
 

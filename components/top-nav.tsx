@@ -3,20 +3,20 @@ import { SearchBox } from "./search-box";
 const TABS = [
   { href: "/", label: "Overview" },
   { href: "/grant-way", label: "The Grant Way" },
-  { href: "/workflow-consulting", label: "Workflow Consulting" },
+  { href: "/roles", label: "Roles" },
 ] as const;
 
 /**
  * Persistent top-level tab bar. "General first tab, then the tracks underneath
  * it": Overview is org-wide onboarding; everything after it is role-specific.
- * Engineering/Ops/other tracks get added here the day they exist, following
- * the same pattern as Workflow Consulting: a folder under vendor/ or content/,
- * an index page, module pages, nothing more to wire up.
+ * Roles is a card grid, one card per seat (see /roles); each seat's own
+ * track (Process Consulting, Sales, Engineering, ...) lives under
+ * /roles/<track> and still highlights this same "Roles" tab.
  */
 export function TopNav({
   active,
 }: {
-  active?: "overview" | "grant-way" | "workflow-consulting";
+  active?: "overview" | "grant-way" | "roles";
 }) {
   return (
     <div className="border-b border-border bg-card">

@@ -1,5 +1,57 @@
 # Changelog
 
+## 2026-09-16 (v0.7, Roles shell: tabs, scorecard split, six track stubs)
+
+**Tabs become Overview / The Grant Way / Roles.** `components/top-nav.tsx` and
+`components/module-shell.tsx` take the new track keys. Roles is a card grid,
+one card per seat: Workflow PC, Workshop PC, Engineer, Project Manager,
+Operations Manager, Marketing Manager, Sales Setter, Sales Closer, plus a CEO
+placeholder with no link (owner Grant Hushek, scorecard not written yet).
+Each live card opens that seat's scorecard directly.
+
+**Workflow Consulting moved to `/roles/process-consulting`.** Every old
+`/workflow-consulting/*` URL gets a permanent redirect in `next.config.ts`.
+`content/workflow-consulting` moved to `content/roles/process-consulting`,
+and `lib/wc-markdown.ts` generalized into `lib/role-markdown.ts` (track +
+filename), one reader for every role track's modules.
+
+**Scorecards are their own pages now, split for real this time.** The old
+`00-role-overview.md` merged the Workflow and Workshop scorecards into one
+page, a known bug. It's deleted. `content/roles/process-consulting/scorecard-workflow.json`
+and `scorecard-workshop.json` are copied field for field from ClickUp
+(`8cjh2zy-110372`, `8cjh2zy-110352`), figures unchanged even where the source
+page contradicts itself (the KPI table's duplicate-numbered Scope Leakage row,
+the turnaround SLA mismatch, the Workshop readiness-window mismatch): Olivia
+is resolving those in ClickUp, and Step 5 of the handbooks buildout plan
+re-diffs. New routes: `/roles/process-consulting/scorecard-workflow` and
+`/scorecard-workshop`. `components/scorecard.tsx` renders the shape every
+ClickUp scorecard page shares: mission, a KPI tile row, the Outcomes table,
+then Competencies and Values in Action as two columns. `lib/scorecard.ts`
+validates the required fields. The Workshop scorecard page carries one line:
+no Workshop SOPs exist in ClickUp yet, and the `workshop-portal` skill in
+gpc-skills is the current delivery runbook.
+
+**Six tracks, one content model.** `content/roles/<track>/track.json` (title,
+eyebrow, lede, clickupDocUrl, seats, modules) now exists for all six Roles
+tracks. Only Process Consulting has modules today; the other five (Sales,
+Engineering, Project Management, Operations, Marketing) ship as stubs, a
+scorecard card per seat and an empty-state line naming the ClickUp handbook.
+`lib/roles.ts` reads `track.json`; `app/roles/<track>/page.tsx` renders from
+it, so landing real content in a track (see README's "Adding a new track")
+touches `track.json` and content files, not the page.
+
+**`npm run check` is new** (`scripts/check-content.mjs`). Fails the build on
+a module route with no `SEARCH_INDEX` entry, an em or en dash outside
+`vendor/`, a banned word (`scripts/banned-words.json`, seeded from
+gpc-skills' voice-and-slop.md plus the plan's additions), a module with no
+table, Figure, or svg, or a scorecard JSON missing a required field. Prints
+the open Figure list and a word count per module, informational only. The
+six Process Consulting modules moved as-is (not yet cut for word choice) and
+GitHub Basics (predates the Figure convention) warn instead of fail today,
+via `scripts/pc-visual-rule-allowlist.json` and
+`scripts/overview-visual-rule-allowlist.json`, each deleted by the step that
+fixes its own content (Step 2, Step 3).
+
 ## 2026-09-15 (v0.6, Grant Way's second doorway + Communication Guidelines)
 
 **Grant Way lives in two places now.** Factored the module list out to

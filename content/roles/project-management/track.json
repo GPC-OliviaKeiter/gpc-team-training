@@ -1,0 +1,10 @@
+{
+  "title": "Project Management",
+  "eyebrow": "Roles · Project Management Handbook",
+  "lede": "The PM cadence, the partner lifecycle from onboarding to offboarding, scope and estimates and retros, workspace hygiene, and the people-ops work the PM owns. Source of truth is GPC's ClickUp Project Management handbook until modules land here.",
+  "clickupDocUrl": "https://app.clickup.com/9012022270/docs/8cjh2zy-180852",
+  "seats": [
+    { "name": "Project Manager" }
+  ],
+  "modules": []
+}

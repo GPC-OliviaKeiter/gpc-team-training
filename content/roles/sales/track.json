@@ -1,0 +1,11 @@
+{
+  "title": "Sales",
+  "eyebrow": "Roles · Sales Handbook",
+  "lede": "Pipeline, qualification, discovery and demo, proposal to close, CRM discipline, and the approved answers to common prospect questions. Source of truth is GPC's ClickUp Sales handbook until modules land here.",
+  "clickupDocUrl": "https://app.clickup.com/9012022270/docs/8cjh2zy-180892",
+  "seats": [
+    { "name": "Sales Setter" },
+    { "name": "Sales Closer" }
+  ],
+  "modules": []
+}
