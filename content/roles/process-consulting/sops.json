@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Partner Onboarding: PC Responsibilities",
+    "pageId": "8cjh2zy-111572",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180912/8cjh2zy-111572",
+    "seat": "workflow",
+    "module": "01"
+  },
+  {
+    "name": "Conducting the Client Kickoff Call",
+    "pageId": "8cjh2zy-112472",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180912/8cjh2zy-112472",
+    "seat": "workflow",
+    "module": "01"
+  },
+  {
+    "name": "Filling Out the Onboarding Document",
+    "pageId": "8cjh2zy-101592",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180912/8cjh2zy-101592",
+    "seat": "workflow",
+    "module": "01"
+  },
+  {
+    "name": "Creating the Engineering Handover Document",
+    "pageId": "8cjh2zy-112412",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180912/8cjh2zy-112412",
+    "seat": "workflow",
+    "module": "01"
+  },
+  {
+    "name": "Running Weekly Calls",
+    "pageId": "8cjh2zy-82932",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180912/8cjh2zy-82932",
+    "seat": "workflow",
+    "module": "02"
+  },
+  {
+    "name": "Weekly Client Updates (Every Monday)",
+    "pageId": "8cjh2zy-101452",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180912/8cjh2zy-101452",
+    "seat": "workflow",
+    "module": "02"
+  },
+  {
+    "name": "Conducting Stakeholder Interviews (Workflow Assessment)",
+    "pageId": "8cjh2zy-112172",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180912/8cjh2zy-112172",
+    "seat": "workflow",
+    "module": "02"
+  },
+  {
+    "name": "Maintaining Client Relationships (Active Stage)",
+    "pageId": "8cjh2zy-112452",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180912/8cjh2zy-112452",
+    "seat": "workflow",
+    "module": "03"
+  },
+  {
+    "name": "Flagging Scope Creep in Client Requests",
+    "pageId": "8cjh2zy-111832",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180912/8cjh2zy-111832",
+    "seat": "workflow",
+    "module": "03"
+  },
+  {
+    "name": "Identifying & Pitching Upsell Opportunities",
+    "pageId": "8cjh2zy-112512",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180912/8cjh2zy-112512",
+    "seat": "workflow",
+    "module": "03"
+  },
+  {
+    "name": "Partner Closeout: PC Responsibilities",
+    "pageId": "8cjh2zy-111472",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180912/8cjh2zy-111472",
+    "seat": "workflow",
+    "module": "04"
+  },
+  {
+    "name": "Github & Vercel SOPs",
+    "pageId": "8cjh2zy-113552",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180912/8cjh2zy-113552",
+    "seat": "workflow",
+    "module": "05"
+  },
+  {
+    "name": "Vulnerability Management Execution",
+    "pageId": "8cjh2zy-113872",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180912/8cjh2zy-113872",
+    "seat": "workflow",
+    "module": null
+  }
+]

@@ -1,5 +1,56 @@
 # Changelog
 
+## 2026-09-16 (v0.8, component kit and Process Consulting copy cut)
+
+**Five new components, each documented in its own file.** `figure.tsx` is
+the screenshot placeholder: a dashed box on the secondary token, a caption,
+a one-line capture spec, and the `id` `npm run check`'s open-Figure list
+reports. `callout.tsx` is a one-line rule or warning with a red left border.
+`step-rail.tsx` is a numbered procedure with an optional Figure per step,
+built for a future .tsx page that composes structured step data directly
+(not used by this pass). `checklist.tsx` is the phase-grouped, ClickUp-linked
+list Overview's onboarding module needs in Step 3. `sop-index.tsx` is the
+per-track SOP table: name (linking that page's own ClickUp URL), Seat, and
+Covered in (linking the module, or "Index only").
+
+**Figure and Callout can be written inline in a module's markdown.**
+`lib/role-markdown.ts` recognizes a self-closing `<Figure id="..."
+caption="..." spec="..." />` tag and a `<Callout>...</Callout>` block in the
+raw markdown source and rewrites them, before the rest of the document goes
+through `marked`, into the same markup `components/figure.tsx` and
+`callout.tsx` render directly (the class strings live once, in each
+component, and the markdown path reuses them, so the two can't drift).
+Marked's raw-HTML-block passthrough carries that markup into the page
+untouched. This is a plain HTML string builder, not a server-rendered React
+tree: Next's App Router refuses to bundle `react-dom/server` into a Server
+Component's module graph, which `role-markdown.ts` is.
+
+**The six Process Consulting modules rewritten for word choice.** Every
+fact, rule, owner, and number from the ClickUp source survives; sentences
+that only restated one are gone. Prose lists that were really a RACI, a
+cadence, or a checklist are now tables: the three-role onboarding ownership
+split, the weekly call's six timed segments, the stakeholder interview's
+seven-phase shape, the scope-creep resolution paths, the upsell
+signal-to-service map, the three Close Out action items, and Grant's nine
+email patterns. One Figure placeholder per module marks where a screenshot
+replaces a paragraph. Standalone rule sentences ("You don't mark your own,"
+"Never blame the client's data before investigating," "When in doubt, the
+answer is a proposal, not a favor") are now Callouts instead of buried in
+prose.
+
+**`content/roles/process-consulting/sops.json`**, all 13 SOP pages from
+ClickUp doc `8cjh2zy-180912`'s SOPs subtree, each row `{name, pageId, url,
+seat, module}`. Every row is tagged `seat: "workflow"`: Workshop PC has a
+scorecard and no SOPs in ClickUp yet, so there's no seat split to make.
+`module` is the covering module's `num` from `track.json`, or `null` for
+Vulnerability Management Execution, which has no module and is index only.
+Rendered as the SOP index at the bottom of `/roles/process-consulting`, via
+the new `lib/sops.ts` reader and `SopIndex`.
+
+**`scripts/pc-visual-rule-allowlist.json` deleted.** Every Process
+Consulting module now carries a real table, Figure, or both on its own;
+`npm run check` passes with zero failures.
+
 ## 2026-09-16 (v0.7.1, plan decisions: SOP seat tags, direct ClickUp links)
 
 Two decisions confirmed after v0.7 shipped, recorded in the plan doc
