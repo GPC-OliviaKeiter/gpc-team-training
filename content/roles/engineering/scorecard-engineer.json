@@ -1,0 +1,100 @@
+{
+  "mission": "To turn approved business requirements into reliable, production-ready automation systems that are delivered on time, built to spec, thoroughly tested, documented, and maintainable.",
+  "capacity": "All time logged in ClickUp daily. Progress on active builds updated at least 3x per week; blockers escalated within 2 business hours of detection. Flag Grant and Savannah in advance if a week is trending past your contracted hours.",
+  "sourceUrl": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-110092",
+  "kpis": [
+    {
+      "name": "1. Technical Rework Rate",
+      "calculation": "Completed builds requiring rework because of avoidable technical design gaps ÷ total completed builds",
+      "target": "<10%"
+    },
+    {
+      "name": "2. Escaped Defects",
+      "calculation": "Defects discovered after the build has passed engineering QA and reached production/client use",
+      "target": "≤2 per client/month"
+    },
+    {
+      "name": "3. Definition of Done Compliance",
+      "calculation": "Completed tickets meeting acceptance criteria, edge-case handling, test evidence, documentation, and business requirements ÷ total completed tickets",
+      "target": "100%"
+    },
+    {
+      "name": "4. Production Reliability",
+      "calculation": "Time from production issue occurring to detection, and detection to resolution",
+      "target": "MTTD ≤60 min; MTTR ≤12 working hours"
+    },
+    {
+      "name": "5. Documentation Completeness",
+      "calculation": "Production systems with current technical documentation ÷ total production systems",
+      "target": "100%"
+    }
+  ],
+  "outcomes": [
+    {
+      "what": "Technical solution design",
+      "howMeasured": "100% of builds have a documented technical approach, data mapping, integrations, edge cases, and acceptance criteria before material build work begins; <10% of completed work requires rework due to avoidable technical design gaps",
+      "byWhen": "Per build; ongoing"
+    },
+    {
+      "what": "On-time delivery to plan",
+      "howMeasured": "≥95% of assigned deliverables complete and QA'd ≥24h before the partner call; slippage only with a documented blocker, dependency, or approved scope change",
+      "byWhen": "Weekly; ongoing"
+    },
+    {
+      "what": "Build quality",
+      "howMeasured": "≤2 escaped defects per client per month; 100% of applicable builds complete documented testing before being marked complete",
+      "byWhen": "Per client per month; ongoing"
+    },
+    {
+      "what": "Operational reliability",
+      "howMeasured": "Minimum time to discover ≤60 minutes and minimum time to resolve ≤12 working hours on monitored production flows; alerts, retries, and error handling configured where applicable",
+      "byWhen": "Monthly; ongoing"
+    },
+    {
+      "what": "Specification adherence",
+      "howMeasured": "100% of tickets meet Definition of Done: acceptance criteria met, edge cases handled, test evidence attached, required documentation complete, and the client/business requirement satisfied",
+      "byWhen": "Weekly; ongoing"
+    },
+    {
+      "what": "Documentation and maintainability",
+      "howMeasured": "100% of production systems have current documentation including workflow logic, data mapping, dependencies, credentials/access requirements, error handling, and user-facing documentation where applicable",
+      "byWhen": "Per milestone completion; ongoing"
+    },
+    {
+      "what": "Proactive communication",
+      "howMeasured": "Progress updated at least 3x per week on active builds; blockers escalated within 2 business hours of detection; requirement questions raised within 1 business day of identifying ambiguity",
+      "byWhen": "Weekly; ongoing"
+    },
+    {
+      "what": "Continuous improvement opportunities",
+      "howMeasured": "≥1 meaningful automation, reliability, efficiency, or expansion opportunity per active client per month, documented with problem, expected impact, and recommended next step",
+      "byWhen": "Monthly; ongoing"
+    }
+  ],
+  "competencies": [
+    { "body": "Automation architecture and technical solution design." },
+    { "body": "Attention to detail across data mapping, edge cases, and idempotency." },
+    { "body": "Reliability patterns including retries, monitoring, alerting, and failure handling." },
+    { "body": "Data integrity and schema literacy across client systems." },
+    { "body": "Test and release discipline." },
+    { "body": "Clear technical writing and asynchronous communication." }
+  ],
+  "values": [
+    {
+      "label": "Build-Sharpen-Scale.",
+      "body": "Turns solved technical problems into reusable modules, templates, SOPs, and patterns so future delivery becomes faster and more reliable."
+    },
+    {
+      "label": "Passion for Modern Solutions.",
+      "body": "Selects modern tools and technical approaches when they measurably improve reliability, speed, maintainability, or cost."
+    },
+    {
+      "label": "Empathetic Ownership.",
+      "body": "Owns the technical outcome end to end; flags risks early, fixes root causes rather than symptoms, and verifies systems work in the real environment."
+    },
+    {
+      "label": "Be Decent, Be Direct.",
+      "body": "Communicates status, blockers, technical limitations, and trade-offs plainly; pushes back on unclear requirements before building the wrong thing."
+    }
+  ]
+}

@@ -1,5 +1,45 @@
 # Changelog
 
+## 2026-09-16 (v1.1, Engineering track: six modules, one scorecard, 33-row SOP index)
+
+Step 4b. `content/roles/engineering/` and `app/roles/engineering/` fill in
+from ClickUp doc `8cjh2zy-180752`, ~33 SOP and template pages across a single
+seat.
+
+**One scorecard**, `scorecard-engineer.json`, copied field for field from
+`8cjh2zy-110092`.
+
+**Six modules**: From Ticket to Build (client communication rules, scoping
+time estimates with the 0.25 buffer rule, technical design and pre-build
+planning, partner call briefs), Definition of Done and QA (the four
+non-negotiable and six complexity-gated criteria, peer QA's 24h/48h/24h
+deadlines, automation naming convention, the live-process change protocol),
+Go-Live and Operate (deployment, engineering's half of monitoring and
+ownership, the Sev-1/2/3 incident framework, root cause analysis's five
+classifications, closing support tickets), Access and Credentials (per-seat
+platform access by engagement type, the 1Password vault day-to-day rules,
+Chrome profile setup, Make.com account migration), Handover and
+Documentation (engineer-to-engineer handover, the Client SOP and automation
+documentation template shapes, the 8-phase meta-prompting technique, the
+Value Calculator build and connection steps), and ClickUp for Engineers
+(native automations, evaluating them against plan limits, soft launches,
+status colors, workspace migrations, training a client team).
+
+**`content/roles/engineering/sops.json`**, 33 rows, one seat (`engineer`)
+throughout. Two rows, Quickbooks Tool Module and Make Tool Module, carry a
+new optional `note` field ("Legacy, confirm with Augusto") instead of a
+module link, per the plan; `SopRow` and `SopIndex` gain that field, rendered
+in italics where "Index only" would otherwise show. Excluded entirely: a "Temporary Handover" page (a named engineer's dated
+leave-coverage note, not a reusable SOP), and the folder-only container
+pages ("Engineering SOPs," "Templates," "ClickUp") that hold real pages but
+carry no content of their own. "Client Automation Documentation Templates"
+is itself a real page (name matches the plan's source list) and gets its own
+row even though its body is empty; its two child templates (Internal,
+External) are described inside Module 05's text instead of indexed
+separately.
+
+`npm run check` and `npm run build` both pass clean.
+
 ## 2026-09-16 (v1.0, Sales track: six modules, two scorecards, 22-row SOP index)
 
 Step 4a. `content/roles/sales/` and `app/roles/sales/` fill in from ClickUp doc

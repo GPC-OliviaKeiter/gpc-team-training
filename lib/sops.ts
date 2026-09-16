@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 
-export type SopSeat = "workflow" | "workshop" | "both" | "setter" | "closer";
+export type SopSeat = "workflow" | "workshop" | "both" | "setter" | "closer" | "engineer";
 
 export type SopRow = {
   name: string;
@@ -9,6 +9,10 @@ export type SopRow = {
   url: string;
   seat: SopSeat;
   module: string | null;
+  /** Shown in place of "Index only" when a row needs a flag beyond its
+   * module link, e.g. Engineering's Quickbooks/Make tool modules: "legacy,
+   * confirm with Augusto." */
+  note?: string;
 };
 
 /**

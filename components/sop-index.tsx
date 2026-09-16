@@ -5,11 +5,12 @@ import type { SopRow } from "@/lib/sops";
  * SopIndex: the per-track table at the bottom of a track page, one row per
  * SOP page in that track's ClickUp handbook. Columns are the SOP name
  * (linking straight to its own ClickUp page, not the track's doc-level
- * link), Seat, and Covered in (linking the module that condenses it, or
- * "Index only" when the SOP has no module yet). ClickUp doesn't split most
- * tracks' SOPs by seat, so `seat` is usually "both"; a track like Process
- * Consulting, where one seat has no SOPs written yet, tags every row for
- * the seat that does.
+ * link), Seat, and Covered in (linking the module that condenses it,
+ * `note` in italics for a row that's index-only but needs a flag, e.g.
+ * "legacy, confirm with Augusto," or plain "Index only" otherwise). ClickUp
+ * doesn't split most tracks' SOPs by seat, so `seat` is usually "both"; a
+ * track like Process Consulting, where one seat has no SOPs written yet,
+ * tags every row for the seat that does.
  */
 export function SopIndex({ sops, modules }: { sops: SopRow[]; modules: RoleModule[] }) {
   const moduleByNum = new Map(modules.map((m) => [m.num, m]));
@@ -53,6 +54,8 @@ export function SopIndex({ sops, modules }: { sops: SopRow[]; modules: RoleModul
                     <a href={mod.href} className="text-primary underline underline-offset-2">
                       {mod.title}
                     </a>
+                  ) : sop.note ? (
+                    <span className="italic">{sop.note}</span>
                   ) : (
                     "Index only"
                   )}

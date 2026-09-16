@@ -313,6 +313,82 @@ export const SEARCH_INDEX: SearchEntry[] = [
       "escalation", "objection handling", "model agnostic",
     ],
   },
+  {
+    track: "Engineering",
+    title: "Scorecard: Engineer",
+    href: "/roles/engineering/scorecard-engineer",
+    blurb: "What the Engineer seat is held to: technical design, on-time delivery, build quality, reliability.",
+    tags: [
+      "engineer scorecard", "engineering kpis", "technical rework rate",
+      "escaped defects", "definition of done compliance", "mttd", "mttr",
+      "documentation completeness", "engineering mission",
+    ],
+  },
+  {
+    track: "Engineering",
+    title: "From Ticket to Build",
+    href: "/roles/engineering/from-ticket-to-build",
+    blurb: "Client communication rules, scoping time estimates, technical design, and partner call briefs.",
+    tags: [
+      "client communication", "turnaround expectation", "no dms", "scoping",
+      "time estimates", "bloating rule", "technical design", "pre-build planning",
+      "partner call brief", "meeting brief",
+    ],
+  },
+  {
+    track: "Engineering",
+    title: "Definition of Done and QA",
+    href: "/roles/engineering/definition-of-done-and-qa",
+    blurb: "The Definition of Done, peer QA, naming conventions, and the rules for touching a live process.",
+    tags: [
+      "definition of done", "car requirements", "automation qa", "peer qa",
+      "naming convention", "automations naming", "making changes to live processes",
+      "live testing", "staging environment",
+    ],
+  },
+  {
+    track: "Engineering",
+    title: "Go-Live and Operate",
+    href: "/roles/engineering/go-live-and-operate",
+    blurb: "Deployment, monitoring and ownership, incident response, root cause analysis, and closing support tickets.",
+    tags: [
+      "deployment", "go live", "handover session", "monitoring", "automation ownership",
+      "production incident", "severity levels", "sev-1", "root cause analysis",
+      "internal resolution", "support tickets", "rollback",
+    ],
+  },
+  {
+    track: "Engineering",
+    title: "Access and Credentials",
+    href: "/roles/engineering/access-and-credentials",
+    blurb: "Requesting and confirming platform access, the credential vault, Chrome profiles, and Make.com migrations.",
+    tags: [
+      "client platform access", "credential management", "1password vault",
+      "soc 2", "chrome profile", "primary backup engineer", "make.com migration",
+      "automations client account",
+    ],
+  },
+  {
+    track: "Engineering",
+    title: "Handover and Documentation",
+    href: "/roles/engineering/handover-and-documentation",
+    blurb: "Engineer-to-engineer handover, client SOP and automation documentation templates, and the Value Calculator.",
+    tags: [
+      "project handover", "engineer handover", "client sop template",
+      "automation documentation", "how to create prompt", "value calculator",
+      "meta prompting",
+    ],
+  },
+  {
+    track: "Engineering",
+    title: "ClickUp for Engineers",
+    href: "/roles/engineering/clickup-for-engineers",
+    blurb: "Automations, evaluating internal automations against plan limits, soft launches, and migrations.",
+    tags: [
+      "clickup automations", "automation limits", "soft launch", "fulfilment space",
+      "status colors", "clickup migration", "clickup training", "clickup like a pro",
+    ],
+  },
 ];
 
 export type SearchResult = SearchEntry & { score: number };

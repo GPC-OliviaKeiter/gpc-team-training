@@ -1,0 +1,235 @@
+[
+  {
+    "name": "Client communication and turnaround expectation",
+    "pageId": "8cjh2zy-80892",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-80892",
+    "seat": "engineer",
+    "module": "01"
+  },
+  {
+    "name": "Scoping Time Estimates for Hourly Retainer Tasks",
+    "pageId": "8cjh2zy-88352",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-88352",
+    "seat": "engineer",
+    "module": "01"
+  },
+  {
+    "name": "Technical Design / Pre-Build Planning",
+    "pageId": "8cjh2zy-112872",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-112872",
+    "seat": "engineer",
+    "module": "01"
+  },
+  {
+    "name": "Preparing Partner Call Briefs",
+    "pageId": "8cjh2zy-64512",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-64512",
+    "seat": "engineer",
+    "module": "01"
+  },
+  {
+    "name": "Engineering Definition of Done",
+    "pageId": "8cjh2zy-112892",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-112892",
+    "seat": "engineer",
+    "module": "02"
+  },
+  {
+    "name": "Automation Quality Assurance",
+    "pageId": "8cjh2zy-93152",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-93152",
+    "seat": "engineer",
+    "module": "02"
+  },
+  {
+    "name": "Guidelines for naming convention on automations",
+    "pageId": "8cjh2zy-48912",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-48912",
+    "seat": "engineer",
+    "module": "02"
+  },
+  {
+    "name": "Making Changes to Live processes",
+    "pageId": "8cjh2zy-81472",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-81472",
+    "seat": "engineer",
+    "module": "02"
+  },
+  {
+    "name": "Deployment / Go-Live Process",
+    "pageId": "8cjh2zy-112912",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-112912",
+    "seat": "engineer",
+    "module": "03"
+  },
+  {
+    "name": "Monitoring & Automation Ownership",
+    "pageId": "8cjh2zy-112932",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-112932",
+    "seat": "engineer",
+    "module": "03"
+  },
+  {
+    "name": "Production Incident Response",
+    "pageId": "8cjh2zy-112952",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-112952",
+    "seat": "engineer",
+    "module": "03"
+  },
+  {
+    "name": "Root Cause Analysis / Post-Incident Review",
+    "pageId": "8cjh2zy-112972",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-112972",
+    "seat": "engineer",
+    "module": "03"
+  },
+  {
+    "name": "Closing Support Tickets (Slack + Ticket System)",
+    "pageId": "8cjh2zy-90092",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-90092",
+    "seat": "engineer",
+    "module": "03"
+  },
+  {
+    "name": "Engineering Access & Credential Management",
+    "pageId": "8cjh2zy-112852",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-112852",
+    "seat": "engineer",
+    "module": "04"
+  },
+  {
+    "name": "Credential Vault Usage & Sharing",
+    "pageId": "8cjh2zy-113772",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-113772",
+    "seat": "engineer",
+    "module": "04"
+  },
+  {
+    "name": "Confirm Client Platform Access",
+    "pageId": "8cjh2zy-92772",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-92772",
+    "seat": "engineer",
+    "module": "04"
+  },
+  {
+    "name": "Chrome Profile Setup for Engineering Accounts",
+    "pageId": "8cjh2zy-65012",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-65012",
+    "seat": "engineer",
+    "module": "04"
+  },
+  {
+    "name": "Migrating Make.com Automations to Client Accounts",
+    "pageId": "8cjh2zy-50772",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-50772",
+    "seat": "engineer",
+    "module": "04"
+  },
+  {
+    "name": "Project Handover Between Engineers",
+    "pageId": "8cjh2zy-65132",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-65132",
+    "seat": "engineer",
+    "module": "05"
+  },
+  {
+    "name": "Client SOP Template",
+    "pageId": "8cjh2zy-101212",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-101212",
+    "seat": "engineer",
+    "module": "05"
+  },
+  {
+    "name": "Prompt for SOP Generation",
+    "pageId": "8cjh2zy-101232",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-101232",
+    "seat": "engineer",
+    "module": "05"
+  },
+  {
+    "name": "Client Automation Documentation Templates",
+    "pageId": "8cjh2zy-101392",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-101392",
+    "seat": "engineer",
+    "module": "05"
+  },
+  {
+    "name": "How to Create Prompt",
+    "pageId": "8cjh2zy-43432",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-43432",
+    "seat": "engineer",
+    "module": "05"
+  },
+  {
+    "name": "Creating Value Calculator",
+    "pageId": "8cjh2zy-63952",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-63952",
+    "seat": "engineer",
+    "module": "05"
+  },
+  {
+    "name": "Adding Automation to the Value Calculator",
+    "pageId": "8cjh2zy-48972",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-48972",
+    "seat": "engineer",
+    "module": "05"
+  },
+  {
+    "name": "Guidelines for evaluating internal automations",
+    "pageId": "8cjh2zy-93172",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-93172",
+    "seat": "engineer",
+    "module": "06"
+  },
+  {
+    "name": "Guidelines for Soft Launch (Fulfilment Space)",
+    "pageId": "8cjh2zy-92852",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-92852",
+    "seat": "engineer",
+    "module": "06"
+  },
+  {
+    "name": "Color Guidelines for ClickUp Statuses",
+    "pageId": "8cjh2zy-92032",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-92032",
+    "seat": "engineer",
+    "module": "06"
+  },
+  {
+    "name": "Migration Steps for ClickUp",
+    "pageId": "8cjh2zy-92012",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-92012",
+    "seat": "engineer",
+    "module": "06"
+  },
+  {
+    "name": "ClickUp Like A Pro Training Flow",
+    "pageId": "8cjh2zy-100772",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-100772",
+    "seat": "engineer",
+    "module": "06"
+  },
+  {
+    "name": "Automations in ClickUp",
+    "pageId": "8cjh2zy-56472",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-56472",
+    "seat": "engineer",
+    "module": "06"
+  },
+  {
+    "name": "Quickbooks Tool Module",
+    "pageId": "8cjh2zy-55952",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-55952",
+    "seat": "engineer",
+    "module": null,
+    "note": "Legacy, confirm with Augusto"
+  },
+  {
+    "name": "Make Tool Module",
+    "pageId": "8cjh2zy-55872",
+    "url": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752/8cjh2zy-55872",
+    "seat": "engineer",
+    "module": null,
+    "note": "Legacy, confirm with Augusto"
+  }
+]

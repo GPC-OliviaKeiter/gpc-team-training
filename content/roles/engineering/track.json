@@ -1,10 +1,47 @@
 {
   "title": "Engineering",
   "eyebrow": "Roles · Engineering Handbook",
-  "lede": "Ticket to build, definition of done and QA, go-live and operate, access and credentials, handover and documentation. Source of truth is GPC's ClickUp Engineering handbook until modules land here.",
+  "lede": "Ticket to build, definition of done and QA, go-live and operate, access and credentials, handover and documentation. Rewritten from GPC's ClickUp Engineering handbook.",
   "clickupDocUrl": "https://app.clickup.com/9012022270/docs/8cjh2zy-180752",
   "seats": [
-    { "name": "Engineer" }
+    { "name": "Engineer", "scorecardHref": "/roles/engineering/scorecard-engineer" }
   ],
-  "modules": []
+  "modules": [
+    {
+      "num": "01",
+      "title": "From Ticket to Build",
+      "blurb": "Client communication rules, scoping time estimates, technical design, and partner call briefs.",
+      "href": "/roles/engineering/from-ticket-to-build"
+    },
+    {
+      "num": "02",
+      "title": "Definition of Done and QA",
+      "blurb": "The Definition of Done, peer QA, naming conventions, and the rules for touching a live process.",
+      "href": "/roles/engineering/definition-of-done-and-qa"
+    },
+    {
+      "num": "03",
+      "title": "Go-Live and Operate",
+      "blurb": "Deployment, monitoring and ownership, incident response, root cause analysis, and closing support tickets.",
+      "href": "/roles/engineering/go-live-and-operate"
+    },
+    {
+      "num": "04",
+      "title": "Access and Credentials",
+      "blurb": "Requesting and confirming platform access, the credential vault, Chrome profiles, and Make.com migrations.",
+      "href": "/roles/engineering/access-and-credentials"
+    },
+    {
+      "num": "05",
+      "title": "Handover and Documentation",
+      "blurb": "Engineer-to-engineer handover, client SOP and automation documentation templates, and the Value Calculator.",
+      "href": "/roles/engineering/handover-and-documentation"
+    },
+    {
+      "num": "06",
+      "title": "ClickUp for Engineers",
+      "blurb": "Automations, evaluating internal automations against plan limits, soft launches, and migrations.",
+      "href": "/roles/engineering/clickup-for-engineers"
+    }
+  ]
 }
