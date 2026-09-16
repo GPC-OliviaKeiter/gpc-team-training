@@ -12,7 +12,7 @@ Decisions already made (do not reopen in a build chat):
 | Decision | Choice |
 |---|---|
 | Track shape | One track per handbook (6 tracks). One scorecard page per seat (8 scorecards). |
-| Navigation | Reopened and revised after Step 2 shipped: tabs are Overview / Roles, not Overview / The Grant Way / Roles. Roles is a card grid, one card per track (not one per seat: a multi-seat track like Process Consulting is one role, its own index page lists both scorecards). The Grant Way isn't a top-level tab; Grant personally does every role, so its content is scoped to whichever role sourced it. Process Consulting today, via `/roles/process-consulting/the-grant-way`. Other tracks get the same doorway once their own Grant Way content exists, sourced from their own past calls, not a shared cross-role tab. |
+| Navigation | Tabs become Overview / The Grant Way / Roles. Roles is a card grid, one card per track (a multi-seat track like Process Consulting is one role; its card lists that track's seat scorecards as links, so Workflow PC and Workshop PC, or Setter and Closer, are reachable without opening the track index first). |
 | SOP depth | 4 to 8 grouped modules per track plus one SOP index table per track linking every ClickUp page. |
 | Fundamentals | A Core Fundamentals section on Overview. Cards are doorways into existing modules. Missing ones show a coming-soon state with Pete as owner. |
 | CEO | Placeholder card on the Roles index. No route until Grant writes the scorecard. |
@@ -58,9 +58,9 @@ Target). One component renders all eight.
 /                                   Overview: 01 Onboarding, 02 GitHub Basics, Core Fundamentals section
 /overview/onboarding                new
 /overview/github-basics             existing, copy cut + figures
-/grant-way                          redirects to /roles/process-consulting/the-grant-way (Step 2 revision)
-/grant-way/<module>                 content unchanged; page chrome now reads as under Roles > Process Consulting
-/roles                              new index, one card per track (not per seat), CEO placeholder
+/grant-way/*                        unchanged
+/roles                              new index, one card per track, each card links that track's seat
+                                     scorecards inline, CEO placeholder
 /roles/process-consulting           track index (was /workflow-consulting)
 /roles/process-consulting/scorecard-workflow
 /roles/process-consulting/scorecard-workshop

@@ -30,6 +30,17 @@ export type SearchEntry = {
 export const SEARCH_INDEX: SearchEntry[] = [
   {
     track: "Overview",
+    title: "Onboarding at GPC",
+    href: "/overview/onboarding",
+    blurb: "Every ClickUp onboarding task, phase by phase, each row linking its own task.",
+    tags: [
+      "onboarding", "new hire", "paperwork", "offer letter", "systems and tools",
+      "slack", "clickup university", "first week calls", "role handbook",
+      "checklist", "getting started",
+    ],
+  },
+  {
+    track: "Overview",
     title: "GitHub Basics",
     href: "/overview/github-basics",
     blurb: "Repos, branches, commits, pull requests, merge, and how it works at GPC.",

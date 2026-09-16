@@ -6,8 +6,8 @@ export default function Page() {
 
   return (
     <ModuleShell
-      track="roles"
-      crumbs={[{ label: "Process Consulting", href: "/roles/process-consulting" }, { label: "The Grant Way", href: "/roles/process-consulting/the-grant-way" }, { label: "Module 01 · Discovery Interviews" }]}
+      track="grant-way"
+      crumbs={[{ label: "The Grant Way", href: "/grant-way" }, { label: "Module 01 · Discovery Interviews" }]}
       eyebrow="The Grant Way · Module 01 · Flagship"
       title={title}
       lede="The flagship module: how Grant runs an AI strategy interview, across the deep-dive and functional-panel formats."

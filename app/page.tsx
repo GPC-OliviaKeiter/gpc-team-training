@@ -3,10 +3,56 @@ import { TopNav } from "@/components/top-nav";
 const modules = [
   {
     num: "01",
+    title: "Onboarding at GPC",
+    blurb: "Every ClickUp onboarding task, phase by phase, each row linking its own task.",
+    href: "/overview/onboarding",
+  },
+  {
+    num: "02",
     title: "GitHub Basics",
     blurb:
       "Repos, branches, commits, pull requests, merge, and how it works at GPC specifically.",
     href: "/overview/github-basics",
+  },
+];
+
+type FundamentalCard = {
+  title: string;
+  blurb: string;
+  href?: string;
+  owner?: string;
+};
+
+const CORE_FUNDAMENTALS: FundamentalCard[] = [
+  {
+    title: "Pitching",
+    blurb: "The discovery and demo craft: how GPC pitches an engagement.",
+    owner: "Coming soon, once Sales's own track lands (Step 4a)",
+  },
+  {
+    title: "Selling",
+    blurb: "Pipeline, qualification, and the sales process end to end.",
+    href: "/roles/sales",
+  },
+  {
+    title: "Client service",
+    blurb: "Client health, scope creep, and spotting the next engagement.",
+    href: "/roles/process-consulting/managing-the-relationship",
+  },
+  {
+    title: "Communicating at GPC",
+    blurb: "Channel-by-purpose rules, the 1-3-1 method, and how Grant writes to clients.",
+    href: "/roles/process-consulting/communication-guidelines",
+  },
+  {
+    title: "The Grant Way",
+    blurb: "How Grant runs the workflow-consultant role, sourced from real call transcripts.",
+    href: "/grant-way",
+  },
+  {
+    title: "Pete's list",
+    blurb: "The fundamentals Pete wants beyond these five.",
+    owner: "Coming soon. Owner: Pete Sena",
   },
 ];
 
@@ -66,6 +112,46 @@ export default function Page() {
                 </div>
               </a>
             ))}
+          </div>
+        </section>
+
+        <section className="mt-14">
+          <h2 className="mb-2 font-display text-[26px] font-normal">Core Fundamentals</h2>
+          <p className="mb-5 max-w-[64ch] text-[15px] leading-relaxed text-muted-foreground">
+            Doorways into the modules everyone benefits from knowing, wherever
+            they actually live.
+          </p>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {CORE_FUNDAMENTALS.map((c) => {
+              const body = (
+                <div
+                  className={`relative flex h-full flex-col gap-2 border bg-card px-5 py-4 transition-colors ${
+                    c.href ? "border-border hover:border-gpc-primary-red" : "border-border"
+                  }`}
+                >
+                  <h3 className="font-display text-xl font-normal">{c.title}</h3>
+                  <p className="text-[14.5px] leading-snug text-muted-foreground">{c.blurb}</p>
+                  {c.href ? (
+                    <span className="mt-auto pt-2 font-mono text-[11px] font-semibold tracking-[0.08em] text-gpc-primary-red uppercase">
+                      Open module →
+                    </span>
+                  ) : (
+                    <p className="mt-auto pt-2 font-mono text-[11px] tracking-[0.06em] text-muted-foreground uppercase">
+                      {c.owner}
+                    </p>
+                  )}
+                </div>
+              );
+              return c.href ? (
+                <a key={c.title} href={c.href} className="block h-full">
+                  {body}
+                </a>
+              ) : (
+                <div key={c.title} className="h-full">
+                  {body}
+                </div>
+              );
+            })}
           </div>
         </section>
 

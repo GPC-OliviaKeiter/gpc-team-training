@@ -1,5 +1,90 @@
 # Changelog
 
+## 2026-09-16 (v0.9, Overview: onboarding checklist, Core Fundamentals, GitHub Basics cut)
+
+**Module 01: Onboarding at GPC**, new. `content/overview/onboarding.json`
+carries all 47 tasks from ClickUp list `901220437555` (GPC General
+Onboarding), grouped into six phases: Paperwork (4), Systems and Tools (9),
+Learn About GPC (7), ClickUp University (21, collapsed by default), First
+Week Calls (5), Your Role Handbook (1, linking `/roles` instead of a ClickUp
+page, since there's no single handbook page to point at). Every other row
+links its own ClickUp task, in a new tab. `lib/onboarding.ts` reads the JSON;
+`/overview/onboarding` renders it with `components/checklist.tsx`, the kit
+component Step 2 shipped but nothing used yet. GitHub Basics becomes Module
+02.
+
+Two additions to `checklist.tsx` beyond what Step 2 shipped: a `collapsed`
+flag per phase, rendered as a native `<details>` so the 21-item ClickUp
+University phase doesn't dominate the page on load, and an external-link
+check so a row only opens in a new tab when its `clickupUrl` actually points
+off-site (the Role Handbook row's `/roles` link navigates normally instead
+of popping a tab for an in-site route).
+
+A handful of ClickUp University course titles use words this repo's own
+copy bans (one course title opens with a verb meaning "find your way," two
+others with verbs meaning "make more efficient" and "put to use"; see
+`content/overview/onboarding.json`'s ClickUp University phase for the exact
+titles). Reproducing a real ClickUp task title so the row matches what the
+reader checks off there isn't this site's own writing, so `check-content.mjs`
+gets a `BANNED_WORD_EXCEPTIONS` set (`content/overview/onboarding.json`), the
+same reasoning as the existing `DASH_EXCEPTIONS` carve-out for a real quoted
+email in Communication Guidelines.
+
+**Core Fundamentals**, new section on Overview under the module grid, six
+cards: Selling, Client service, Communicating at GPC, and The Grant Way link
+straight to existing modules; Pete's list is coming soon, owner Pete Sena,
+per the plan. Pitching is also coming soon, one deviation from the plan's
+table: its destination, `/roles/sales/discovery-and-demo`, doesn't exist yet
+because Sales's own track (Step 4a) hasn't landed. Marked coming soon rather
+than shipping a dead link; flip it live the same commit Step 4a adds that
+module.
+
+**GitHub Basics cut for word choice.** Every fact, rule, and click-path step
+survives; sentences that only restated one are gone. The six `shot` labels
+(inline yellow tags) are now real `Figure` placeholders with capture specs,
+consistent with every other track. One inline SVG of the branch-commit-PR-
+merge loop sits above section 01, recovered from `site/index.html`
+(v0.1, lost in the v0.2 Next.js rebuild) and redrawn on the GPC token
+palette (`var(--gpc-*)`, no hardcoded hex) instead of the original's literal
+colors. `scripts/overview-visual-rule-allowlist.json` deleted: both Overview
+modules now carry a real Figure or svg on their own, `npm run check` passes
+with zero failures or warnings.
+
+New `SEARCH_INDEX` entry for `/overview/onboarding`, 11 tags.
+
+## 2026-09-16 (v0.8.2, Grant Way tab restored, seat scorecards linked from the track card)
+
+Two plan decisions from v0.8.1 restored before Step 3, one fully and one
+partially.
+
+**The Grant Way is a top-level tab again.** `/grant-way` (the standalone
+index) comes back; `components/top-nav.tsx` and `components/module-shell.tsx`
+regain the `"grant-way"` track key, and all eight module pages (plus
+`/roles/process-consulting/the-grant-way`) revert to pointing at each other
+the way they did before v0.8.1: `track="grant-way"` and a two-item breadcrumb
+starting at `/grant-way` on the standalone pages, cross-links between the two
+doorways restored on both. `next.config.ts` drops the `/grant-way` redirect.
+`lib/grant-way-modules.ts` is unchanged either way: one module array, two
+doorways, no content duplication, same as it's been since v0.6.
+
+**`/roles` stays one card per track**, the other half of v0.8.1, which holds:
+a multi-seat track like Process Consulting is still one role, one card, not
+two. What changes is discoverability inside that card. `RoleCard` now takes
+`seats` (`track.json`'s existing `seats[]`, `{ name, scorecardHref }`) and
+renders each seat as its own line in the card body, a direct link when
+`scorecardHref` is set (Workflow PC and Workshop PC today) and plain text
+when it isn't yet (Sales Setter and Sales Closer, until Step 4a lands
+Sales's scorecards). The "Open track" link and label are unchanged. Because
+a seat link and the track link can no longer share one wrapping `<a>`, the
+whole card is no longer a single clickable region; "Open track" is now the
+card's own link, same as `RoleCard` looked before v0.7 introduced the
+whole-card-as-link pattern.
+
+The plan doc's Navigation decision reverts to its pre-v0.8.1 form (tabs
+restored) with the one part of v0.8.1 that stays folded in (one card per
+track, seats linked inline). The Routes table's `/grant-way` rows revert to
+`/grant-way/* unchanged`.
+
 ## 2026-09-16 (v0.8.1, Roles is one card per track, Grant Way moves under Process Consulting)
 
 Navigation fix after v0.8 shipped: `/roles` had no way to reach Process

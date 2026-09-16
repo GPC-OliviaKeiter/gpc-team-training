@@ -6,8 +6,8 @@ export default function Page() {
 
   return (
     <ModuleShell
-      track="roles"
-      crumbs={[{ label: "Process Consulting", href: "/roles/process-consulting" }, { label: "The Grant Way", href: "/roles/process-consulting/the-grant-way" }, { label: "Module 00 · Method Overview" }]}
+      track="grant-way"
+      crumbs={[{ label: "The Grant Way", href: "/grant-way" }, { label: "Module 00 · Method Overview" }]}
       eyebrow="The Grant Way · Module 00"
       title={title}
       lede="The philosophy and core frameworks everything else hangs on: start with the people, infrastructure before intelligence, probleming before solutioning."

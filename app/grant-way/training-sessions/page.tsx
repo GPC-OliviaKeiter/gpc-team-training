@@ -117,15 +117,11 @@ export default function Page() {
         approval.
       </div>
 
-      <TopNav active="roles" />
+      <TopNav active="grant-way" />
 
       <main className="mx-auto max-w-[860px] px-6 pt-11 pb-20">
         <nav className="mb-6 font-mono text-xs tracking-[0.08em] text-muted-foreground uppercase">
-          <a href="/roles/process-consulting" className="hover:text-foreground hover:underline">
-            Process Consulting
-          </a>{" "}
-          /{" "}
-          <a href="/roles/process-consulting/the-grant-way" className="hover:text-foreground hover:underline">
+          <a href="/grant-way" className="hover:text-foreground hover:underline">
             The Grant Way
           </a>{" "}
           / Module 06 · Training Sessions

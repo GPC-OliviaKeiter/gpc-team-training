@@ -6,13 +6,6 @@ import type { NextConfig } from "next";
  * working. /workflow-consulting/role-overview has no 1:1 successor: its
  * content split into two scorecard pages, so it redirects to the track
  * index, which lists both.
- *
- * /grant-way (the standalone index page) redirects the same way: The Grant
- * Way is no longer its own top-level tab, since every module it has today
- * is sourced from Grant running the Process Consultant role specifically.
- * Its content pages keep their existing /grant-way/<module> URLs (nothing
- * to redirect there); only the landing page moves, to the Process
- * Consulting doorway that already lists the same modules.
  */
 const nextConfig: NextConfig = {
   async redirects() {
@@ -51,11 +44,6 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/workflow-consulting/the-grant-way",
-        destination: "/roles/process-consulting/the-grant-way",
-        permanent: true,
-      },
-      {
-        source: "/grant-way",
         destination: "/roles/process-consulting/the-grant-way",
         permanent: true,
       },

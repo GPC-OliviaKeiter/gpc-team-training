@@ -6,8 +6,8 @@ export default function Page() {
 
   return (
     <ModuleShell
-      track="roles"
-      crumbs={[{ label: "Process Consulting", href: "/roles/process-consulting" }, { label: "The Grant Way", href: "/roles/process-consulting/the-grant-way" }, { label: "Module 07 · Follow-up Interviews" }]}
+      track="grant-way"
+      crumbs={[{ label: "The Grant Way", href: "/grant-way" }, { label: "Module 07 · Follow-up Interviews" }]}
       eyebrow="The Grant Way · Module 07"
       title={title}
       lede="Technical & opportunity deep-dives after discovery: governance and rollout negotiation, architecture, and ROI scoping."

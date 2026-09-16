@@ -1,5 +1,5 @@
 import { TopNav } from "@/components/top-nav";
-import { GRANT_WAY_MODULES } from "@/lib/grant-way-modules";
+import { GRANT_WAY_MODULES as modules } from "@/lib/grant-way-modules";
 
 export default function Page() {
   return (
@@ -11,44 +11,35 @@ export default function Page() {
         · GPC-only. Nothing here goes public without Grant&rsquo;s approval.
       </div>
 
-      <TopNav active="roles" />
+      <TopNav active="grant-way" />
 
       <main className="mx-auto max-w-[900px] px-6 pt-11 pb-20">
-        <nav className="mb-6 font-mono text-xs tracking-[0.08em] text-muted-foreground uppercase">
-          <a href="/roles/process-consulting" className="hover:text-foreground hover:underline">
-            Process Consulting
-          </a>{" "}
-          / The Grant Way
-        </nav>
-
         <header className="mb-11 border-b border-border pb-8">
           <div className="mb-4 font-mono text-[11.5px] tracking-[0.2em] text-muted-foreground uppercase">
-            Process Consulting · The Grant Way
+            The Grant Way · Workflow Consultant Playbook
           </div>
           <h1 className="font-display text-[clamp(2.5rem,6vw,3.75rem)] leading-[1.05] font-normal tracking-tight">
-            The Grant Way, for this role
+            The Grant Way
           </h1>
           <p className="mt-5 max-w-[64ch] text-[17px] leading-relaxed text-muted-foreground">
-            Grant personally does every role at GPC at some point, and each role
-            track gets its own doorway into the part of{" "}
-            <a href="/grant-way" className="text-primary underline underline-offset-2">
-              The Grant Way
-            </a>{" "}
-            that shows how he does it. For Process Consulting, that&rsquo;s the
-            whole playbook today: every module so far comes from Grant running
-            this exact role. As Grant&rsquo;s method for other roles gets
-            documented, they&rsquo;ll get their own version of this page.
+            How Grant Hushek runs the workflow-consultant role, reverse-engineered
+            from real call transcripts. Every claim traces back to a transcript;
+            anything reasoned rather than observed is flagged as inferred. Eight
+            modules, three clients, growing with every new transcript batch.
           </p>
         </header>
 
         <section>
+          <h2 className="mb-5 font-display text-[26px] font-normal">
+            The eight modules
+          </h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {GRANT_WAY_MODULES.map((m) => (
-              <a key={m.num} href={m.href} className="block h-full">
+            {modules.map((m) => {
+              const Card = (
                 <div
-                  className={`relative flex h-full flex-col gap-2 border bg-card px-5 py-4 transition-colors hover:border-gpc-primary-red ${
+                  className={`relative flex h-full flex-col gap-2 border bg-card px-5 py-4 ${
                     m.flagship ? "border-foreground" : "border-border"
-                  }`}
+                  } ${m.href ? "transition-colors hover:border-gpc-primary-red" : ""}`}
                 >
                   {m.badge && (
                     <span className="absolute -top-2.5 right-4 rounded-sm bg-gpc-primary-red px-2 py-0.5 font-mono text-[10px] font-semibold tracking-[0.12em] text-gpc-neutral-100">
@@ -58,26 +49,41 @@ export default function Page() {
                   <span className="font-mono text-xs font-semibold text-muted-foreground">
                     {m.num}
                   </span>
-                  <h3 className="font-display text-xl font-normal">{m.title}</h3>
+                  <h3 className="font-display text-xl font-normal">
+                    {m.title}
+                  </h3>
                   <p className="text-[14.5px] leading-snug text-muted-foreground">
                     {m.blurb}
                   </p>
-                  <span className="mt-auto pt-2 font-mono text-[11px] font-semibold tracking-[0.08em] text-gpc-primary-red uppercase">
-                    Open module →
-                  </span>
+                  {m.href && (
+                    <span className="mt-auto pt-2 font-mono text-[11px] font-semibold tracking-[0.08em] text-gpc-primary-red uppercase">
+                      Open module →
+                    </span>
+                  )}
                 </div>
-              </a>
-            ))}
+              );
+              return m.href ? (
+                <a key={m.num} href={m.href} className="block h-full">
+                  {Card}
+                </a>
+              ) : (
+                <div key={m.num} className="h-full">
+                  {Card}
+                </div>
+              );
+            })}
           </div>
         </section>
 
         <footer className="mt-14 border-t border-foreground pt-6">
           <p className="max-w-[60ch] text-[13.5px] text-muted-foreground">
-            Same modules, same pages as the{" "}
-            <a href="/grant-way" className="text-primary underline underline-offset-2">
-              standalone Grant Way tab
-            </a>
-            . This page is a second doorway into them, not a second copy.
+            Modules 00-05 and 07 render{" "}
+            <code className="rounded-sm bg-secondary px-1.5 py-0.5 font-mono text-[12px]">
+              playbook/*.md
+            </code>{" "}
+            directly, so the module doc stays the single source of truth.
+            Module 06 is hand-laid-out since it doesn&rsquo;t have a matching
+            playbook doc yet.
           </p>
         </footer>
       </main>

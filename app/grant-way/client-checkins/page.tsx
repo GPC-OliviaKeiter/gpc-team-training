@@ -6,8 +6,8 @@ export default function Page() {
 
   return (
     <ModuleShell
-      track="roles"
-      crumbs={[{ label: "Process Consulting", href: "/roles/process-consulting" }, { label: "The Grant Way", href: "/roles/process-consulting/the-grant-way" }, { label: "Module 03 · Client Check-ins" }]}
+      track="grant-way"
+      crumbs={[{ label: "The Grant Way", href: "/grant-way" }, { label: "Module 03 · Client Check-ins" }]}
       eyebrow="The Grant Way · Module 03"
       title={title}
       lede="Same-day debriefs with the client sponsors: turning a day of interviews into client confidence."

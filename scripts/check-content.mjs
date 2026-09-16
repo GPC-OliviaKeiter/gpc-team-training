@@ -122,6 +122,16 @@ const DASH_EXCEPTIONS = new Set([
   path.join("content", "roles", "process-consulting", "06-communication-guidelines.md"),
 ]);
 
+// The onboarding checklist's item labels are ClickUp's own task and course
+// titles, reproduced verbatim so the row someone clicks matches the task
+// they check off in ClickUp. Same reasoning as the dash exception above:
+// the banned-word rule polices this site's own writing, not a literal copy
+// of a title GPC doesn't control (several ClickUp University course titles
+// use "navigate," "leverage," or "streamline").
+const BANNED_WORD_EXCEPTIONS = new Set([
+  path.join("content", "overview", "onboarding.json"),
+]);
+
 function checkDashesAndBannedWords() {
   const files = walkFiles(ROOT);
   for (const file of files) {
@@ -131,6 +141,8 @@ function checkDashesAndBannedWords() {
     if (/[–—]/.test(text) && !DASH_EXCEPTIONS.has(rel)) {
       fail(`${rel} contains an em or en dash`);
     }
+
+    if (BANNED_WORD_EXCEPTIONS.has(rel)) continue;
 
     const lower = text.toLowerCase();
     for (const word of BANNED_WORDS) {

@@ -35,7 +35,12 @@ export default function Page() {
         <section>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {tracks.map((track) => (
-              <RoleCard key={track.key} name={track.title} href={`/roles/${track.key}`} />
+              <RoleCard
+                key={track.key}
+                name={track.title}
+                href={`/roles/${track.key}`}
+                seats={track.seats}
+              />
             ))}
             <RoleCard name="CEO" fallbackText="Scorecard not written yet. Owner: Grant Hushek." />
           </div>

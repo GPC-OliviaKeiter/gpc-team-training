@@ -2,6 +2,7 @@ import { SearchBox } from "./search-box";
 
 const TABS = [
   { href: "/", label: "Overview" },
+  { href: "/grant-way", label: "The Grant Way" },
   { href: "/roles", label: "Roles" },
 ] as const;
 
@@ -10,17 +11,12 @@ const TABS = [
  * it": Overview is org-wide onboarding; everything after it is role-specific.
  * Roles is a card grid, one card per track (see /roles); each track
  * (Process Consulting, Sales, Engineering, ...) lives under /roles/<track>
- * and still highlights this same "Roles" tab. The Grant Way isn't its own
- * tab: Grant personally does every role, so its content is scoped to
- * whichever role it's sourced from (Process Consulting today, via that
- * track's own doorway at /roles/process-consulting/the-grant-way) and reads
- * as "Roles" active, not a company-wide fourth tab. See README's "Grant Way
- * lives inside a role" for why.
+ * and still highlights this same "Roles" tab.
  */
 export function TopNav({
   active,
 }: {
-  active?: "overview" | "roles";
+  active?: "overview" | "grant-way" | "roles";
 }) {
   return (
     <div className="border-b border-border bg-card">
