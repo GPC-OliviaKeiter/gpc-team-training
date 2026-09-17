@@ -1,0 +1,231 @@
+{
+  "_source": "ClickUp doc 8cjh2zy-176192, GPC space, 'Glossary of Terms'. Definitions condensed. The ClickUp doc is the source of truth; if a term is missing there, DM the Project Manager to have it added rather than inventing one here.",
+  "terms": [
+    {
+      "term": "3SK",
+      "tag": "Operations",
+      "definition": "The three silent killers of task and project management: the hidden issues that quietly derail progress when nobody names them."
+    },
+    {
+      "term": "AI Agent",
+      "tag": "AI",
+      "definition": "An AI-powered program that performs tasks or makes decisions on its own."
+    },
+    {
+      "term": "Alignment Call",
+      "tag": "Call",
+      "instead": "Weekly Call",
+      "definition": "A client-facing call to connect on the ongoing build, review direction, and ask questions."
+    },
+    {
+      "term": "Assignee",
+      "tag": "ClickUp",
+      "definition": "The person responsible for completing a task. Assigning it makes them the owner: accountable for driving it to done inside the agreed scope, timeline, and quality."
+    },
+    {
+      "term": "Automation Engineer",
+      "tag": "Role",
+      "instead": "Implementation Engineer",
+      "definition": "Designs, builds, and maintains the workflow automations that remove manual work for partners. Owns technical quality; does not approve scope changes or make commercial concessions."
+    },
+    {
+      "term": "C2C",
+      "tag": "Product",
+      "definition": "Call-to-Content. A productized service that turns meeting transcripts and call recordings into LinkedIn posts, blog articles, and other marketing material."
+    },
+    {
+      "term": "ClickUp Folder",
+      "tag": "ClickUp",
+      "definition": "A container inside a Space, grouping related Lists. At GPC a partner is a Folder, which is also where their ClickUp chat channel lives."
+    },
+    {
+      "term": "ClickUp List",
+      "tag": "ClickUp",
+      "definition": "Where tasks live. Production, Survey Data, Onboarding Form, and NPS are the standard lists in a partner folder."
+    },
+    {
+      "term": "ClickUp Space",
+      "tag": "ClickUp",
+      "definition": "A major section of the workspace, usually a department or a large function. Partner Fulfillment is the Space most client work sits in."
+    },
+    {
+      "term": "ClickUp Workspace",
+      "tag": "ClickUp",
+      "definition": "The top level, representing the whole company. GPC has one."
+    },
+    {
+      "term": "Demo",
+      "tag": "Call",
+      "definition": "A live or recorded walkthrough of a solution, used to show it working, gather feedback, and confirm alignment before development continues or the work rolls out."
+    },
+    {
+      "term": "Edge Case",
+      "tag": "Engineering",
+      "definition": "An error the system reports when something breaks in an unusual or unexpected way."
+    },
+    {
+      "term": "Error Handler",
+      "tag": "Engineering",
+      "definition": "Logic in an automation tool that catches and responds to a failure. Break retries, ignore skips and continues, resume falls back to a default, and commit or rollback protects data integrity."
+    },
+    {
+      "term": "GO Call",
+      "tag": "Call",
+      "instead": "Internal Kickoff Call",
+      "definition": "Goals and Operations. The internal call that starts the implementation phase and aligns the team on project goals."
+    },
+    {
+      "term": "Growth Insurance",
+      "tag": "Product",
+      "instead": "Maintenance",
+      "definition": "The ongoing support and maintenance subscription for infrastructure GPC already built."
+    },
+    {
+      "term": "Kickoff Call",
+      "tag": "Call",
+      "definition": "The client-facing meeting that launches a project: objectives, success criteria, who is on the team, scope, deliverables, timeline, communication protocols, risks, and the next immediate actions."
+    },
+    {
+      "term": "Live Launch",
+      "tag": "Build phase",
+      "instead": "Roll out",
+      "definition": "Full deployment after the MVP build, client testing, and approval. Everyone is onboarded and the solution is in everyday use, with documentation, training, and support in place."
+    },
+    {
+      "term": "Lookup Table",
+      "tag": "Automation",
+      "definition": "A table used to match one value to another quickly: client names to IDs, status codes to readable descriptions, tasks to the team member who owns them."
+    },
+    {
+      "term": "MVP",
+      "tag": "Build phase",
+      "definition": "The simplest working version of a solution, built in a permission-controlled environment to validate the approach and gather feedback before a wider launch."
+    },
+    {
+      "term": "Onboarding Call",
+      "tag": "Call",
+      "definition": "The client-facing call that kicks off a Workflow Assessment."
+    },
+    {
+      "term": "Partner",
+      "tag": "Role",
+      "instead": "Client",
+      "definition": "A company receiving consulting, automation, or implementation services from GPC. Partner is the correct term in GPC materials. Client appears in older documents and in casual speech."
+    },
+    {
+      "term": "Partner Folder",
+      "tag": "Operations",
+      "definition": "The ClickUp folder holding everything for one partner: lists, milestones, templates, documentation, tasks, tickets, and progress. Created automatically at onboarding."
+    },
+    {
+      "term": "Priority",
+      "tag": "ClickUp",
+      "definition": "High means this is the next thing someone should pick up. Urgent means stop what you are doing. Otherwise leave it blank."
+    },
+    {
+      "term": "Process Consultant",
+      "tag": "Role",
+      "definition": "Bridges business problems and technical solutions. Runs workflow assessments and stakeholder interviews, maps current and future state, designs the automation strategy, and guides change management. Decides what should be solved and why."
+    },
+    {
+      "term": "Production List",
+      "tag": "ClickUp",
+      "definition": "The weekly sprint of tasks inside a partner folder, where deliverables are assigned, time-bound, and moved to completion."
+    },
+    {
+      "term": "Project Manager",
+      "tag": "Role",
+      "definition": "The operational backbone of partner projects. Keeps timelines on track, keeps the tools clear, is the point of contact for updates and blockers, and keeps execution aligned with what was agreed at onboarding."
+    },
+    {
+      "term": "QA",
+      "tag": "Delivery",
+      "definition": "Making sure deliverables meet the defined quality standard, with the emphasis on prevention and consistency rather than catching things at the end."
+    },
+    {
+      "term": "Soft Launch",
+      "tag": "Build phase",
+      "definition": "A controlled release to a subset of users, for real-world testing and refinement before the full live launch."
+    },
+    {
+      "term": "SOP",
+      "tag": "Operations",
+      "definition": "A documented process naming the exact steps, roles, and tools needed to complete a recurring task or workflow."
+    },
+    {
+      "term": "SOW",
+      "tag": "Commercial",
+      "definition": "Statement of Work. The formal document defining scope, objectives, deliverables, timeline, responsibilities, and terms for an engagement."
+    },
+    {
+      "term": "SOD",
+      "tag": "Operations",
+      "definition": "Start of Day. The list of tasks every team member runs at the start of each day."
+    },
+    {
+      "term": "Sprint",
+      "tag": "Operations",
+      "definition": "A fixed period, usually one week, in which a team completes a defined set of tasks."
+    },
+    {
+      "term": "Sprint Points",
+      "tag": "Operations",
+      "definition": "A unit of effort or complexity used to plan capacity and track progress within a sprint."
+    },
+    {
+      "term": "Stakeholder",
+      "tag": "Delivery",
+      "definition": "Anyone with an interest in a project who can affect its outcome, inside GPC or inside the partner. Their objectives may differ from each other's, which is usually the thing worth finding out."
+    },
+    {
+      "term": "Support Ticket",
+      "tag": "Delivery",
+      "definition": "A request or issue raised by a partner, logged so it can be tracked and resolved."
+    },
+    {
+      "term": "Support Ticket Triage",
+      "tag": "Delivery",
+      "definition": "Reviewing, categorizing, and prioritizing incoming tickets so each goes to the right team in the right order of urgency and impact."
+    },
+    {
+      "term": "System Designer",
+      "tag": "Role",
+      "definition": "Architects the systems and workflows behind partner solutions so they scale, stay maintainable, and meet both business and technical requirements."
+    },
+    {
+      "term": "Template",
+      "tag": "ClickUp",
+      "definition": "An SOP turned into a repeatable set of tasks and subtasks in ClickUp. Can also be a repeatable folder, space, or view."
+    },
+    {
+      "term": "Time Estimate",
+      "tag": "ClickUp",
+      "definition": "An informed prediction of how long a task will take, used for planning, prioritization, and setting expectations. Never left blank."
+    },
+    {
+      "term": "Time Tracking",
+      "tag": "Operations",
+      "definition": "Recording hours spent on tasks, in 5-minute increments, at the subtask level. Feeds both team expectations and project profitability."
+    },
+    {
+      "term": "Weekly Check-In",
+      "tag": "Call",
+      "definition": "The recurring client meeting for updates, alignment, and relationship management."
+    },
+    {
+      "term": "Wiki",
+      "tag": "Operations",
+      "definition": "GPC's central knowledge base in ClickUp: internal processes, SOPs, onboarding material, and best practice. Most of this Overview track is rewritten from it."
+    },
+    {
+      "term": "Workflow Assessment",
+      "tag": "Product",
+      "definition": "A structured engagement that analyzes and documents how an organization works, finds bottlenecks and automation opportunities, and ends in a prioritized roadmap and readout."
+    },
+    {
+      "term": "Zap",
+      "tag": "Automation",
+      "definition": "An automated workflow in Zapier. An event triggers it, and one or more actions run automatically."
+    }
+  ]
+}

@@ -96,6 +96,7 @@ const patterns = [
 ];
 
 import { TopNav } from "@/components/top-nav";
+import { GpcLogo } from "@/components/gpc-logo";
 import { citationHref, CITATION_MAP } from "@/lib/citations";
 
 function Chip({ children }: { children: React.ReactNode }) {
@@ -119,7 +120,7 @@ export default function Page() {
 
       <TopNav active="roles" />
 
-      <main className="mx-auto max-w-[860px] px-6 pt-11 pb-20">
+      <main className="mx-auto max-w-[1040px] px-6 pt-11 pb-20">
         <nav className="mb-6 font-mono text-xs tracking-[0.08em] text-muted-foreground uppercase">
           <a href="/roles/process-consulting" className="hover:text-foreground hover:underline">
             Process Consulting
@@ -288,7 +289,8 @@ export default function Page() {
           </p>
         </section>
 
-        <footer className="mt-14 border-t border-foreground pt-6">
+        <footer className="mt-14 flex items-center gap-4 border-t border-foreground pt-6">
+          <GpcLogo color="auto" title="" className="h-4 w-auto text-muted-foreground" />
           <p className="font-mono text-[11px] text-muted-foreground">
             GPC TEAM TRAINING · INTERNAL
           </p>

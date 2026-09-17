@@ -46,7 +46,7 @@ export function SearchBox() {
   }
 
   return (
-    <div ref={containerRef} className="relative ml-auto w-full max-w-[260px]">
+    <div ref={containerRef} className="relative ml-auto w-full max-w-[220px] lg:max-w-[280px]">
       <input
         type="search"
         value={query}
@@ -59,9 +59,9 @@ export function SearchBox() {
           if (e.key === "Enter") goToResults();
           if (e.key === "Escape") setOpen(false);
         }}
-        placeholder="Ask a question or search…"
+        placeholder="Search"
         aria-label="Search training modules"
-        className="w-full rounded-sm border border-border bg-background px-3 py-1.5 font-mono text-[12px] text-foreground placeholder:text-muted-foreground focus:border-gpc-primary-red focus:outline-none"
+        className="w-full rounded-sm border border-border bg-background px-3 py-1.5 font-mono text-[12px] text-foreground placeholder:text-muted-foreground/80 focus:border-gpc-primary-red focus:outline-none"
       />
 
       {open && query.trim().length >= 2 && (

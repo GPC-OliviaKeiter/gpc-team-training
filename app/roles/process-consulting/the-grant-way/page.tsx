@@ -1,4 +1,5 @@
 import { TopNav } from "@/components/top-nav";
+import { GpcLogo } from "@/components/gpc-logo";
 import { GRANT_WAY_MODULES } from "@/lib/grant-way-modules";
 
 export default function Page() {
@@ -13,7 +14,7 @@ export default function Page() {
 
       <TopNav active="roles" />
 
-      <main className="mx-auto max-w-[900px] px-6 pt-11 pb-20">
+      <main className="mx-auto max-w-[1040px] px-6 pt-11 pb-20">
         <nav className="mb-6 font-mono text-xs tracking-[0.08em] text-muted-foreground uppercase">
           <a href="/roles/process-consulting" className="hover:text-foreground hover:underline">
             Process Consulting
@@ -68,7 +69,8 @@ export default function Page() {
           </div>
         </section>
 
-        <footer className="mt-14 border-t border-foreground pt-6">
+        <footer className="mt-14 flex items-center gap-4 border-t border-foreground pt-6">
+          <GpcLogo color="auto" title="" className="h-4 w-auto text-muted-foreground" />
           <p className="max-w-[60ch] text-[13.5px] text-muted-foreground">
             This is the only doorway into these modules: The Grant Way isn&rsquo;t
             a company-wide tab, since every module so far is sourced from Grant

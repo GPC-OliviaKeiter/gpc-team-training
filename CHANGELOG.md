@@ -1,5 +1,88 @@
 # Changelog
 
+## 2026-09-17 (v0.9, the Overview buildout, the visual pass, and the session timer)
+
+**Overview goes from one module to ten.** Everything org-wide that a new
+hire needs before their seat's own handbook, sourced from the GPC Wiki
+(ClickUp doc `8cjh2zy-176272`), the General Onboarding list (`901220437555`),
+the Glossary (`8cjh2zy-176192`), and, for module 08, the
+`gpc-ai-roi-framework` repo:
+
+| # | Module | Rewritten from |
+|---|---|---|
+| 01 | Onboarding at GPC | All 47 tasks in the General Onboarding list, regrouped into seven phases, each row linking its own ClickUp task. The 21 ClickUp University courses render collapsed. |
+| 02 | Welcome to GPC | About GPC, History of GPC, Mission/Vision, GPC Core Values, The GPC Standard |
+| 03 | How GPC Is Structured | GPC Team Structure Overview, GPC Org Chart |
+| 04 | What GPC Sells | The six GPC Services pages, both tiers of each, plus Legacy Accounts |
+| 05 | How We Work | Communication Guidelines, Task Creation, Time Tracking Policy, Escalation Protocols, Video Presentability, Required Content Creation |
+| 06 | Working with Clients | Client Communication Standards (1-3-1 and the error templates), Handling Slack Requests |
+| 07 | ClickUp at GPC | ClickUp Hierarchy Explained, ClickUp Best Practices, Task Status Changes, Bounceback System, External Meeting Task Creation |
+| 08 | Measuring AI ROI | `gpc-ai-roi-framework`: the argument, the baseline pack, the eight signals, the two questions, the four actions, the cadence |
+| 09 | GitHub Basics | Existing module, moved onto `ModuleShell`, six screenshot labels converted to `Figure` placeholders, the branch-commit-PR-merge SVG restored |
+| 10 | Glossary | Glossary of Terms, condensed, with the say-this-not-that pairs pulled out first |
+
+Module 08 is the one that does not come from ClickUp. It condenses the AI ROI
+framework for the people who have to run it: every sample number is that
+repo's own (90 min to 15 min, 2 runs a week, 5 eligible people, 50 hours in
+month one), labeled sample data wherever it renders, and its two hard rules
+carry over. Never invent client outcomes, and no dollar figures for AI cost,
+since gas is measured in tokens. It also keeps the framework's correction:
+three of the eight signals divide by skill calls, not all eight.
+
+**A session timer, in the top bar on every page.** `components/training-timer.tsx`:
+start, pause, reset, with the elapsed time visible wherever you are in the
+site. It keeps counting across navigation and survives a reload, because the
+whole state is one `localStorage` key. Nothing is sent anywhere and nothing
+is logged for you. The point is the figure it hands back: it rounds to the
+5-minute increment GPC's Time Tracking Policy logs in, with a copy button,
+so an onboarding session can be pasted straight into a ClickUp time entry.
+Two renderings of the same state, the compact bar in the nav and the panel
+on the Overview index, stay in sync through a `storage` listener plus a
+same-document event.
+
+**A visual pass across the whole site.**
+
+- The official GPC mark ships as `components/gpc-logo.tsx`, path data copied
+  verbatim from the Design Starter's `components/brand/gpc-logo.tsx`
+  (`gpc-make-it-pretty`, a read-only reference; nothing there was edited).
+  It sits in the top bar, in the Overview and Roles heroes, and in every
+  footer. Only the two approved artwork colors are exposed.
+- `components/diagrams.tsx` holds eleven hand-authored inline SVGs on the
+  GPC tokens: the work pipeline, the service ladder, the ClickUp hierarchy,
+  the task status flow, the communication routing, the four values, the
+  GitHub loop, and the four AI ROI figures. No chart library, no image
+  files, no JavaScript, so they render identically with scripting off. Each
+  carries `role="img"` and an `aria-label` that states the claim, and none
+  carry information in color alone.
+- `components/diagram.tsx` adds the `Diagram` frame (numbered label, the
+  drawing, a caption that says what the drawing claims) and `StatTiles` for
+  a row of figures pulled out of prose.
+- `/` and `/roles` both get a hero with the mark set large, and the module
+  grid groups into Start here, How GPC works, and Tools and craft. Every
+  card shows its ClickUp source and a read estimate. `RoleCard` now reports
+  its seats and whether the track has modules written or is a doorway to its
+  ClickUp handbook.
+- The content column widens from 820/900px to 1040px everywhere, so a
+  diagram no longer needs a horizontal scrollbar to be read.
+
+**A CSS fix that made the rest of it possible.** The `.md-body` markdown
+typography moves into `@layer components`. Tailwind v4 puts its utilities in
+a later layer, so unlayered rules were beating every utility class: a card
+inside a module was getting the markdown paragraph's line height, color,
+margin, and 70ch cap regardless of what its own classes said. With the block
+layered, a page can compose real components inside the same `.md-body`
+wrapper, and `.not-prose` on the wrapper zeroes the few margins and widths
+no utility happens to set.
+
+**`npm run check` changes.** `hasVisual` now recognizes `<Diagram>` and
+`<StatTiles>` (and an HTML `<table>`) as satisfying the visual rule, since
+Overview's modules compose components rather than writing raw `<svg>` in the
+page. `scripts/overview-visual-rule-allowlist.json` is deleted: GitHub Basics
+carries its SVG now. And `BANNED_WORD_EXCEPTIONS` joins the existing
+`DASH_EXCEPTIONS`, per file and per word, for the four ClickUp University
+course titles quoted verbatim in `content/overview/onboarding.json`, so a row
+here and the ClickUp task it links to still match when someone goes looking.
+
 ## 2026-09-16 (v0.8.1, Roles is one card per track, Grant Way moves under Process Consulting)
 
 Navigation fix after v0.8 shipped: `/roles` had no way to reach Process

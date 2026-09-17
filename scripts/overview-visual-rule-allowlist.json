@@ -1,4 +1,0 @@
-{
-  "_comment": "Step 1 allowlist: GitHub Basics predates the Figure/svg convention. Listed route warns instead of fails the visual rule. Step 3 deletes this file once it converts the six `shot` labels into Figure placeholders and adds the branch-commit-PR-merge svg.",
-  "routes": ["/overview/github-basics"]
-}
