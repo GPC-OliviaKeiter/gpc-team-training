@@ -33,7 +33,7 @@ function SearchPageInner() {
 
       <TopNav />
 
-      <main className="mx-auto max-w-[820px] px-6 pt-11 pb-20">
+      <main className="mx-auto max-w-[1040px] px-6 pt-11 pb-20">
         <header className="mb-9 border-b border-border pb-8">
           <div className="mb-4 font-mono text-[11.5px] tracking-[0.2em] text-muted-foreground uppercase">
             Search

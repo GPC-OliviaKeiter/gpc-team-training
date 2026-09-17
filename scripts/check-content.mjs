@@ -122,6 +122,20 @@ const DASH_EXCEPTIONS = new Set([
   path.join("content", "roles", "process-consulting", "06-communication-guidelines.md"),
 ]);
 
+// Same principle as DASH_EXCEPTIONS: the ban is a rule for copy this site
+// authors, not a license to rewrite something quoted verbatim. Overview's
+// onboarding checklist carries ClickUp University course titles exactly as
+// ClickUp names them, so a row here and the ClickUp task it links to match
+// when someone goes looking. Four of those titles use words on the list.
+// The exception is per file AND per word: anything else in these files
+// still fails.
+const BANNED_WORD_EXCEPTIONS = new Map([
+  [
+    path.join("content", "overview", "onboarding.json"),
+    new Set(["leverage", "streamline", "navigate", "navigating"]),
+  ],
+]);
+
 function checkDashesAndBannedWords() {
   const files = walkFiles(ROOT);
   for (const file of files) {
@@ -135,7 +149,7 @@ function checkDashesAndBannedWords() {
     const lower = text.toLowerCase();
     for (const word of BANNED_WORDS) {
       const pattern = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
-      if (pattern.test(lower)) {
+      if (pattern.test(lower) && !BANNED_WORD_EXCEPTIONS.get(rel)?.has(word)) {
         fail(`${rel} contains banned word "${word}"`);
       }
     }
@@ -150,11 +164,11 @@ function checkDashesAndBannedWords() {
 // so it passes automatically.
 // ---------------------------------------------------------------------------
 
-// Two allowlists, two different owners for deleting them: Step 2 cuts the
-// six Process Consulting modules and deletes pc-visual-rule-allowlist.json;
-// Step 3 cuts GitHub Basics (adds the branch-commit-PR-merge svg) and
-// deletes overview-visual-rule-allowlist.json. Kept separate so Step 2
-// clearing its file doesn't re-fail a route Step 3 hasn't reached yet.
+// Both staged allowlists are gone: Step 2 cut the six Process Consulting
+// modules and deleted pc-visual-rule-allowlist.json, and the Overview
+// buildout added the branch-commit-PR-merge svg to GitHub Basics and
+// deleted overview-visual-rule-allowlist.json. The mechanism stays so a
+// future route can be staged the same way, one file per step.
 const ALLOWLIST_FILES = ["pc-visual-rule-allowlist.json", "overview-visual-rule-allowlist.json"];
 const VISUAL_ALLOWLIST = new Set(
   ALLOWLIST_FILES.flatMap((name) => {
@@ -173,10 +187,14 @@ function visualCheckRoutes(moduleRoutes) {
 }
 
 function hasVisual(text) {
-  const hasTable = /^\s*\|.+\|\s*$/m.test(text);
+  const hasTable = /^\s*\|.+\|\s*$/m.test(text) || /<table[\s>]/i.test(text);
   const hasSvg = /<svg[\s>]/i.test(text);
   const hasFigure = /<Figure\b|\bfigure\b/i.test(text);
-  return hasTable || hasSvg || hasFigure;
+  // Overview's modules compose the two components in components/diagram.tsx
+  // rather than writing raw <svg> in the page: Diagram frames an inline SVG
+  // from components/diagrams.tsx, StatTiles renders a figure row. Both count.
+  const hasDiagramComponent = /<Diagram\b|<StatTiles\b/.test(text);
+  return hasTable || hasSvg || hasFigure || hasDiagramComponent;
 }
 
 function contentTextFor(pageSource) {

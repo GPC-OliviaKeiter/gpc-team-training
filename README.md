@@ -1,7 +1,9 @@
 # GPC Team Training
 
-The internal GPC training site: a Next.js app on GPC's real Design Starter tokens,
-two top-level tabs. **Overview** (org-wide, role-agnostic onboarding) and
+The internal GPC training site: a Next.js app on GPC's real Design Starter tokens
+and the official GPC mark, two top-level tabs. **Overview** (org-wide,
+role-agnostic onboarding: ten modules covering who GPC is, what it sells, how
+the work gets done, and the tools it runs on) and
 **Roles** (a card grid, one card per role at GPC, each opening that role's
 track: its scorecard or scorecards, its operational SOPs, and, where Grant's
 own method for that role has been documented from real call transcripts, its
@@ -20,8 +22,8 @@ gpc-team-training/
 ├── README.md                          <- you are here
 ├── CHANGELOG.md                       <- what changed, when
 ├── app/
-│   ├── page.tsx                       <- Overview tab index
-│   ├── overview/github-basics/        <- Overview's one module so far
+│   ├── page.tsx                       <- Overview tab index: module grid, timer, Core Fundamentals
+│   ├── overview/<module>/             <- Overview's ten modules (see "The Overview tab" below)
 │   ├── grant-way/                     <- The Grant Way's content: one route per playbook module.
 │   │                                      No index page here anymore; /grant-way redirects to
 │   │                                      roles/process-consulting/the-grant-way below.
@@ -34,17 +36,25 @@ gpc-team-training/
 │   └── roles/<sales|engineering|project-management|operations|marketing>/
 │                                       <- stub track index pages, content lands track by track
 ├── content/
+│   ├── overview/onboarding.json       <- the 47 ClickUp onboarding tasks, grouped into phases
+│   ├── overview/glossary.json         <- the glossary, condensed, with the say-this-not-that pairs
 │   ├── roles/<track>/track.json       <- title, eyebrow, lede, clickupDocUrl, seats[], modules[]
 │   ├── roles/<track>/scorecard-<seat>.json  <- one scorecard per seat, schema in lib/scorecard.ts
 │   └── roles/<track>/*.md             <- module source (rewritten from ClickUp)
 ├── components/
-│   ├── top-nav.tsx                    <- the persistent tab bar + search box, on every page
+│   ├── top-nav.tsx                    <- the persistent bar: mark, tabs, session timer, search
+│   ├── gpc-logo.tsx                   <- the official GPC mark, Brand Kit kit_b669c185
+│   ├── training-timer.tsx             <- the session stopwatch (see "The timer" below)
+│   ├── diagram.tsx                    <- the Diagram frame and the StatTiles row
+│   ├── diagrams.tsx                   <- every inline SVG the site draws, in one file
 │   ├── search-box.tsx                 <- the top-nav "ask a question" input, live dropdown of matches
 │   ├── module-shell.tsx               <- shared page chrome + the Sources footer
 │   ├── role-card.tsx                  <- one track card on /roles (live or placeholder)
 │   └── scorecard.tsx                  <- renders a seat's scorecard JSON
 ├── app/search/page.tsx                <- full search results page (/search?q=...)
 ├── lib/
+│   ├── overview.ts                    <- the Overview module list and the Core Fundamentals cards
+│   ├── onboarding.ts                  <- reads content/overview/onboarding.json
 │   ├── search-index.ts                <- hand-tagged index of every module, across all tracks
 │   ├── grant-way-modules.ts           <- the Grant Way module list, read by its one doorway page
 │   ├── citations.ts                   <- registry mapping Grant Way's [tag] citations to transcripts
@@ -124,6 +134,57 @@ superscript number linking to a numbered Sources list at the bottom of the page,
 with a real link to the transcript. Nothing is deleted. The vendored markdown
 in `vendor/grant-way-playbook` still carries every tag; this is a display-layer
 transform only.
+
+## The Overview tab
+
+Ten modules, grouped into Start here, How GPC works, and Tools and craft. The
+list lives in `lib/overview.ts`; each module is its own `app/overview/<name>/page.tsx`
+composed from `ModuleShell` plus the component kit, not markdown, because most
+of them interleave prose with a diagram or a table.
+
+Nine of the ten are rewritten once from the **GPC Wiki** in ClickUp (doc
+`8cjh2zy-176272`), the **General Onboarding list** (`901220437555`), or the
+**Glossary** (`8cjh2zy-176192`). Those stay the source of truth: when this
+site and ClickUp disagree, ClickUp is right and this site is stale. Tell the
+Project Manager so both get fixed.
+
+The tenth, **Measuring AI ROI**, comes from the `gpc-ai-roi-framework` repo
+instead. It is the framework condensed for the people who run it rather than
+the prospect-facing experience. Three rules carry over from that repo and
+apply to anything written from it: every invented number is labeled sample
+data where it appears, no dollar figures for AI cost anywhere (gas is measured
+in tokens), and never say the framework divides everything by skill calls,
+because three of the eight signals do and five do not.
+
+## The timer
+
+`components/training-timer.tsx` is a stopwatch for the person reading, not a
+logging system. It runs in the top bar on every page, keeps counting across
+navigation, and survives a reload, because its whole state is one
+`localStorage` key. Nothing is sent anywhere.
+
+The number it hands back is the point: it rounds to the 5-minute increment
+GPC's Time Tracking Policy logs in, so an onboarding session can be pasted
+straight into a ClickUp time entry. Two renderings of the same state (the
+compact bar in the nav, the panel on the Overview index) stay in sync through
+a `storage` listener plus a same-document event.
+
+## Diagrams
+
+Every inline SVG lives in `components/diagrams.tsx` and renders inside the
+`Diagram` frame from `components/diagram.tsx`. Four rules hold for all of them:
+
+- Colors are `var()` references to the GPC tokens in `app/globals.css`, so a
+  token change moves the diagrams with the rest of the site.
+- Nothing is carried by color alone. Every lane, stage, and quadrant is
+  labeled in text too.
+- `role="img"` plus an `aria-label` that states the claim, not the shapes.
+- No chart library, no image files, no JavaScript. They render identically
+  with scripting off, which is why they are hand-authored rather than
+  generated.
+
+`npm run check` treats `<Diagram>`, `<StatTiles>`, a `<Figure>`, a table, or a
+raw `<svg>` as satisfying the visual rule.
 
 ## Search
 

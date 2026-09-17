@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { TopNav } from "./top-nav";
+import { GpcLogo } from "./gpc-logo";
 import { citationHref, type NumberedSource } from "@/lib/annotate-citations";
 
 type Crumb = { label: string; href?: string };
@@ -35,7 +36,7 @@ export function ModuleShell({
 
       <TopNav active={track} />
 
-      <main className="mx-auto max-w-[820px] px-6 pt-11 pb-20">
+      <main className="mx-auto max-w-[1040px] px-6 pt-11 pb-20">
         <nav className="mb-6 font-mono text-xs tracking-[0.08em] text-muted-foreground uppercase">
           {crumbs.map((c, i) => (
             <span key={c.label}>
@@ -99,7 +100,8 @@ export function ModuleShell({
           </section>
         )}
 
-        <footer className="mt-14 border-t border-foreground pt-6">
+        <footer className="mt-14 flex items-center gap-4 border-t border-foreground pt-6">
+          <GpcLogo color="auto" title="" className="h-4 w-auto text-muted-foreground" />
           <p className="font-mono text-[11px] text-muted-foreground">
             GPC TEAM TRAINING · INTERNAL
           </p>

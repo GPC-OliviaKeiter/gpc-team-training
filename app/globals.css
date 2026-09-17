@@ -125,7 +125,17 @@ body {
 
 /* Rendered markdown from playbook/*.md (see lib/module-markdown.ts). Module
    docs are the single source of truth for content, so this styles whatever
-   marked emits rather than a hand-authored shape. */
+   marked emits rather than a hand-authored shape.
+
+   The whole block sits in @layer components on purpose. Tailwind v4 puts its
+   utilities in a later layer, so anything with a utility class on it wins
+   over these defaults no matter the specificity. That is what lets an
+   Overview module compose real components (cards, stat rows, step rails)
+   inside the same .md-body wrapper without its own type sizes and colors
+   being overridden by the markdown defaults. `.not-prose` on the wrapping
+   div zeroes the margins and widths no utility happens to set. */
+@layer components {
+
 .md-body h2 {
   margin: 2.75rem 0 0.9rem;
   font-family: var(--font-display);
@@ -252,4 +262,38 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted-foreground);
+}
+
+/* Blocks a module composes from components rather than markdown opt out with
+   `.not-prose`, the same escape-hatch name Tailwind Typography uses. Only the
+   properties that would fight a card layout are neutralized here; everything
+   visual comes from the component's own utility classes, which win by layer. */
+.md-body .not-prose :is(p, ul, ol, li, dt, dd, pre) {
+  margin: 0;
+  max-width: none;
+  padding-left: 0;
+  line-height: 1.5;
+  color: inherit;
+}
+
+.md-body .not-prose li::marker {
+  color: inherit;
+}
+
+.md-body .not-prose :is(h2, h3, h4) {
+  margin: 0;
+}
+
+/* A card row that is a link is still a card, not a sentence with a link in
+   it. Anything inside a composed block that really is prose-with-a-link
+   sets its own `text-primary underline` and wins by layer. */
+.md-body .not-prose a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.md-body .not-prose table {
+  margin: 0;
+}
+
 }

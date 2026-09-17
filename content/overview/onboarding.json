@@ -1,0 +1,94 @@
+{
+  "_source": "ClickUp list 901220437555, GPC space, 'GPC General Onboarding'. All 47 tasks, regrouped for reading order. The list is the source of truth: check a box there, not here.",
+  "phases": [
+    {
+      "title": "Paperwork",
+      "note": "Savannah Higgins owns these. Nothing else starts until the offer letter is signed.",
+      "items": [
+        { "label": "Sign offer letter", "clickupUrl": "https://app.clickup.com/t/869ek2tw6" },
+        { "label": "Complete necessary paperwork", "clickupUrl": "https://app.clickup.com/t/869ek2tv1" },
+        { "label": "Complete Gusto / Deel onboarding", "clickupUrl": "https://app.clickup.com/t/869ek2txm" },
+        { "label": "Complete internal team member onboarding", "clickupUrl": "https://app.clickup.com/t/869ek2tz3", "owner": "PM" }
+      ]
+    },
+    {
+      "title": "Accounts and tools",
+      "note": "Do these in order. Dashlane holds every shared credential, so it comes before anything that needs one.",
+      "items": [
+        { "label": "Set up systems and tools", "clickupUrl": "https://app.clickup.com/t/869ek2r82" },
+        { "label": "Log in to your GPC email", "clickupUrl": "https://app.clickup.com/t/869ek2r8p" },
+        { "label": "Set up Slack and join key channels", "clickupUrl": "https://app.clickup.com/t/869ek2r94" },
+        { "label": "Log in to ClickUp and Dashlane", "clickupUrl": "https://app.clickup.com/t/869ek2rb8" },
+        { "label": "Read the Tools We Use document", "clickupUrl": "https://app.clickup.com/t/869ek2rbz" },
+        { "label": "Set up office hours in Google Calendar", "clickupUrl": "https://app.clickup.com/t/869em8fw9" },
+        { "label": "Subscribe to the leave calendar", "clickupUrl": "https://app.clickup.com/t/869em8gnc" }
+      ]
+    },
+    {
+      "title": "Say hello",
+      "items": [
+        { "label": "Introduce yourself on Slack", "clickupUrl": "https://app.clickup.com/t/869ek2rh5" },
+        { "label": "Post your name, role, and a fun fact in #4-general", "clickupUrl": "https://app.clickup.com/t/869ek2rm6" }
+      ]
+    },
+    {
+      "title": "Learn about GPC",
+      "note": "Modules 02, 03, 04, 05 and 07 on this site cover the same ground in reading order. Tick the ClickUp task when you finish the module.",
+      "items": [
+        { "label": "Learn about General Purpose Consulting", "clickupUrl": "https://app.clickup.com/t/869ek2rn9" },
+        { "label": "Read GPC's history, values, and mission", "clickupUrl": "https://app.clickup.com/t/869ek2rp4" },
+        { "label": "Review our team structure", "clickupUrl": "https://app.clickup.com/t/869ek2rnp" },
+        { "label": "Understand our product offerings", "clickupUrl": "https://app.clickup.com/t/869ek2ruw" },
+        { "label": "Review internal communication guidelines", "clickupUrl": "https://app.clickup.com/t/869ek2rwr" },
+        { "label": "Review must-know SOPs", "clickupUrl": "https://app.clickup.com/t/869ek2ry6" },
+        { "label": "Review client testimonials and success stories", "clickupUrl": "https://app.clickup.com/t/869ek2rw0" }
+      ]
+    },
+    {
+      "title": "ClickUp University",
+      "note": "Twenty-one ClickUp-authored courses. Titles are theirs, verbatim, so the ClickUp task and this row match when you go looking. Module 07 covers how GPC uses ClickUp specifically, which the courses do not.",
+      "collapsed": true,
+      "items": [
+        { "label": "Complete ClickUp training to expert level", "clickupUrl": "https://app.clickup.com/t/869ek2tnf" },
+        { "label": "Complete ClickUp for beginners", "clickupUrl": "https://app.clickup.com/t/869ek2tnj" },
+        { "label": "Complete best practices for setting up your hierarchy", "clickupUrl": "https://app.clickup.com/t/869ek2tnk" },
+        { "label": "What is a workflow and why workflows matter", "clickupUrl": "https://app.clickup.com/t/869ek2tnp" },
+        { "label": "Tailor Your Workflow: The Power of Custom Statuses in ClickUp", "clickupUrl": "https://app.clickup.com/t/869ek2tnr" },
+        { "label": "Overview of Your Project with Custom Fields", "clickupUrl": "https://app.clickup.com/t/869ek2tnx" },
+        { "label": "Navigating ClickUp with Views", "clickupUrl": "https://app.clickup.com/t/869ek2tnz" },
+        { "label": "Simplify Data Collection with ClickUp Forms", "clickupUrl": "https://app.clickup.com/t/869ek2tp2" },
+        { "label": "Collaborate Faster with ClickUp Docs", "clickupUrl": "https://app.clickup.com/t/869ek2tp4" },
+        { "label": "Getting Started with Whiteboards", "clickupUrl": "https://app.clickup.com/t/869ek2tp5" },
+        { "label": "Build Your Own Workflow", "clickupUrl": "https://app.clickup.com/t/869ek2tp7" },
+        { "label": "Automate Your First Workflow in ClickUp", "clickupUrl": "https://app.clickup.com/t/869ek2tp8" },
+        { "label": "Standardize Workflows and Reduce Errors with ClickUp Templates", "clickupUrl": "https://app.clickup.com/t/869ek2tp9" },
+        { "label": "Apply and Manage Templates", "clickupUrl": "https://app.clickup.com/t/869ek2tpb" },
+        { "label": "Connect Your Work With Relationships", "clickupUrl": "https://app.clickup.com/t/869ek2tpc" },
+        { "label": "Work Cross-Functionally With Tasks", "clickupUrl": "https://app.clickup.com/t/869ek2tpd" },
+        { "label": "Leverage Reporting With Dashboards", "clickupUrl": "https://app.clickup.com/t/869ek2tpe" },
+        { "label": "Streamline Your Project Management With ClickUp", "clickupUrl": "https://app.clickup.com/t/869ek2tpf" },
+        { "label": "Run Productive Meetings With ClickUp", "clickupUrl": "https://app.clickup.com/t/869ek2tpg" },
+        { "label": "Best Practices for Running Successful 1:1 Meetings", "clickupUrl": "https://app.clickup.com/t/869ek2tpj" },
+        { "label": "Navigate the Agency Customer Lifecycle", "clickupUrl": "https://app.clickup.com/t/869ek2tpk" }
+      ]
+    },
+    {
+      "title": "Your first week of calls",
+      "note": "Standups are Tuesday and Thursday. The team call is Friday, and it is also the deadline for finalizing that week's time entries.",
+      "items": [
+        { "label": "Attend your first week of team calls", "clickupUrl": "https://app.clickup.com/t/869ek2w3j" },
+        { "label": "Tuesday standup", "clickupUrl": "https://app.clickup.com/t/869ek2w58" },
+        { "label": "Thursday standup", "clickupUrl": "https://app.clickup.com/t/869ek2w5d" },
+        { "label": "Friday team call", "clickupUrl": "https://app.clickup.com/t/869ek2w62" },
+        { "label": "1:1 with your manager", "clickupUrl": "https://app.clickup.com/t/869ek2w6g" }
+      ]
+    },
+    {
+      "title": "Then your seat",
+      "note": "This is where Overview ends and the Roles tab starts.",
+      "items": [
+        { "label": "Review your role-specific handbook", "clickupUrl": "https://app.clickup.com/t/869eqr3mw" }
+      ]
+    }
+  ]
+}
